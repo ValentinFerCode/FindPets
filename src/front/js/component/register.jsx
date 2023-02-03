@@ -3,8 +3,8 @@ import React from "react";
 export const Register = () => {
 
     return (
-        <div classNameName="container w-25 p-12  ">
-            <div className="row justify-content-center">
+        <div classNameName="container col-25 p-12">
+            <div className=" d-flex align-items-center">
                 <form>
                     <div className="col col-3">
                         <label for="exampleInputEmail1" className="form-label">Email</label>
