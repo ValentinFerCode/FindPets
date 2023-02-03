@@ -8,14 +8,7 @@ from api.utils import generate_sitemap, APIException
 api = Blueprint('api', __name__)
 
 
-# @api.route('/hello', methods=['POST', 'GET'])
-# def handle_hello():
 
-#     response_body = {
-#         "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-#     }
-
-#     return jsonify(response_body), 200
 
 
 
@@ -44,7 +37,11 @@ def login():
 
     usuario_login = Usuario.query.filter_by(username=username).first()
 
+<<<<<<< HEAD
     if username != username_login.username or password != usuario_login.password:
+=======
+    if username != usuario_login.username or password != usuario_login.password:
+>>>>>>> 281e2d2d03f946ee1913f78ed89d0b283dacc7b6
         return jsonify({"message": "Usuario o contraseña incorrectos"}), 401
 
     else: 
