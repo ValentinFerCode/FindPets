@@ -5,7 +5,6 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 import json
 from api.models import db, Usuario, Mascotas
 from api.utils import generate_sitemap, APIException
-from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
 
 api = Blueprint('api', __name__)
 
@@ -39,23 +38,6 @@ def signup():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @api.route("/login", methods=["POST"])
 def login():
     # Obtengo credenciales del usuario desde el cuerpo de la solicitud
@@ -69,7 +51,6 @@ def login():
 
     else: 
         return jsonify({"message": "Inicio de sesión exitoso"})
-
     #Token de acceso
     access_token = create_access_token(identity=user.id)
 
