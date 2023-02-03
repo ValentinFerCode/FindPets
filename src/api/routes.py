@@ -38,23 +38,6 @@ def signup():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @api.route("/login", methods=["POST"])
 def login():
     # Obtengo credenciales del usuario desde el cuerpo de la solicitud
