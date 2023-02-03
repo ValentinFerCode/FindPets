@@ -37,11 +37,7 @@ def login():
 
     usuario_login = Usuario.query.filter_by(username=username).first()
 
-<<<<<<< HEAD
-    if username != username_login.username or password != usuario_login.password:
-=======
     if username != usuario_login.username or password != usuario_login.password:
->>>>>>> 281e2d2d03f946ee1913f78ed89d0b283dacc7b6
         return jsonify({"message": "Usuario o contraseña incorrectos"}), 401
 
     else: 
