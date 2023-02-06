@@ -33,8 +33,8 @@ class Usuario(db.Model):
 class Mascotas(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    genero = db.Column(db.String(120), unique=True, nullable=False)
-    tamaño = db.Column(db.String(120), unique=True, nullable=False)
+    genero = db.Column(db.String(120), unique=False, nullable=False)
+    tamaño = db.Column(db.String(120), unique=False, nullable=False)
     color = db.Column(db.String(80), unique=False, nullable=False)
     nombre = db.Column(db.String(80), unique=False, nullable=False)
     edad = db.Column(db.String(80), unique=False, nullable=False)
