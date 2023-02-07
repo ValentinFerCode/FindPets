@@ -6,9 +6,13 @@ import {Home} from "./pages/home.jsx";
 import {Demo} from "./pages/demo";
 import {Single} from "./pages/single";
 import injectContext from "./store/appContext";
+import {Login} from "./pages/login.jsx";
 
-import {Navbar} from "./component/navbar.jsx";
-import {Footer} from "./component/footer.jsx";
+
+import {Navbar} from "./component/navbar";
+import {Footer} from "./component/footer";
+// import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
+// import { PetForm } from "./pages/formencontrado.jsx";
 import {Register} from "./component/register.jsx";
 import {FormAdoptar} from "./pages/formadoptar.jsx";
 
@@ -18,31 +22,32 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    return (
-        <div>
-            <BrowserRouter basename={basename}>
-                <ScrollToTop>
-                    <Navbar/>
-                    <Routes>
-                        <Route element={<Home/>}
-                            path="/"/>
-                        <Route element={<Register/>}
-                            path="/register"/>
-                        <Route element={<FormAdoptar/>}
-                            path="/formadoptar"/>
-                        <Route element={<Demo/>}
-                            path="/demo"/>
-                        <Route element={<Single/>}
-                            path="/single/:theid"/>
-                        <Route element={
-                            <h1>Not found!</h1>
-                        }/>
-                    </Routes>
-                    <Footer/>
-                </ScrollToTop>
-            </BrowserRouter>
-        </div>
-    );
+    return (<div>
+        <BrowserRouter basename={basename}>
+            <ScrollToTop>
+                <Navbar/>
+                <Routes>
+
+                    <Route element={<Login/>}
+                        path="/login"/>
+                    <Route element={<Home/>}
+                        path="/"/>
+                    <Route element={<Demo/>}
+                        path="/demo"/>
+                    <Route element={<Single/>}
+                        path="/single/:theid"/> {/* <Route element={<Recuperacion_clave />} path="/recuperacion_clave"/>
+                        <Route element={<PetForm />} path="/formencontrado" />
+                        <Route element={<FormAdoptar/>} path="/formadoptar"/> */}
+                    <Route element={
+                        <h1>Not found!</h1>
+                    }/>
+                    <Route element={<Register/>}
+                        path="/register"/>
+                </Routes>
+                <Footer/>
+            </ScrollToTop>
+        </BrowserRouter>
+    </div>);
 };
 
 export default injectContext(Layout);
