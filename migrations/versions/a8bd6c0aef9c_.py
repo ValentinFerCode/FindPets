@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 11cc261853ce
+Revision ID: a8bd6c0aef9c
 Revises: 
-Create Date: 2023-02-03 20:25:47.379240
+Create Date: 2023-02-07 15:39:37.645984
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '11cc261853ce'
+revision = 'a8bd6c0aef9c'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -33,19 +33,20 @@ def upgrade():
     )
     op.create_table('mascotas',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('genero', sa.String(length=120), nullable=False),
+    sa.Column('genero', sa.String(length=120), nullable=True),
     sa.Column('tamaño', sa.String(length=120), nullable=False),
     sa.Column('color', sa.String(length=80), nullable=False),
-    sa.Column('nombre', sa.String(length=80), nullable=False),
-    sa.Column('edad', sa.String(length=80), nullable=False),
-    sa.Column('raza', sa.String(length=80), nullable=False),
+    sa.Column('nombre', sa.String(length=80), nullable=True),
+    sa.Column('edad', sa.String(length=80), nullable=True),
+    sa.Column('raza', sa.String(length=80), nullable=True),
     sa.Column('estado', sa.String(length=80), nullable=False),
     sa.Column('especie', sa.String(length=80), nullable=False),
+    sa.Column('latitud', sa.String(length=100), nullable=False),
+    sa.Column('longitud', sa.String(length=100), nullable=False),
+    sa.Column('url', sa.String(length=250), nullable=True),
     sa.Column('usuario_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['usuario_id'], ['usuario.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('genero'),
-    sa.UniqueConstraint('tamaño')
+    sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
 
