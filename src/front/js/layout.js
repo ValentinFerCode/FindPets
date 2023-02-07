@@ -6,9 +6,13 @@ import { Home } from "./pages/home.jsx";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
+import { Login } from "./pages/login.jsx";
 
-import { Navbar } from "./component/navbar.jsx";
-import { Footer } from "./component/footer.jsx";
+import { Navbar } from "./component/navbar";
+import { Footer } from "./component/footer";
+// import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
+// import { PetForm } from "./pages/formencontrado.jsx";
+// import {FormAdoptar} from "./pages/formadoptar.jsx";
 import { Register } from "./component/register.jsx";
 
 // create your first component
@@ -23,15 +27,19 @@ const Layout = () => {
         <ScrollToTop>
           <Navbar />
           <Routes>
+            <Route element={<Login />} path="/login" />
             <Route element={<Home />} path="/" />
-            <Route element={<Register />} path="/register" />
             <Route element={<Demo />} path="/demo" />
             <Route element={<Single />} path="/single/:theid" />
-            <Route element={<h1> Not found! </h1>} />{" "}
-          </Routes>{" "}
+            {/* <Route element={<Recuperacion_clave />} path="/recuperacion_clave"/>
+                        <Route element={<PetForm />} path="/formencontrado" />
+                        <Route element={<FormAdoptar/>} path="/formadoptar"/> */}
+            <Route element={<h1>Not found!</h1>} />
+            <Route element={<Register />} path="/register" />
+          </Routes>
           <Footer />
-        </ScrollToTop>{" "}
-      </BrowserRouter>{" "}
+        </ScrollToTop>
+      </BrowserRouter>
     </div>
   );
 };
