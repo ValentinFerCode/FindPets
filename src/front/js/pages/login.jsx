@@ -5,13 +5,13 @@ import { Context } from "../store/appContext.js";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function userLogin(e) {
     e.preventDefault();
-    actions.login(email, password);
-    setEmail("");
+    actions.login(username, password);
+    setUsername("");
     setPassword("");
   }
 
@@ -39,15 +39,14 @@ export const Login = () => {
                   className="m-2 border border-dark rounded-4 border border-4 rounded-pill text-white "
                   style={{ background: "#085F63" }}
                 >
-                  <b>Email</b>
+                  <b>Nombre de usuario</b>
                 </h5>
                 <input
-                  type="email"
-                  className="form-control border border-dark rounded-pill text-white"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  type="text"
+                  id="inputusuario"
+                  className="form-control border border-dark rounded-pill"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
             </div>

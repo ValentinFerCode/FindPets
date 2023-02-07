@@ -17,7 +17,7 @@ export const Register = () => {
     setUsername("");
     setEmail("");
     setPassword("");
-    setName("");
+    setNombre("");
     setApellido("");
     setContacto("");
   }
