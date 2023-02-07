@@ -109,8 +109,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         localStorage.removeItem("token");
         setStore({
           auth: false,
-          //   view: "",
-          //   hidden: "visually-hidden",
+          view: "",
+          hidden: "visually-hidden",
         });
       },
     },
