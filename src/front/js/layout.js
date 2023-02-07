@@ -10,6 +10,7 @@ import injectContext from "./store/appContext";
 import {Navbar} from "./component/navbar.jsx";
 import {Footer} from "./component/footer.jsx";
 import {Register} from "./component/register.jsx";
+import {FormAdoptar} from "./pages/formadoptar.jsx";
 
 // create your first component
 const Layout = () => {
@@ -27,6 +28,8 @@ const Layout = () => {
                             path="/"/>
                         <Route element={<Register/>}
                             path="/register"/>
+                        <Route element={<FormAdoptar/>}
+                            path="/formadoptar"/>
                         <Route element={<Demo/>}
                             path="/demo"/>
                         <Route element={<Single/>}
