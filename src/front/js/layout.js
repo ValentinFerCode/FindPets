@@ -12,11 +12,7 @@ import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer.jsx";
 import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
 // import { PetForm } from "./pages/formencontrado.jsx";
-<<<<<<< HEAD
 // import {FormAdoptar} from "./pages/formadoptar.jsx";
-=======
-// import { FormAdoptar } from "./pages/formadoptar.jsx";
->>>>>>> ecd9271a59006a667251bf30328b3607130091e7
 import { Register } from "./component/register.jsx";
 
 const Layout = () => {
