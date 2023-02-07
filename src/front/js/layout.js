@@ -34,15 +34,15 @@ const Layout = () => {
             <Route
               element={<Recuperacion_clave />}
               path="/recuperacion_clave"
-            />
-            {/* <Route element={<PetForm />} path="/formencontrado" /> */}
-            {/* <Route element={<FormAdoptar />} path="/formadoptar" /> */}
-            <Route element={<h1>Not found!</h1>} />
+            />{" "}
+            {/* <Route element={<PetForm />} path="/formencontrado" /> */}{" "}
+            {/* <Route element={<FormAdoptar />} path="/formadoptar" /> */}{" "}
+            <Route element={<h1> Not found! </h1>} />
             <Route element={<Register />} path="/register" />
-          </Routes>
+          </Routes>{" "}
           <Footer />
-        </ScrollToTop>
-      </BrowserRouter>
+        </ScrollToTop>{" "}
+      </BrowserRouter>{" "}
     </div>
   );
 };
