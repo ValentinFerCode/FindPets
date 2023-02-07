@@ -9,8 +9,8 @@ import injectContext from "./store/appContext";
 import {Login} from "./pages/login.jsx";
 
 
-import {Navbar} from "./component/navbar";
-import {Footer} from "./component/footer";
+import {Navbar} from "./component/navbar.jsx";
+import {Footer} from "./component/footer.jsx";
 // import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
 // import { PetForm } from "./pages/formencontrado.jsx";
 import {Register} from "./component/register.jsx";
@@ -35,9 +35,12 @@ const Layout = () => {
                     <Route element={<Demo/>}
                         path="/demo"/>
                     <Route element={<Single/>}
-                        path="/single/:theid"/> {/* <Route element={<Recuperacion_clave />} path="/recuperacion_clave"/>
-                        <Route element={<PetForm />} path="/formencontrado" />
-                        <Route element={<FormAdoptar/>} path="/formadoptar"/> */}
+                        path="/single/:theid"/> {/* <Route element={<Recuperacion_clave/>}
+                        path="/recuperacion_clave"/>
+                    <Route element={<PetForm/>}
+                        path="/formencontrado"/> */}
+                    <Route element={<FormAdoptar/>}
+                        path="/formadoptar"/>
                     <Route element={
                         <h1>Not found!</h1>
                     }/>
