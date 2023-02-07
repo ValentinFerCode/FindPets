@@ -33,14 +33,17 @@ class Usuario(db.Model):
 class Mascotas(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    genero = db.Column(db.String(120), unique=False, nullable=False)
+    genero = db.Column(db.String(120), unique=False, nullable=True)
     tamaño = db.Column(db.String(120), unique=False, nullable=False)
     color = db.Column(db.String(80), unique=False, nullable=False)
-    nombre = db.Column(db.String(80), unique=False, nullable=False)
-    edad = db.Column(db.String(80), unique=False, nullable=False)
-    raza = db.Column(db.String(80), unique=False, nullable=False)
+    nombre = db.Column(db.String(80), unique=False, nullable=True)
+    edad = db.Column(db.String(80), unique=False, nullable=True)
+    raza = db.Column(db.String(80), unique=False, nullable=True)
     estado = db.Column(db.String(80), unique=False, nullable=False)
     especie = db.Column(db.String(80), unique=False, nullable=False)
+    latitud = db.Column(db.String(100), unique=False, nullable=False)
+    longitud = db.Column(db.String(100), unique=False, nullable=False)
+    url = db.Column(db.String(250), nullable=True)
     usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
 
@@ -58,7 +61,9 @@ class Mascotas(db.Model):
             "raza": self.raza,
             "estado": self.estado,
             "especie": self.especie,
+            "latitud": self.latitud,
+            "longitud": self.longitud,
+            "url": self.url,
             "usuario_id": self.usuario_id,
-
             # do not serialize the password, its a security breach
         }
