@@ -14,6 +14,7 @@ import {Footer} from "./component/footer.jsx";
 import {PetForm} from "./pages/formencontrado.jsx";
 // import {FormAdoptar} from "./pages/formadoptar.jsx";
 import {Register} from "./component/register.jsx";
+import {FormAdoptar} from "./pages/formadoptar.jsx";
 
 // create your first component
 const Layout = () => {
@@ -37,6 +38,8 @@ const Layout = () => {
                             path="/single/:theid"/> {/* <Route element={<Recuperacion_clave />} path="/recuperacion_clave"/> */}
                         <Route element={<PetForm/>}
                             path="/formencontrado"/> {/* <Route element={<FormAdoptar/>} path="/formadoptar"/> */}
+                        <Route element={<FormAdoptar/>}
+                            path="/formadoptar"/>
                         <Route element={
                             <h1>Not found!</h1>
                         }/>
