@@ -77,6 +77,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       login: (userName, userPassword) => {
         fetch(process.env.BACKEND_URL + "/api/login", {
           method: "POST",
+          // mode: "no-cors",
+          // credentials: "include",
           headers: {
             "Content-Type": "application/json",
             // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -109,8 +111,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         localStorage.removeItem("token");
         setStore({
           auth: false,
-          view: "",
-          hidden: "visually-hidden",
+          //   view: "",
+          //   hidden: "visually-hidden",
         });
       },
     },
