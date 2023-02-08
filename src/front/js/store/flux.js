@@ -78,6 +78,7 @@ const getState = ({
             },
 
             login: (userName, userPassword) => {
+                console.log(userName, userPassword);
                 fetch(process.env.BACKEND_URL + "/api/login", {
                         method: "POST",
                         // mode: "no-cors",
@@ -106,8 +107,61 @@ const getState = ({
                             alert(data.msg);
                         }
                         localStorage.setItem("token", data.access_token);
+                        localStorage.setItem("userid", data.user.id);
                     })
                     .catch((err) => console.log(err));
+            },
+            crearMascota: (
+                genero,
+                tamaño,
+                color,
+                // nombre,
+                edad,
+                raza,
+                estado,
+                especie
+                // latitud,
+                // longitud
+            ) => {
+                let userid = localStorage.getItem("userid");
+                fetch(process.env.BACKEND_URL + "/api/pets", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            genero: genero,
+                            tamaño: tamaño,
+                            color: color,
+                            edad: edad,
+                            raza: raza,
+                            estado: "lost",
+                            especie: especie,
+                            // url: "url",
+                            usuario_id: userid,
+                        }),
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log("Pet guardada:", data);
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar la pet:", error);
+                    });
+                console.log(
+                    genero,
+                    tamaño,
+                    color,
+                    // nombre,
+                    edad,
+                    raza,
+                    estado,
+                    especie
+                    // latitud,
+                    // longitud,
+                    // url,
+                    // usuario_id
+                );
             },
 
             logout: () => {
