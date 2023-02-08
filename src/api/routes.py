@@ -176,7 +176,7 @@ def getPet(id):
 def postPets():
     body = json.loads(request.data)
 
-    newPets = Mascotas(genero=body["genero"], tamaño=body["tamaño"], color=body["color"], nombre=body["nombre"], edad=body["edad"], raza=body["raza"], estado=body["estado"], especie=body["especie"],latitud=body["latitud"],url=body["url"] ,usuario_id=body["usuario_id"])
+    newPets = Mascotas(genero=body["genero"], tamaño=body["tamaño"], color=body["color"], edad=body["edad"], raza=body["raza"], estado=body["estado"], especie=body["especie"], usuario_id=body["usuario_id"])
     db.session.add(newPets)
     db.session.commit()
 
