@@ -5,115 +5,134 @@ import { Context } from "../store/appContext.js";
 export const Register = () => {
   const { store, actions } = useContext(Context);
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [contacto, setContacto] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
+  //
 
-  function userRegister(e) {
+  function signup(e) {
     e.preventDefault();
-    actions.signup(username, email, password, nombre, apellido, contacto);
-    setUsername("");
-    setEmail("");
-    setPassword("");
-    setNombre("");
-    setApellido("");
-    setContacto("");
+    if (
+      firstname != "" &&
+      lastname != "" &&
+      email != "" &&
+      username != "" &&
+      password != "" &&
+      contact != ""
+    ) {
+      actions.signup(username, email, password, firstname, lastname, contact);
+      setFirstname("");
+      setLastname("");
+      setEmail("");
+      setUsername("");
+      setPassword("");
+      setContact("");
+    } else {
+      alert("Faltan datos por completar");
+    }
   }
 
   return (
-    <>
+    <div className="container w-50 mb-5">
+      <h1 className="text-center text-danger border-bottom border-danger">
+        SIGN UP
+      </h1>
+
       {store.auth === true ? (
         <Navigate to="/" />
       ) : (
-        <div className="mx-auto w-50 card text-center m-4">
-          <form onSubmit={userRegister}>
-            <div className="col col-3 d-flex mx-auto">
-              <div className>
-                <h5>
-                  <b>Nombre</b>
-                </h5>
-                {/* <label for="exampleInputEmail1" className="form-label">Email</label> */}
-                <input
-                  type="text"
-                  className="form-control"
-                  id="nombre"
-                  aria-describedby="emailHelp"
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
-                />
-              </div>
+        <form onSubmit={signup}>
+          <div className="form-group row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="firstname" className="form-label">
+                First name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+                id="firstname"
+              />
             </div>
-            <div className>
-              <h5>
-                <b>Apellido</b>
-              </h5>
-              <div className="col col-3 d-flex mx-auto">
-                {/* <label for="exampleInputPassword1" className="form-label">Password</label> */}
-                <input
-                  type="text"
-                  className="form-control"
-                  id="apellido"
-                  value={apellido}
-                  onChange={(e) => setApellido(e.target.value)}
-                />
-              </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="lastname" className="form-label">
+                Last name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+                id="lastname"
+              />
+            </div>
+          </div>
+          <div className="form-group row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="email" className="form-label">
+                Email address
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                id="email"
+                aria-describedby="emailHelp"
+              />
             </div>
 
-            <div className="col col-3 d-flex mx-auto">
-              <div className>
-                <h5>
-                  <b>Correo Electrónico</b>
-                </h5>
-                {/* <label for="exampleInputEmail1" className="form-label">Email</label> */}
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="contact" className="form-label">
+                Contact
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                id="contact"
+              />
             </div>
-            <div className>
-              <h5>
-                <b>Nombre de Usuario</b>
-              </h5>
-              <div className="col col-3 d-flex mx-auto">
-                {/* <label for="exampleInputPassword1" className="form-label">Password</label> */}
-                <input
-                  type="text"
-                  className="form-control"
-                  id="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-              </div>
-              <h5>
-                <strong>Contraseña</strong>
-              </h5>
-              <div className="col col-3 d-flex mx-auto">
-                {/* <label for="exampleInputPassword1" className="form-label">Password</label> */}
-                <input
-                  type="password"
-                  className="form-control"
-                  id="contraseña"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <button
-                type="submit"
-                className="  d-flex mx-auto btn btn-warning "
-              >
-                Registrarse
-              </button>
+          </div>
+          <div className="form-group row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="username" className="form-label">
+                Username
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                id="username"
+              />
             </div>
-          </form>
-        </div>
+
+            <div className="col-md-6 mb-3">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                id="password"
+              />
+            </div>
+          </div>
+
+          <div className="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" className="btn btn-lg btn-danger">
+              Submit
+            </button>
+          </div>
+        </form>
       )}
-    </>
+    </div>
   );
 };
