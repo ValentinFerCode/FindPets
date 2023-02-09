@@ -8,10 +8,10 @@ import {Single} from "./pages/single";
 import injectContext from "./store/appContext";
 import {Login} from "./pages/login.jsx";
 
-import {Navbar} from "./component/navbar.jsx";
-import {Footer} from "./component/footer.jsx";
-// import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
-import {PetForm} from "./pages/formencontrado.jsx";
+import { Navbar } from "./component/navbar.jsx";
+import { Footer } from "./component/footer.jsx";
+import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
+import { PetForm } from "./pages/formencontrado.jsx";
 // import {FormAdoptar} from "./pages/formadoptar.jsx";
 import {Register} from "./component/register.jsx";
 import {FormAdoptar} from "./pages/formadoptar.jsx";
