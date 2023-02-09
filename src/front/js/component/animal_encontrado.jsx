@@ -16,22 +16,42 @@ const Lista_encontrados = (props) => {
                 <div className="col-md-2 border-end border-danger">
                   <img src={item.url} />
                 </div>
-                <div className="col-md-10">
-                  <div className="mx-3 d-flex">
-                    {/*  */}
-                    <div>
-                      <p className="">Género: {item.genero}</p>
-                      <p className="">Tamaño: {item.tamaño}</p>
-                      <p className="">Color: {item.color}</p>
+                <div className="col-md-6 m-auto mx-3">
+                  {/*  */}
+                  <div className="container text-start mx-auto">
+                    <div className="row g-2 justify-content-end me-2">
+                      <div className="col-6">
+                        <div className="p-3">Género: {item.genero}</div>
+                      </div>
+                      <div className="col-6">
+                        <div className="p-3">Tamaño: {item.tamaño}</div>
+                      </div>
+                      <div className="col-6">
+                        <div className="p-3">Color: {item.color}</div>
+                      </div>
+                      <div className="col-6">
+                        <div className="p-3">Edad: {item.edad}</div>
+                      </div>
+                      <div className="col-6">
+                        <div className="p-3">Raza: {item.raza}</div>
+                      </div>
+                      <div className="col-6">
+                        <div className="p-3">Especie: {item.especie}</div>
+                      </div>
                     </div>
-                    <div>
-                      <p className="">Edad: {item.edad}</p>
-                      <p className="">Raza: {item.raza}</p>
-                      <p className="">Especie: {item.especie}</p>
-                    </div>
-
-                    {/*  */}
                   </div>
+                  {/* <div>
+                    <p className="">Género: {item.genero}</p>
+                    <p className="">Tamaño: {item.tamaño}</p>
+                    <p className="">Color: {item.color}</p>
+                  </div>
+                  <div>
+                    <p className="">Edad: {item.edad}</p>
+                    <p className="">Raza: {item.raza}</p>
+                    <p className="">Especie: {item.especie}</p>
+                  </div> */}
+
+                  {/*  */}
                 </div>
               </div>
             </div>
