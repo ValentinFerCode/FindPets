@@ -36,7 +36,7 @@ def signup():
             return jsonify(response_body), 200
 
     response_body = {
-            "msg": "El usuario ya existe en el sistema"
+            "msg": "User exist in the system"
         }
     return jsonify(response_body), 400
 
@@ -52,10 +52,10 @@ def login():
     usuario_login = Usuario.query.filter_by(username=username).first()
 
     if usuario_login  is None:
-        return jsonify({"msg": "Usuario no existe"}), 404
+        return jsonify({"msg": "User does not exist"}), 404
 
     if username != usuario_login.username or password != usuario_login.password:
-        return jsonify({"message": "Usuario o contraseña incorrectos"}), 401
+        return jsonify({"msg": "Bad username or password"}), 401
 
     #Token de acceso
     access_token = create_access_token(identity=usuario_login.id)
@@ -176,7 +176,7 @@ def getPet(id):
 def postPets():
     body = json.loads(request.data)
 
-    newPets = Mascotas(genero=body["genero"], tamaño=body["tamaño"], color=body["color"], edad=body["edad"], raza=body["raza"], estado=body["estado"], especie=body["especie"], usuario_id=body["usuario_id"])
+    newPets = Mascotas(genero=body["genero"], tamaño=body["tamaño"], color=body["color"], nombre=body["nombre"], edad=body["edad"], raza=body["raza"], estado=body["estado"], especie=body["especie"],latitud=body["latitud"], longitud=body["longitud"],url=body["url"] ,usuario_id=body["usuario_id"])
     db.session.add(newPets)
     db.session.commit()
 
