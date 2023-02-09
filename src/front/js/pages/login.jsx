@@ -21,25 +21,22 @@ export const Login = () => {
         <Navigate to="/" />
       ) : (
         <div
-          className="mx-auto w-50 card text-center m-4 border border-dark rounded-4 border border-4 "
-          style={{ background: "#CDF0EA" }}
+          className="mx-auto w-50 card text-center m-4 border border-danger rounded-2 border border-2 "
+          style={{ background: "white" }}
         >
-          <div
-            className="m-4 border border-dark rounded-4 border border-4 rounded-pill text-white"
-            style={{ background: "#085F63" }}
-          >
+          <div className="m-2 text-danger">
             <h1 className="text-center ">
               <strong>LOGIN</strong>
             </h1>
+            <hr style={{ background: "red" }}></hr>
           </div>
           <form onSubmit={userLogin}>
             <div className="col col-6 mx-auto">
               <div>
-                <h5
-                  className="m-2 border border-dark rounded-4 border border-4 rounded-pill text-white "
-                  style={{ background: "#085F63" }}
-                >
-                  <b>Nombre de usuario</b>
+                <h5 className="m-2  text-black ">
+                  <b>
+                    <i class="fa fa-user"></i> Nombre de usuario
+                  </b>
                 </h5>
                 <input
                   type="text"
@@ -52,11 +49,10 @@ export const Login = () => {
             </div>
             <div className="row g-3 align-items-center">
               <div className="col-auto mx-auto">
-                <h5
-                  className="m-2 border border-dark rounded-4 border border-4 rounded-pill text-white"
-                  style={{ background: "#085F63" }}
-                >
-                  <b>Password</b>
+                <h5 className="m-2 text-black">
+                  <b>
+                    <i class="fa fa-lock"></i> Password
+                  </b>
                 </h5>
                 <div className="col-auto">
                   <input
@@ -69,26 +65,21 @@ export const Login = () => {
                   />
                 </div>
                 <div className="col-auto">
-                  <span id="passwordHelpInline" className="form-text">
+                  <span
+                    id="passwordHelpInline"
+                    className="form-text text-black"
+                  >
                     <strong>Must be 8-20 characters long.</strong>
                   </span>
                 </div>
               </div>
             </div>
             <div className="mx-auto m-4">
-              <button
-                type="submit"
-                className="btn btn-outline-light"
-                style={{ background: "#085F63" }}
-              >
-                <b>Olvidé mi contraseña</b>
+              <button type="submit" className="buttonClassContraseña">
+                Olvidé mi contraseña
               </button>
-              <button
-                type="submit"
-                className="btn btn-outline-light"
-                style={{ background: "#085F63" }}
-              >
-                <b>Ingresar</b>
+              <button type="submit" className="buttonClassIngresar">
+                Ingresar
               </button>
             </div>
           </form>
