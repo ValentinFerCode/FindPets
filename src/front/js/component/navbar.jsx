@@ -24,7 +24,7 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item fs-5">
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/lista_encontrados" style={{ textDecoration: "none" }}>
                 <span className="text-white">Mascotas</span>
               </Link>
             </li>
