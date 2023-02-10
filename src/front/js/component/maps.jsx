@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import { useNavigate, Navigate } from "react-router-dom";
 import {
   GoogleMap,
   useJsApiLoader,
@@ -10,12 +11,17 @@ import "../../styles/home.css";
 
 export const Map = () => {
   const { store, actions } = useContext(Context);
-  const [selectedMarker, setSelectedMarket] = useState("");
+  const navigate = useNavigate();
 
   //Api GoogleMaps
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
+
+  //
+  function goPetInfo(id) {
+    navigate("/mascota/" + id); //usamos navigate para redireccionar
+  }
 
   //
   const insertAt = (str, sub, pos) =>
@@ -35,6 +41,7 @@ export const Map = () => {
             lng: parseFloat(item.longitud),
           }}
           icon={insertAt(item.url, "w_90,h_90,c_fill/", 49) + "#custom_marker"}
+          onClick={() => goPetInfo(item.id)}
         ></Marker>
       ))}
     </GoogleMap>

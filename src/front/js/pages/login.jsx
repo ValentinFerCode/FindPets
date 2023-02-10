@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import Swal from "sweetalert2";
 import "../../styles/home.css";
 import { Navigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
@@ -10,9 +11,17 @@ export const Login = () => {
 
   function userLogin(e) {
     e.preventDefault();
-    actions.login(username, password);
-    setUsername("");
-    setPassword("");
+    if (username == "" && password == "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Faltan datos por completar!",
+      });
+    } else {
+      actions.login(username, password);
+      setUsername("");
+      setPassword("");
+    }
   }
 
   return (
@@ -35,7 +44,7 @@ export const Login = () => {
               <div>
                 <h5 className="m-2  text-black ">
                   <b>
-                    <i class="fa fa-user"></i> Nombre de usuario
+                    <i className="fa fa-user"></i> Nombre de usuario
                   </b>
                 </h5>
                 <input
@@ -51,7 +60,7 @@ export const Login = () => {
               <div className="col-auto mx-auto">
                 <h5 className="m-2 text-black">
                   <b>
-                    <i class="fa fa-lock"></i> Password
+                    <i className="fa fa-lock"></i> Password
                   </b>
                 </h5>
                 <div className="col-auto">

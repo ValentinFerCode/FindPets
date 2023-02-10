@@ -14,11 +14,7 @@
 img[src$="#custom_marker"] {
     position: absolute;
     cursor: pointer;
-    width: 90px;
-    height: 90px;
-    margin: 5px;
     border-radius: 50%;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
 .listPet {
@@ -51,5 +47,11 @@ img[src$="#custom_marker"] {
 .listPet img {
     width: 14rem;
     height: 14rem;
+    object-fit: cover;
+}
+
+.onePet {
+    width: 18rem;
+    height: 18rem;
     object-fit: cover;
 }
