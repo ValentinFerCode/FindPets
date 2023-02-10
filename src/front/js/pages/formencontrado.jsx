@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import { Context } from "../store/appContext";
 import { Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import {
-  GoogleMap,
-  useJsApiLoader,
-  Marker,
-  InfoWindow,
-} from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import "../../styles/home.css";
 
 export const PetForm = () => {
@@ -19,10 +15,9 @@ export const PetForm = () => {
   const [nombre, setNombre] = useState("");
   const [edad, setEdad] = useState("");
   const [raza, setRaza] = useState("");
-  const [estado, setEstado] = useState("");
   const [especie, setEspecie] = useState("");
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
+  const [lat, setLat] = useState("");
+  const [lng, setLng] = useState("");
   const [dlat, seDtLat] = useState(-34.839054258608684);
   const [dlng, setDLng] = useState(-56.16434951021918);
   const [urlimage, setUrlImage] = useState("");
@@ -35,33 +30,51 @@ export const PetForm = () => {
   //
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(store.imagePet != "" && store.imagePet != undefined);
-    console.log(store.imagePet);
   }, []);
 
   function postPetLost(e) {
     e.preventDefault();
-    if (tamaño != "" && color != "" && edad != "" && lat != "") {
-      actions.uploadImage(urlimage);
-      if (store.imagePet != "" && store.imagePet != undefined) {
-        actions.petsPost(
-          genero,
-          tamaño,
-          color,
-          nombre,
-          edad,
-          raza,
-          especie,
-          lat,
-          lng,
-          store.imagePet,
-          store.userSession.id
-        );
-      } else {
-        alert("Imagen invalida");
-      }
+    if (tamaño == "" || color == "" || edad == "") {
+      console.log(store.imagePet == "");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Faltan datos por completar!",
+      });
+    } else if (store.imagePet == "" || store.imagePet == undefined) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "La imagen no quedo subida correctamente!",
+      });
+    } else if (lat == "" || lng == "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Debe seleccionar una ubicación en el mapa!",
+      });
     } else {
-      alert("Faltan datos por completar");
+      actions.petsPost(
+        genero,
+        tamaño,
+        color,
+        nombre,
+        edad,
+        raza,
+        especie,
+        lat,
+        lng,
+        store.imagePet,
+        store.userSession.id
+      );
+      setGenero("");
+      setTamaño("");
+      setColor("");
+      setEdad("");
+      setRaza("");
+      setEspecie("");
+      setLat("");
+      setLng("");
     }
   }
 
@@ -142,7 +155,7 @@ export const PetForm = () => {
                           onChange={(e) => setEdad(e.target.value)}
                         >
                           <option value="" disabled>
-                            Selecciona un tamaño
+                            Selecciona una edad
                           </option>
                           <option value="cachorro">Cachorro</option>
                           <option value="joven">Joven</option>
@@ -151,19 +164,6 @@ export const PetForm = () => {
                       </div>
                     </div>
                     <div className="form-group row">
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="raza" className="form-label">
-                          Raza
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          value={raza}
-                          onChange={(e) => setRaza(e.target.value)}
-                          id="raza"
-                        />
-                      </div>
-
                       <div className="col-md-6 mb-3">
                         <label htmlFor="url" className="form-label">
                           Especie:
@@ -181,19 +181,41 @@ export const PetForm = () => {
                           <option value="gato">Gato</option>
                         </select>
                       </div>
+
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="raza" className="form-label">
+                          Raza
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          value={raza}
+                          onChange={(e) => setRaza(e.target.value)}
+                          id="raza"
+                          disabled={
+                            especie == "gato" || especie == "" ? true : false
+                          }
+                        />
+                      </div>
                     </div>
 
                     <div className="form-group row">
-                      <div className="col-md-12 mb-3">
-                        <label htmlFor="url" className="form-label">
-                          Foto
-                        </label>
+                      <div className="col-md-9 mb-3">
                         <input
                           type="file"
                           className="form-control"
                           onChange={(e) => setUrlImage(e.target.files[0])}
                           id="url"
                         />
+                      </div>
+                      <div className="col-md-3 mb-3">
+                        <button
+                          type="button"
+                          onClick={() => actions.uploadImage(urlimage)}
+                          class="btn btn-primary"
+                        >
+                          Subir Foto
+                        </button>
                       </div>
                     </div>
 

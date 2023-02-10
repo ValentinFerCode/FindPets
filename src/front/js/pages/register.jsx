@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import Swal from "sweetalert2";
 import { Navigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
@@ -30,7 +31,11 @@ export const Register = () => {
       setPassword("");
       setContact("");
     } else {
-      alert("Faltan datos por completar");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Faltan datos por completar!",
+      });
     }
   }
 
