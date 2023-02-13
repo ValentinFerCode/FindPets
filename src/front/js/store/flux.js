@@ -11,6 +11,7 @@ const getState = ({
             petslost: [],
             imagePet: "",
             onePet: {},
+            adopt: []
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
