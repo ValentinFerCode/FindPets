@@ -11,6 +11,7 @@ const getState = ({
             petslost: [],
             imagePet: "",
             onePet: {},
+            adopt: [],
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
@@ -230,6 +231,22 @@ const getState = ({
                             });
                         });
                     //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getAdoption: () => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/pets/orphan", {
+                            method: "GET",
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                adopt: data,
+                            });
+                        });
                 } catch (e) {
                     console.log(e);
                 }
