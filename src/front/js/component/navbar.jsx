@@ -74,8 +74,11 @@ export const Navbar = () => {
                   {store.userSession.nombre}
                 </button>
                 <ul className="dropdown-menu">
-                  <li className="dropdown-item float-start">Account</li>
-
+                  <Link to={"/perfil"}>
+                    <button className="dropdown-item float-start">
+                      Account
+                    </button>
+                  </Link>
                   <button
                     className="dropdown-item float-start text-danger"
                     onClick={handleLogout}

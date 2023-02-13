@@ -192,7 +192,7 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
+                                    title: "Good",
                                     text: "La foto fue subida de forma exitosa!",
                                 });
                             } else {

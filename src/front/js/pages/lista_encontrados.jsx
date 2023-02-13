@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Animal_encontrado } from "../component/animal_encontrado.jsx";
+import "../../styles/home.css";
 
 export const Lista_encontrados = () => {
   const { store, actions } = useContext(Context);

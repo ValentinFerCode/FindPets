@@ -17,7 +17,7 @@ import { Register } from "./pages/register.jsx";
 import { FormAdoptar } from "./pages/formadoptar.jsx";
 import Lista_encontrados from "./component/animal_encontrado.jsx";
 import { OnePet } from "./pages/mascota.jsx";
-
+import { Perfil } from "./pages/perfil.jsx";
 // create your first component
 const Layout = () => {
   // the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -39,6 +39,7 @@ const Layout = () => {
             {/* <Route element={<FormAdoptar/>} path="/formadoptar"/> */}
             <Route element={<FormAdoptar />} path="/formadoptar" />
             <Route element={<OnePet />} path="/mascota/:id" />
+            <Route element={<Perfil />} path="/perfil" />
             <Route element={<h1>Not found!</h1>} />
             <Route element={<Register />} path="/register" />
             <Route element={<Lista_encontrados />} path="/lista_encontrados" />
