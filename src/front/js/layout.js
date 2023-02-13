@@ -15,8 +15,12 @@ import { PetForm } from "./pages/formencontrado.jsx";
 // import {FormAdoptar} from "./pages/formadoptar.jsx";
 import { Register } from "./pages/register.jsx";
 import { FormAdoptar } from "./pages/formadoptar.jsx";
-import Lista_encontrados from "./component/animal_encontrado.jsx";
+import {Lista_encontrados} from "./pages/lista_encontrados.jsx";
 import { OnePet } from "./pages/mascota.jsx";
+// import  {List_adopt}  from "./pages/lista_adoptados.jsx";
+import {List_adopt} from "./pages/lista_adoptados.jsx"
+
+
 
 // create your first component
 const Layout = () => {
@@ -42,6 +46,7 @@ const Layout = () => {
             <Route element={<h1>Not found!</h1>} />
             <Route element={<Register />} path="/register" />
             <Route element={<Lista_encontrados />} path="/lista_encontrados" />
+            <Route element={<List_adopt/>} path="/lista_adoptados" />
           </Routes>
           <Footer />
         </ScrollToTop>

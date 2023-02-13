@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { Animal_encontrado } from "../component/animal_encontrado.jsx";
+import { Lista_adoptados } from "../component/animal_adoptado.jsx";
 
-export const Lista_encontrados = () => {
-  const { store, actions } = useContext(Context);
+export const List_adopt = () => {
+  // const { store, actions } = useContext(Context);
 
   return (
     <>
@@ -20,7 +20,7 @@ export const Lista_encontrados = () => {
                 role="tab"
                 aria-controls="home"
                 aria-selected="true"
-              >
+              > 
                 <i className="fa fa-paw"></i> <strong>Pets Lost</strong>
               </a>
             </li>
@@ -42,13 +42,8 @@ export const Lista_encontrados = () => {
           </Link>
         </ul>
       </div>
-      {/* <div className="tab-content" id="myTabContent">
-  <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-  <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-  <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-</div> */}
       <div className="my-4 scrollable">
-        <Animal_encontrado />
+        <Lista_adoptados />
       </div>
     </>
   );
