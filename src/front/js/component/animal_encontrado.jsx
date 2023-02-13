@@ -27,7 +27,7 @@ export const Animal_encontrado = (props) => {
                         <div className="col-6">
                           <div className="p-3">
                             <strong>
-                              <i class="fa fa-venus-mars"></i> Género:
+                               Género:
                             </strong>{" "}
                             {item.genero}
                           </div>
@@ -40,7 +40,7 @@ export const Animal_encontrado = (props) => {
                         <div className="col-6">
                           <div className="p-3">
                             <strong>
-                              <i class="fa fa-palette"></i> Color:
+                               Color:
                             </strong>{" "}
                             {item.color}
                           </div>
@@ -58,7 +58,7 @@ export const Animal_encontrado = (props) => {
                         <div className="col-6">
                           <div className="p-3">
                             <strong>
-                              <i class="fa fa-paw"></i> Especie:
+                               Especie:
                             </strong>{" "}
                             {item.especie}
                           </div>
