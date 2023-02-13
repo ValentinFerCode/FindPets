@@ -109,7 +109,8 @@ export const Perfil = () => {
               </div>
             </div>
             {/* Segunda Columna */}
-            <div className="row g-0 scrollablePerfil border-bottom border-danger">
+
+            <div className="row g-0  border-bottom border-danger">
               <div className="col-md-12 ">
                 {store.petsUser.map((item, id) => (
                   <div className="btn m-4 ms-0 col-auto mx-1 rounded" key={id}>

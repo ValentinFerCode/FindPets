@@ -12,6 +12,7 @@ const getState = ({
             imagePet: "",
             onePet: {},
             adopt: [],
+            petsUser: [],
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
@@ -247,6 +248,26 @@ const getState = ({
                                 adopt: data,
                             });
                         });
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getPetsUser: (id) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/" + id + "/pets/", {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                petsUser: data.results,
+                            });
+                        });
+                    //
                 } catch (e) {
                     console.log(e);
                 }

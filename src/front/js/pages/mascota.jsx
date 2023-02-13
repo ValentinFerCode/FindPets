@@ -22,6 +22,10 @@ export const OnePet = () => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
+  //
+  const insertAt = (str, sub, pos) =>
+    `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
+
   return (
     <div className="container-fluid">
       <div className="jumbotron  m-3">
