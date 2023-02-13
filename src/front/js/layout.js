@@ -15,17 +15,11 @@ import { PetForm } from "./pages/formencontrado.jsx";
 // import {FormAdoptar} from "./pages/formadoptar.jsx";
 import { Register } from "./pages/register.jsx";
 import { FormAdoptar } from "./pages/formadoptar.jsx";
-import {Lista_encontrados} from "./pages/lista_encontrados.jsx";
+import { Lista_encontrados } from "./pages/lista_encontrados.jsx";
 import { OnePet } from "./pages/mascota.jsx";
-<<<<<<< HEAD
-import { Perfil } from "./pages/perfil.jsx";
-=======
 // import  {List_adopt}  from "./pages/lista_adoptados.jsx";
-import {List_adopt} from "./pages/lista_adoptados.jsx"
+import { List_adopt } from "./pages/lista_adoptados.jsx";
 
-
-
->>>>>>> 828ccd7016623be6f22a16afbb849aa21ab71fdb
 // create your first component
 const Layout = () => {
   // the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -51,7 +45,7 @@ const Layout = () => {
             <Route element={<h1>Not found!</h1>} />
             <Route element={<Register />} path="/register" />
             <Route element={<Lista_encontrados />} path="/lista_encontrados" />
-            <Route element={<List_adopt/>} path="/lista_adoptados" />
+            <Route element={<List_adopt />} path="/lista_adoptados" />
           </Routes>
           <Footer />
         </ScrollToTop>
