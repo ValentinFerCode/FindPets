@@ -12,10 +12,11 @@ export const PetForm = () => {
   const [genero, setGenero] = useState("");
   const [tamaño, setTamaño] = useState("");
   const [color, setColor] = useState("");
-  const [nombre, setNombre] = useState("");
+  const [descripcion, setDescripcion] = useState("");
   const [edad, setEdad] = useState("");
   const [raza, setRaza] = useState("");
   const [especie, setEspecie] = useState("");
+  const [estado, setEstado] = useState("lost");
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
   const [dlat, seDtLat] = useState(-34.839054258608684);
@@ -58,14 +59,15 @@ export const PetForm = () => {
         genero,
         tamaño,
         color,
-        nombre,
+        descripcion,
         edad,
         raza,
         especie,
         lat,
         lng,
         store.imagePet,
-        store.userSession.id
+        store.userSession.id,
+        estado
       );
       setGenero("");
       setTamaño("");
@@ -75,6 +77,7 @@ export const PetForm = () => {
       setEspecie("");
       setLat("");
       setLng("");
+      setDescripcion("");
     }
   }
 
@@ -93,6 +96,23 @@ export const PetForm = () => {
                   <Navigate to="/" />
                 ) : (
                   <form onSubmit={postPetLost}>
+                    <div className="form-group row">
+                      <div className="col-md-12 mb-3">
+                        <label
+                          htmlFor="exampleFormControlTextarea1"
+                          className="form-label"
+                        >
+                          Descripción
+                        </label>
+                        <textarea
+                          className="form-control"
+                          id="exampleFormControlTextarea1"
+                          rows="2"
+                          value={descripcion}
+                          onChange={(e) => setDescripcion(e.target.value)}
+                        ></textarea>
+                      </div>
+                    </div>
                     <div className="form-group row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="genero" className="form-label">
@@ -212,7 +232,7 @@ export const PetForm = () => {
                         <button
                           type="button"
                           onClick={() => actions.uploadImage(urlimage)}
-                          class="btn btn-primary"
+                          className="btn btn-primary"
                         >
                           Subir Foto
                         </button>
@@ -233,7 +253,7 @@ export const PetForm = () => {
                 <GoogleMap
                   zoom={11}
                   center={{ lat: parseFloat(dlat), lng: parseFloat(dlng) }}
-                  mapContainerClassName="map-container"
+                  mapContainerClassName="map-mascota"
                   onClick={(e) => {
                     setLat(e.latLng.lat);
                     setLng(e.latLng.lng);

@@ -7,11 +7,13 @@ const getState = ({
     return {
         store: {
             userSession: {},
+            oneUser: {},
             auth: false,
             petslost: [],
             imagePet: "",
             onePet: {},
             adopt: [],
+            petsUser: [],
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
@@ -104,14 +106,15 @@ const getState = ({
                 genero,
                 tamaño,
                 color,
-                nombre,
+                descripcion,
                 edad,
                 raza,
                 especie,
                 latitud,
                 longitud,
                 urlimage,
-                usuario_id
+                usuario_id,
+                estado
             ) => {
                 try {
                     fetch(process.env.BACKEND_URL + "/api/pets", {
@@ -123,10 +126,10 @@ const getState = ({
                                 genero: genero,
                                 tamaño: tamaño,
                                 color: color,
-                                nombre: nombre,
+                                descripcion: descripcion,
                                 edad: edad,
                                 raza: raza,
-                                estado: "lost",
+                                estado: estado,
                                 especie: especie,
                                 latitud: latitud,
                                 longitud: longitud,
@@ -193,7 +196,7 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
+                                    title: "Good",
                                     text: "La foto fue subida de forma exitosa!",
                                 });
                             } else {
@@ -216,6 +219,7 @@ const getState = ({
                 }
             },
             getOnePet: (id) => {
+                let actions = getActions();
                 try {
                     fetch(process.env.BACKEND_URL + "/api/pets/" + id, {
                             method: "GET",
@@ -229,6 +233,7 @@ const getState = ({
                             setStore({
                                 onePet: data,
                             });
+                            actions.getOneUser(data.usuario_id);
                         });
                     //
                 } catch (e) {
@@ -247,6 +252,46 @@ const getState = ({
                                 adopt: data,
                             });
                         });
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getPetsUser: (id) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/" + id + "/pets/", {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                petsUser: data.results,
+                            });
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getOneUser: (id) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/" + id, {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                oneUser: data,
+                            });
+                        });
+                    //
                 } catch (e) {
                     console.log(e);
                 }
