@@ -251,6 +251,45 @@ const getState = ({
                     console.log(e);
                 }
             },
+
+            // DELETE
+            getDeletePets: (id) => {
+                let store = getStore();
+                try {
+                    fetch(process.env.BACKEND_URL + "/formadoptar", {
+                            method: "DELETE",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                petsorphan: data,
+                            });
+                        });
+                    console.log(store.petsorphan);
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         },
     };
 };

@@ -276,3 +276,22 @@ def forgotpassword():
     msg.html = f"""<h1>Su nueva contraseña es: {recover_password}</h1>"""
     current_app.mail.send(msg)
     return jsonify({"msg": "Su nueva clave ha sido enviada al correo electrónico ingresado"}), 200
+
+
+# Delete - Mascota
+@api.route('/formadoptar', methods=['DELETE'])
+def deleteFormAdoptar():
+    body = json.loads(request.data)
+    formadoptar = FormAdoptar.query.filter_by(id=body["formadoptar_id"]).first()
+    if formadoptar is not None:
+        db.session.delete(formadoptar)
+        db.session.commit()
+        response_body = {
+            "msg": "Eliminación correcta de mascota adoptada"
+        }
+        return jsonify(response_body), 200
+    # Afuera del if
+    response_body = {
+            "msg": "La mascota no existe"
+        }
+    return jsonify(response_body), 400
