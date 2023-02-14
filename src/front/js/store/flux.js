@@ -251,13 +251,10 @@ const getState = ({
                     console.log(e);
                 }
             },
-
-            // DELETE
-            getDeletePets: (id) => {
-                let store = getStore();
+            getPetsUser: (id) => {
                 try {
-                    fetch(process.env.BACKEND_URL + "/formadoptar", {
-                            method: "DELETE",
+                    fetch(process.env.BACKEND_URL + "/api/users/" + id + "/pets/", {
+                            method: "GET",
                             headers: {
                                 "Content-Type": "application/json",
                             },
@@ -266,30 +263,34 @@ const getState = ({
                         .then((data) => {
                             console.log(data);
                             setStore({
-                                petsorphan: data,
+                                petsUser: data.results,
                             });
                         });
-                    console.log(store.petsorphan);
+                    //
                 } catch (e) {
                     console.log(e);
                 }
             },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            getOneUser: (id) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/" + id, {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                oneUser: data,
+                            });
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
         },
     };
 };

@@ -23,9 +23,9 @@ export const Navbar = () => {
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item fs-5">
-              <Link to="/lista_encontrados" style={{ textDecoration: "none" }}>
-                <span className="text-white">Mascotas</span>
+            <li className="nav-item fs-6">
+              <Link to="/listas" style={{ textDecoration: "none" }}>
+                <span className="text-white">Lista de Mascotas</span>
               </Link>
             </li>
           </ul>
@@ -52,14 +52,30 @@ export const Navbar = () => {
                 </button>
               </Link>
             ) : null}
-
             {store.auth === true ? (
-              <Link to="/formencontrado">
-                <button className="btn btn-light rounded-pill btn-lg">
+              <div className="dropdown d-flex float-end">
+                <button
+                  className="btn btn-light rounded-pill btn-lg dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   <i className="fa fa-plus-circle mx-2"></i>
                   Postear
                 </button>
-              </Link>
+                <ul className="dropdown-menu">
+                  <Link to={"/formencontrado"}>
+                    <button className="dropdown-item float-start">
+                      Mascota Perdida
+                    </button>
+                  </Link>
+                  <Link to={"/formadoptar"}>
+                    <button className="dropdown-item float-start">
+                      Mascota para Adoptar
+                    </button>
+                  </Link>
+                </ul>
+              </div>
             ) : null}
 
             {store.auth === true ? (
@@ -74,8 +90,11 @@ export const Navbar = () => {
                   {store.userSession.nombre}
                 </button>
                 <ul className="dropdown-menu">
-                  <li className="dropdown-item float-start">Account</li>
-
+                  <Link to={"/perfil"}>
+                    <button className="dropdown-item float-start">
+                      Account
+                    </button>
+                  </Link>
                   <button
                     className="dropdown-item float-start text-danger"
                     onClick={handleLogout}

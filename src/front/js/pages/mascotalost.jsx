@@ -6,8 +6,9 @@ import { Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import "../../styles/home.css";
+import ReactWhatsapp from "react-whatsapp";
 
-export const OnePet = () => {
+export const OnePetLost = () => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   //
@@ -22,6 +23,10 @@ export const OnePet = () => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
+  //
+  const insertAt = (str, sub, pos) =>
+    `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
+
   return (
     <div className="container-fluid">
       <div className="jumbotron  m-3">
@@ -34,6 +39,23 @@ export const OnePet = () => {
                 </h1>
 
                 <form>
+                  <div className="form-group row">
+                    <div className="col-md-12 mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                      >
+                        Descripción
+                      </label>
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="2"
+                        value={store.onePet.descripcion}
+                        readOnly
+                      />
+                    </div>
+                  </div>
                   <div className="form-group row">
                     <div className="col-md-6 mb-3">
                       <label className="form-label">Genero</label>
@@ -108,10 +130,14 @@ export const OnePet = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="d-grid gap-2 col-4 mx-auto my-2">
-                    <button type="submit" className="btn btn-lg btn-success">
+                  <div className=" col-4 mx-auto my-2">
+                    <ReactWhatsapp
+                      className="btn btn-lg btn-success"
+                      number={"+598" + store.oneUser.contacto}
+                      message="Buenas! me contacto contigo para mas información acerca de una mascota que publicaste en FindPets!"
+                    >
                       Contactar <i className="fab fa-whatsapp mx-1"></i>
-                    </button>
+                    </ReactWhatsapp>
                   </div>
                   {/*  */}
                 </form>
@@ -125,7 +151,7 @@ export const OnePet = () => {
                     lat: parseFloat(store.onePet.latitud),
                     lng: parseFloat(store.onePet.longitud),
                   }}
-                  mapContainerClassName="map-container"
+                  mapContainerClassName="map-mascota"
                 >
                   <Marker
                     position={{
@@ -143,6 +169,6 @@ export const OnePet = () => {
   );
 };
 
-OnePet.propTypes = {
+OnePetLost.propTypes = {
   match: PropTypes.object,
 };

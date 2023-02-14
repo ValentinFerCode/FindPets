@@ -180,7 +180,7 @@ def getPet(id):
 def postPets():
     body = json.loads(request.data)
 
-    newPets = Mascotas(genero=body["genero"], tamaño=body["tamaño"], color=body["color"], nombre=body["nombre"], edad=body["edad"], raza=body["raza"], estado=body["estado"], especie=body["especie"],latitud=body["latitud"], longitud=body["longitud"],url=body["url"] ,usuario_id=body["usuario_id"])
+    newPets = Mascotas(genero=body["genero"], tamaño=body["tamaño"], color=body["color"], descripcion=body["descripcion"], edad=body["edad"], raza=body["raza"], estado=body["estado"], especie=body["especie"],latitud=body["latitud"], longitud=body["longitud"],url=body["url"],usuario_id=body["usuario_id"])
     db.session.add(newPets)
     db.session.commit()
 
@@ -200,14 +200,14 @@ def putPets():
         pet.genero = body["genero"]
         pet.tamaño = body["tamaño"]
         pet.color = body["color"]
-        pet.nombre = body["nombre"]
+        pet.descripcion = body["descripcion"]
         pet.edad = body["edad"]
         pet.raza = body["raza"]
         pet.estado = body["estado"]
         pet.especie = body["especie"]
         pet.latitud = body["latitud"]
         pet.longitud = body["longitud"]
-        pet.url = ["url"]
+        pet.url = body["url"]
         pet.usuario_id = body["usuario_id"]
 
         db.session.add(pet)

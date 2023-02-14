@@ -3,24 +3,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home.jsx";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Login } from "./pages/login.jsx";
 
 import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer.jsx";
-// import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
 import { PetForm } from "./pages/formencontrado.jsx";
-// import {FormAdoptar} from "./pages/formadoptar.jsx";
 import { Register } from "./pages/register.jsx";
 import { FormAdoptar } from "./pages/formadoptar.jsx";
-import {Lista_encontrados} from "./pages/lista_encontrados.jsx";
-import { OnePet } from "./pages/mascota.jsx";
-// import  {List_adopt}  from "./pages/lista_adoptados.jsx";
-import {List_adopt} from "./pages/lista_adoptados.jsx"
-
-
+import { OnePetLost } from "./pages/mascotalost.jsx";
+import { Perfil } from "./pages/perfil.jsx";
+import { AllListas } from "./pages/listas.jsx";
 
 // create your first component
 const Layout = () => {
@@ -36,17 +29,16 @@ const Layout = () => {
           <Routes>
             <Route element={<Login />} path="/login" />
             <Route element={<Home />} path="/" />
-            <Route element={<Demo />} path="/demo" />
-            <Route element={<Single />} path="/single/:theid" />{" "}
             {/* <Route element={<Recuperacion_clave />} path="/recuperacion_clave"/> */}
             <Route element={<PetForm />} path="/formencontrado" />{" "}
             {/* <Route element={<FormAdoptar/>} path="/formadoptar"/> */}
             <Route element={<FormAdoptar />} path="/formadoptar" />
-            <Route element={<OnePet />} path="/mascota/:id" />
+            <Route element={<OnePetLost />} path="/mascota/:id" />
+            <Route element={<Perfil />} path="/perfil" />
             <Route element={<h1>Not found!</h1>} />
             <Route element={<Register />} path="/register" />
-            <Route element={<Lista_encontrados />} path="/lista_encontrados" />
-            <Route element={<List_adopt/>} path="/lista_adoptados" />
+            <Route element={<Perfil />} path="/perfil" />
+            <Route element={<AllListas />} path="/listas" />
           </Routes>
           <Footer />
         </ScrollToTop>

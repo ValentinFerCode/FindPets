@@ -2,13 +2,12 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Lista_adoptados = (props) => {
+export const Animal_adoptados = (props) => {
   console.log(props);
   const { store, actions } = useContext(Context);
   console.log(store.adopt);
   return (
     <>
-    <h1>Animales en adopción</h1>
       {store.adopt.map((item, id) => (
         <div key={id} className="container">
           <Link
@@ -26,22 +25,34 @@ export const Lista_adoptados = (props) => {
                     <div className="container text-start mx-auto">
                       <div className="row g-2 justify-content-end me-2">
                         <div className="col-6">
-                          <div className="p-3"><strong>Género:</strong> {item.genero}</div>
+                          <div className="p-3">
+                            <strong>Género:</strong> {item.genero}
+                          </div>
                         </div>
                         <div className="col-6">
-                          <div className="p-3"><strong>Tamaño:</strong> {item.tamaño}</div>
+                          <div className="p-3">
+                            <strong>Tamaño:</strong> {item.tamaño}
+                          </div>
                         </div>
                         <div className="col-6">
-                          <div className="p-3"><strong>Color:</strong> {item.color}</div>
+                          <div className="p-3">
+                            <strong>Color:</strong> {item.color}
+                          </div>
                         </div>
                         <div className="col-6">
-                          <div className="p-3"><strong>Edad:</strong> {item.edad}</div>
+                          <div className="p-3">
+                            <strong>Edad:</strong> {item.edad}
+                          </div>
                         </div>
                         <div className="col-6">
-                          <div className="p-3"><strong>Raza:</strong> {item.raza}</div>
+                          <div className="p-3">
+                            <strong>Raza:</strong> {item.raza}
+                          </div>
                         </div>
                         <div className="col-6">
-                          <div className="p-3"><strong>Especie:</strong> {item.especie}</div>
+                          <div className="p-3">
+                            <strong>Especie:</strong> {item.especie}
+                          </div>
                         </div>
                       </div>
                     </div>
