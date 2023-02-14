@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+<<<<<<< HEAD
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -18,6 +19,64 @@ const getState = ({ getStore, getActions, setStore }) => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+=======
+const getState = ({
+    getStore,
+    getActions,
+    setStore
+}) => {
+    return {
+        store: {
+            userSession: {},
+            auth: false,
+            petslost: [],
+            imagePet: "",
+            onePet: {},
+            adopt: [],
+        },
+        actions: {
+            signup: (username, email, password, nombre, apellido, contacto) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/signup", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                username: username,
+                                email: email,
+                                password: password,
+                                nombre: nombre,
+                                apellido: apellido,
+                                contacto: contacto,
+                                admin: false,
+                            }),
+                        })
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Oops...",
+                                    text: "Usuario creado con exito!",
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            if (data.msg === "User exist in the system") {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "Ya existe una cuenta con ese usuario o email!",
+                                });
+                            }
+                            console.log(data);
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+>>>>>>> c97292d9c37a6541f9fc901f589869789a5f1f50
             },
             body: JSON.stringify({
               username: username,
@@ -55,6 +114,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+<<<<<<< HEAD
       login: (userName, userPassword) => {
         fetch(process.env.BACKEND_URL + "/api/login", {
           method: "POST",
@@ -164,6 +224,57 @@ const getState = ({ getStore, getActions, setStore }) => {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
+=======
+                    fetch("https://api.cloudinary.com/v1_1/dfwglvojj/image/upload", {
+                            method: "POST",
+                            body: data,
+                        })
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Oops...",
+                                    text: "La foto fue subida de forma exitosa!",
+                                });
+                            } else {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "Hubo algun error al momento de subir la foto!",
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log(data.url);
+                            setStore({
+                                imagePet: data.url,
+                            });
+                        });
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getOnePet: (id) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/pets/" + id, {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                onePet: data,
+                            });
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+>>>>>>> c97292d9c37a6541f9fc901f589869789a5f1f50
             },
           })
             .then((response) => response.json())
@@ -279,6 +390,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             headers: {
               "Content-Type": "application/json",
             },
+<<<<<<< HEAD
           })
             .then((response) => response.json())
             .then((data) => {
@@ -294,6 +406,42 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
     },
   };
+=======
+
+            // DELETE
+            getDeletePets: (id) => {
+                let store = getStore();
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/pets", {
+                            method: "DELETE",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                        });
+                    console.log(store.petsorphan);
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+        },
+    };
+>>>>>>> c97292d9c37a6541f9fc901f589869789a5f1f50
 };
 
 export default getState;
