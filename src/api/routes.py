@@ -279,10 +279,10 @@ def forgotpassword():
 
 
 # Delete - Mascota
-@api.route('/formadoptar', methods=['DELETE'])
+@api.route('/pets', methods=['DELETE'])
 def deleteFormAdoptar():
     body = json.loads(request.data)
-    formadoptar = FormAdoptar.query.filter_by(id=body["formadoptar_id"]).first()
+    formadoptar = Mascotas.query.filter_by(id=body["formadoptar_id"]).first()
     if formadoptar is not None:
         db.session.delete(formadoptar)
         db.session.commit()

@@ -104,14 +104,15 @@ const getState = ({
                 genero,
                 tamaño,
                 color,
-                nombre,
+                descripcion,
                 edad,
                 raza,
                 especie,
                 latitud,
                 longitud,
                 urlimage,
-                usuario_id
+                usuario_id,
+                estado
             ) => {
                 try {
                     fetch(process.env.BACKEND_URL + "/api/pets", {
@@ -123,10 +124,10 @@ const getState = ({
                                 genero: genero,
                                 tamaño: tamaño,
                                 color: color,
-                                nombre: nombre,
+                                descripcion: descripcion,
                                 edad: edad,
                                 raza: raza,
-                                estado: "lost",
+                                estado: estado,
                                 especie: especie,
                                 latitud: latitud,
                                 longitud: longitud,
@@ -291,6 +292,38 @@ const getState = ({
                     console.log(e);
                 }
             },
+
+            // DELETE
+            getDeletePets: (id) => {
+                let store = getStore();
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/pets", {
+                            method: "DELETE",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                        });
+                    console.log(store.petsorphan);
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+
+
+
+
+
+
+
+
+
+
+
+
         },
     };
 };
