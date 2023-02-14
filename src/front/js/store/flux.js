@@ -7,13 +7,11 @@ const getState = ({
     return {
         store: {
             userSession: {},
-            oneUser: {},
             auth: false,
             petslost: [],
             imagePet: "",
             onePet: {},
             adopt: [],
-            petsUser: [],
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
@@ -196,7 +194,7 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Good",
+                                    title: "Oops...",
                                     text: "La foto fue subida de forma exitosa!",
                                 });
                             } else {
@@ -219,7 +217,6 @@ const getState = ({
                 }
             },
             getOnePet: (id) => {
-                let actions = getActions();
                 try {
                     fetch(process.env.BACKEND_URL + "/api/pets/" + id, {
                             method: "GET",
@@ -233,7 +230,6 @@ const getState = ({
                             setStore({
                                 onePet: data,
                             });
-                            actions.getOneUser(data.usuario_id);
                         });
                     //
                 } catch (e) {
@@ -296,6 +292,38 @@ const getState = ({
                     console.log(e);
                 }
             },
+
+            // DELETE
+            getDeletePets: (id) => {
+                let store = getStore();
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/pets", {
+                            method: "DELETE",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                        });
+                    console.log(store.petsorphan);
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+
+
+
+
+
+
+
+
+
+
+
+
         },
     };
 };
