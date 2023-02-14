@@ -36,7 +36,7 @@ class Mascotas(db.Model):
     genero = db.Column(db.String(120), unique=False, nullable=True)
     tamaño = db.Column(db.String(120), unique=False, nullable=False)
     color = db.Column(db.String(80), unique=False, nullable=False)
-    nombre = db.Column(db.String(80), unique=False, nullable=True)
+    descripcion = db.Column(db.String(250), unique=False, nullable=True)
     edad = db.Column(db.String(80), unique=False, nullable=True)
     raza = db.Column(db.String(80), unique=False, nullable=True)
     estado = db.Column(db.String(80), unique=False, nullable=False)
@@ -56,7 +56,7 @@ class Mascotas(db.Model):
             "genero": self.genero,
             "tamaño": self.tamaño,
             "color": self.color,
-            "nombre": self.nombre,
+            "descripcion": self.descripcion,
             "edad": self.edad,
             "raza": self.raza,
             "estado": self.estado,

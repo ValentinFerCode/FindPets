@@ -110,29 +110,31 @@ export const Perfil = () => {
             </div>
             {/* Segunda Columna */}
 
-            <div className="row g-0  border-bottom border-danger">
+            <div className="row g-0 scrollablePerfil ">
               <div className="col-md-12 ">
-                {store.petsUser.map((item, id) => (
-                  <div className="btn m-4 ms-0 col-auto mx-1 rounded" key={id}>
-                    <div
-                      className="card listPerfil border-danger "
-                      style={{ width: "10rem", height: "10rem" }}
-                    >
-                      <Link
-                        style={{ textDecoration: "none" }}
-                        to={"/mascota/" + item.id}
+                <div className="d-flex">
+                  {store.petsUser.map((item, id) => (
+                    <div className="btn m-3 ms-0 rounded " key={id}>
+                      <div
+                        className="card listPerfil border-danger "
+                        style={{ width: "10rem", height: "10rem" }}
                       >
-                        <div className="border-bottom border-danger">
-                          <img
-                            src={item.url}
-                            className="card-img-top"
-                            alt="..."
-                          />
-                        </div>
-                      </Link>
+                        <Link
+                          style={{ textDecoration: "none" }}
+                          to={"/mascota/" + item.id}
+                        >
+                          <div className="border-bottom border-danger">
+                            <img
+                              src={item.url}
+                              className="card-img-top"
+                              alt="..."
+                            />
+                          </div>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
             {/*  */}

@@ -11,6 +11,11 @@
     height: 84vh;
 }
 
+.map-mascota {
+    width: 100%;
+    height: 93vh;
+}
+
 img[src$="#custom_marker"] {
     position: absolute;
     cursor: pointer;
@@ -34,7 +39,7 @@ img[src$="#custom_marker"] {
 .scrollable {
     margin: 4px, 4px;
     padding: 4px;
-    height: 78vh;
+    height: 70vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -77,8 +82,11 @@ img[src$="#custom_marker"] {
 }
 
 .scrollablePerfil {
+    margin: 4px, 4px;
+    padding: 4px;
+    height: 30vh;
     overflow-x: scroll;
-    min-height: 50px;
+    overflow-y: hidden;
 }
 
 .scrollablePerfil::-webkit-scrollbar {
