@@ -42,13 +42,13 @@ export const OnePetLost = () => {
                   <div className="form-group row">
                     <div className="col-md-12 mb-3">
                       <label
-                        for="exampleFormControlTextarea1"
-                        class="form-label"
+                        htmlFor="exampleFormControlTextarea1"
+                        className="form-label"
                       >
                         Descripción
                       </label>
                       <textarea
-                        class="form-control"
+                        className="form-control"
                         id="exampleFormControlTextarea1"
                         rows="2"
                         value={store.onePet.descripcion}

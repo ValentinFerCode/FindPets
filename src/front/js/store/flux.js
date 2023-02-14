@@ -12,6 +12,8 @@ const getState = ({
             imagePet: "",
             onePet: {},
             adopt: [],
+            oneUser: {},
+            petsUser: [],
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
@@ -217,6 +219,7 @@ const getState = ({
                 }
             },
             getOnePet: (id) => {
+                let actions = getActions();
                 try {
                     fetch(process.env.BACKEND_URL + "/api/pets/" + id, {
                             method: "GET",
@@ -230,6 +233,7 @@ const getState = ({
                             setStore({
                                 onePet: data,
                             });
+                            actions.getOneUser(data.usuario_id);
                         });
                     //
                 } catch (e) {
@@ -294,7 +298,7 @@ const getState = ({
             },
 
             // DELETE
-            getDeletePets: (id) => {
+            getDeletePets: () => {
                 let store = getStore();
                 try {
                     fetch(process.env.BACKEND_URL + "/api/pets", {
@@ -312,18 +316,6 @@ const getState = ({
                     console.log(e);
                 }
             },
-
-
-
-
-
-
-
-
-
-
-
-
         },
     };
 };
