@@ -318,19 +318,16 @@ const getState = ({
             },
 
             forgotPassword: (userEmail) => {
-                fetch(
-                        "https://3001-valentinfercode-findopt-du0ahcfb2ra.ws-us87.gitpod.io" +
-                        "/api/forgotpassword", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({
-                                // username: userName,
-                                email: userEmail,
-                            }), // body data type must match "Content-Type" header
-                        }
-                    )
+                fetch(process.env.BACKEND_URL + "/api/forgotpassword", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            // username: userName,
+                            email: userEmail,
+                        }), // body data type must match "Content-Type" header
+                    })
                     .then((response) => {
                         console.log(response.status);
                         if (response.status === 200) {
