@@ -2,12 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "../../styles/home.css";
 import Swal from "sweetalert2";
 
 export const Perfil = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
+
   //
   const [username, setUsername] = useState(store.userSession.username);
   const [firstname, setFirstname] = useState(store.userSession.nombre);
@@ -18,42 +20,59 @@ export const Perfil = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     actions.getPetsUser(store.userSession.id);
+    actions.getOneUser(store.userSession.id);
   }, []);
 
   //
   function updateUser(e) {
     e.preventDefault();
     Swal.fire({
-      title: "<strong>HTML <u>example</u></strong>",
-      icon: "info",
-      html:
-        '<label htmlFor="password" className="form-label">Password</label> ' +
-        '<input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} id="password" />' +
-        "and other HTML tags",
-      showCloseButton: true,
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
       showCancelButton: true,
-      focusConfirm: false,
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-      confirmButtonAriaLabel: "Thumbs up, great!",
-      cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
-      cancelButtonAriaLabel: "Thumbs down",
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, update it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        actions.updateUser(
+          username,
+          email,
+          firstname,
+          lastname,
+          contact,
+          store.userSession.id
+        ); // actualizamos el perfil del usuario
+        navigate("/"); //usamos navigate para redireccionar
+      }
     });
     //
+  }
+  //
+  function deleteUser() {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        actions.deleteUser(store.oneUser.id); // borramos el usuario
+        navigate("/"); //usamos navigate para redireccionar
+      }
+    });
   }
   return (
     <div className="container-fluid w-75">
       {store.auth === false ? (
         <Navigate to="/" />
       ) : (
-        <div className="jumbotron m-3">
+        <div className="jumbotron m-3 ">
           <div className="rounded border border-danger">
-            <div className="m-2">
-              {/* Boton Eliminar */}
-              <button className="float-end btn btn-outline-dark border-0 mx-1">
-                <i className="fa fa-trash-alt"></i>
-              </button>
-            </div>
-
             <h1 className="text-center text-danger border-bottom border-danger">
               PERFIL DEL USUARIO
             </h1>
@@ -69,9 +88,9 @@ export const Perfil = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={firstname}
-                        onChange={(e) => setFirstname(e.target.value)}
+                        value={store.oneUser.nombre}
                         id="firstname"
+                        readOnly
                       />
                     </div>
                     <div className="col-md-6 mb-3">
@@ -81,9 +100,9 @@ export const Perfil = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={lastname}
-                        onChange={(e) => setLastname(e.target.value)}
+                        value={store.oneUser.apellido}
                         id="lastname"
+                        readOnly
                       />
                     </div>
                   </div>
@@ -95,10 +114,10 @@ export const Perfil = () => {
                       <input
                         type="email"
                         className="form-control"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={store.oneUser.email}
                         id="email"
                         aria-describedby="emailHelp"
+                        readOnly
                       />
                     </div>
 
@@ -109,43 +128,54 @@ export const Perfil = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={contact}
-                        onChange={(e) => setContact(e.target.value)}
+                        value={store.oneUser.contacto}
                         id="contact"
+                        readOnly
                       />
                     </div>
                   </div>
                   <div className="form-group row">
-                    <div className="col-md-6 mb-3">
+                    <div className="col-md-6 mb-3 mx-auto">
                       <label htmlFor="username" className="form-label">
                         Username
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        value={store.oneUser.username}
                         id="username"
+                        readOnly
                       />
                     </div>
                   </div>
-
-                  <div className="d-grid gap-2 col-6 mx-auto mb-4">
-                    <button
-                      type="submit"
-                      className="btn btn-lg btn-danger"
-                      disabled={
-                        !(
-                          username != store.userSession.username ||
-                          firstname != store.userSession.nombre ||
-                          lastname != store.userSession.apellido ||
-                          email != store.userSession.email ||
-                          contact != store.userSession.contacto
-                        )
-                      }
-                    >
-                      Actualizar Datos
-                    </button>
+                  <div className="form-group row">
+                    <div className="d-grid gap-2 col-4 mx-auto mb-4">
+                      <Link
+                        to={"/perfil/edit"}
+                        type="button"
+                        className="btn btn-primary"
+                      >
+                        MODIFICAR DATOS
+                      </Link>
+                    </div>
+                    {/* <div className="d-grid gap-2 col-4 mx-auto mb-4">
+                      <Link
+                        to={"/perfil/changepassword"}
+                        type="button"
+                        className="btn btn-secondary"
+                      >
+                        CAMBIAR CONTRASEÑA{" "}
+                      </Link>
+                    </div> */}
+                    <div className="d-grid gap-2 col-4 mx-auto mb-4">
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={deleteUser}
+                      >
+                        ELIMINAR CUENTA
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
