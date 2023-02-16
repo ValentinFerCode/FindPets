@@ -3,8 +3,8 @@ import React, { Component } from "react";
 
 export const Footer = () => (
   <footer className="footer">
-    <ul className="">
-      <p>@ 2023 - Todos los derechos reservados.</p>
+    <ul className="text-light">
+      <p className="text">@ 2023 - Todos los derechos reservados.</p>
 
       <p>Teléfono (+598) 2603 8832 | consultas@findpets.com</p>
       <p>
