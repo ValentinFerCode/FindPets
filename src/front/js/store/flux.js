@@ -1,4 +1,6 @@
 import Swal from "sweetalert2";
+import axios from "axios";
+
 const getState = ({
     getStore,
     getActions,
@@ -87,11 +89,13 @@ const getState = ({
                                 title: "Oops...",
                                 text: "Usuario o contraseña incorrecto!",
                             });
+                        } else {
+                            localStorage.setItem("token", data.access_token);
+                            console.log(data.access_token);
+                            setStore({
+                                userSession: data.user,
+                            });
                         }
-                        localStorage.setItem("token", data.access_token);
-                        setStore({
-                            userSession: data.user,
-                        });
                     })
                     .catch((err) => console.log(err));
             },
@@ -296,7 +300,6 @@ const getState = ({
                     console.log(e);
                 }
             },
-
             // DELETE
             getDeletePets: () => {
                 let store = getStore();
@@ -316,6 +319,68 @@ const getState = ({
                     console.log(e);
                 }
             },
+
+            forgotPassword: (userEmail) => {
+                fetch(process.env.BACKEND_URL + "/api/forgotpassword", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            // username: userName,
+                            email: userEmail,
+                        }), // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        console.log(response.status);
+                        // if (response.status === 200) {
+                        //     setStore({
+                        //         auth: true,
+                        //     });
+                        // }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log(data.msg);
+                        if (
+                            data.msg === "El correo ingresado no existe en nuestros registros"
+                        ) {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Usuario o dirección de correo electrónico incorrecto!",
+                            });
+                        }
+                    })
+                    .catch((err) => console.log(err));
+            },
+            validToken: async () => {
+                let accessToken = localStorage.getItem("token");
+                try {
+                    const response = await axios.get(
+                        process.env.BACKEND_URL + "/api/valid-token", {
+                            headers: {
+                                Authorization: "Bearer " + accessToken,
+                            },
+                        }
+                    );
+                    if (response.data.user != null) {
+                        setStore({
+                            auth: true,
+                            userSession: response.data.user,
+                        });
+                    }
+
+                    return;
+                } catch (e) {
+                    if (e.response.status === 402 || e.response.status === 404) {
+                        setStore({
+                            auth: false,
+                        });
+                    }
+                    return false;
+                }
+            },
             petsPostUpdate: (
                 genero,
                 tamaño,
@@ -327,7 +392,7 @@ const getState = ({
                 latitud,
                 longitud,
                 urlimage,
-                // usuario_id,
+                usuario_id,
                 estado
             ) => {
                 try {
