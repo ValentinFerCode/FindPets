@@ -346,25 +346,23 @@ const getState = ({
                         }), // body data type must match "Content-Type" header
                     })
                     .then((response) => {
-                        console.log(response.status);
-                        // if (response.status === 200) {
-                        //     setStore({
-                        //         auth: true,
-                        //     });
-                        // }
+                        if (response.status === 200) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Contraseña actualizada",
+                                text: "Su nueva contraseña fue enviada a su correo electronico!",
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Opps..",
+                                text: "El email no existe en el sistema",
+                            });
+                        }
                         return response.json();
                     })
                     .then((data) => {
                         console.log(data.msg);
-                        if (
-                            data.msg === "El correo ingresado no existe en nuestros registros"
-                        ) {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops...",
-                                text: "Usuario o dirección de correo electrónico incorrecto!",
-                            });
-                        }
                     })
                     .catch((err) => console.log(err));
             },
@@ -432,6 +430,79 @@ const getState = ({
                             console.log(data);
                         });
                     //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            updatePassword: (usuario_id, password) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/changepassword", {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                password: password,
+                                usuario_id: usuario_id,
+                            }),
+                        })
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Oops...",
+                                    text: "Contraseña modificada con exito!",
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            if (data.msg === "El usuario no existe en el sistema") {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "No existe una cuenta con ese usuario o email!",
+                                });
+                            }
+                            console.log(data);
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            deleteUser: (id) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/" + id, {
+                            method: "DELETE",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Good",
+                                    text: "Usuario eliminado con exito!",
+                                });
+                                //
+                                localStorage.removeItem("token");
+                                setStore({
+                                    auth: false,
+                                });
+                            } else {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Opps..",
+                                    text: "Hubo un problema al eliminar el usuario.",
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log(data);
+                        });
                 } catch (e) {
                     console.log(e);
                 }

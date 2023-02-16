@@ -57,11 +57,9 @@ const navigate=useNavigate("")
               />
             </div>
             <div className="mt-5 d-flex justify-content-center">
-              {/* <Link to="/login"> */}
                 <button type="submit" className="btn btn-danger btn-sm">
                   Enviar
                 </button>
-              {/* </Link> */}
             </div>
           </form>
         </div>

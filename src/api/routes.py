@@ -98,11 +98,10 @@ def getUser(id):
     return jsonify(response_body), 400
 
 # Delete - User
-@api.route('/users', methods=['DELETE'])
-def deleteUser():
-    body = json.loads(request.data)
+@api.route('/users/<int:id>', methods=['DELETE'])
+def deleteUser(id):
 
-    user = Usuario.query.filter_by(id=body["usuario_id"]).first()
+    user = Usuario.query.filter_by(id=id).first()
     
     if user is not None:
         db.session.delete(user)
@@ -308,3 +307,5 @@ def private():
         return jsonify({"status":False}), 404
 
     return jsonify({"status": True,"user": user.serialize()  }), 200
+
+    
