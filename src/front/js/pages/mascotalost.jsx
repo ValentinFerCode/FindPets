@@ -124,6 +124,18 @@ export const OnePetLost = () => {
                       />
                     </div>
                     <h1 className="text-center text-danger border-bottom border-danger"></h1>
+
+                    <div className="card-body d-flex flex-column justify-content-end p-0">
+                      <div class="d-flex justify-content-between">
+                        <button className="btn btn-secondary btn-sm w-50 mb-1 btn-overlay mx-1">
+                          Editar
+                        </button>
+                        <button className="btn btn-danger btn-sm w-50 mb-1 btn-overlay mx-1">
+                          Eliminar
+                        </button>
+                      </div>
+                    </div>
+
                     <div className="row">
                       <a className="text-center" href={store.onePet.url}>
                         <img className="onePet" src={store.onePet.url} />

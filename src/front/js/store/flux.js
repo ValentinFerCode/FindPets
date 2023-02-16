@@ -316,6 +316,65 @@ const getState = ({
                     console.log(e);
                 }
             },
+            petsPostUpdate: (
+                genero,
+                tamaño,
+                color,
+                descripcion,
+                edad,
+                raza,
+                especie,
+                latitud,
+                longitud,
+                urlimage,
+                // usuario_id,
+                estado
+            ) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/pets/" + id, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                genero: genero,
+                                tamaño: tamaño,
+                                color: color,
+                                descripcion: descripcion,
+                                edad: edad,
+                                raza: raza,
+                                estado: estado,
+                                especie: especie,
+                                latitud: latitud,
+                                longitud: longitud,
+                                url: urlimage,
+                                // usuario_id: usuario_id,
+                            }),
+                        })
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Oops...",
+                                    text: "Mascota actualizada con exito!",
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            if (data.msg === "User exist in the system") {
+                                alert(data.msg);
+                            }
+                            setStore({
+                                imagePet: "",
+                            });
+                            console.log(data);
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
         },
     };
 };
