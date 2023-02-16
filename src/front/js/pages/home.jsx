@@ -10,6 +10,7 @@ export const Home = () => {
   //
   useEffect(() => {
     actions.getPetsLost();
+    actions.getOneUser(store.userSession.id);
   }, []);
 
   return (

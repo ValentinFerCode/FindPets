@@ -16,7 +16,6 @@ const getState = ({
             adopt: [],
             oneUser: {},
             petsUser: [],
-            styles: []
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
@@ -294,6 +293,7 @@ const getState = ({
                             console.log(data);
                             setStore({
                                 oneUser: data,
+                                userSession: data,
                             });
                         });
                     //
@@ -302,20 +302,33 @@ const getState = ({
                 }
             },
             // DELETE
-            getDeletePets: () => {
-                let store = getStore();
+            deletePet: (id) => {
                 try {
-                    fetch(process.env.BACKEND_URL + "/api/pets", {
+                    fetch(process.env.BACKEND_URL + "/api/pets/" + id, {
                             method: "DELETE",
                             headers: {
                                 "Content-Type": "application/json",
                             },
                         })
-                        .then((response) => response.json())
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Good",
+                                    text: "Mascota eliminada con exito!",
+                                });
+                            } else {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Opps..",
+                                    text: "Hubo un problema al eliminar la mascota.",
+                                });
+                            }
+                            return response.json();
+                        })
                         .then((data) => {
                             console.log(data);
                         });
-                    console.log(store.petsorphan);
                 } catch (e) {
                     console.log(e);
                 }
@@ -382,8 +395,46 @@ const getState = ({
                     return false;
                 }
             },
-            darkMode: () => {
-                if (checked === true) {}
+            updateUser: (username, email, nombre, apellido, contacto, usuario_id) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users", {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                username: username,
+                                email: email,
+                                nombre: nombre,
+                                apellido: apellido,
+                                contacto: contacto,
+                                usuario_id: usuario_id,
+                            }),
+                        })
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Oops...",
+                                    text: "Usuario modificado con exito!",
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            if (data.msg === "El usuario no existe en el sistema") {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "No existe una cuenta con ese usuario o email!",
+                                });
+                            }
+                            console.log(data);
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
             },
         },
     };
