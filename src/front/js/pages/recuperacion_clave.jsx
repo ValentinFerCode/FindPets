@@ -1,49 +1,69 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import Swal from "sweetalert2";
+import "../../styles/home.css";
+import { Link, Navigate } from "react-router-dom";
+import { Context } from "../store/appContext.js";
 
 export const Recuperacion_clave = () => {
-  return (
-    <div
-      className="mx-auto justify-content-center d-flex"
-      style={{ backgroundColor: "sandybrown" }}
-    >
-      <form>
-        <div className="col col-8 mx-auto mb-3">
-          <h5 className="text-center">
-            Nombre de usuario o Correo electrónico
-          </h5>
+  const { store, actions } = useContext(Context);
+  const [email, setEmail] = useState("");
 
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            style={{ width: "200px", heigth: "30px", fontSize: "16px" }}
+  function forgotPassword(e) {
+    e.preventDefault();
+    if (email === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Faltan datos por completar!",
+      });
+    } else {
+      actions.forgotPassword(email);
+      setEmail("");
+    }
+  }
+
+  return (
+    <>
+      <div className="mx-auto m-4 w-25 p-3 card-text-center border border-danger">
+        <div className="mt-3 d-flex justify-content-center">
+          <img
+            src="https://cdn.pixabay.com/photo/2015/10/30/10/40/key-1013662_960_720.jpg"
+            alt="..."
+            style={{ maxWidth: "200px" }}
           />
-          {/* <div id="emailHelp" className="form-text"> */}
-          {/* We'll never share your email with anyone else. */}
-          {/* </div> */}
         </div>
-        <div className="col col-8 mx-auto mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            <h5 className="text-center">Nueva contraseña</h5>
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-            style={{ width: "200px", heigth: "30px", fontSize: "16px" }}
-          />
+        <div className="m-auto w-75 h-25 py-4">
+          <div className="d-flex align-content-center text-danger fs-6">
+            <b>RECUPERACIÓN DE CONTRASEÑA</b>
+          </div>
+          <div className="h4 pb-2 mb-4 text-danger border-bottom border-danger"></div>
+          <form onSubmit={forgotPassword}>
+            <div>
+              <label
+                htmlFor="exampleInputEmail1"
+                className="form-label my-3 d-flex justify-content-center"
+              >
+                {/* <i className="fa fa-envelope m-1"></i> */}
+                Dirección de correo electrónico
+              </label>
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                className="form-control"
+                id="exampleInputEmail1"
+              />
+            </div>
+            <div className="mt-5 d-flex justify-content-center">
+              <Link to="/login">
+                <button type="submit" className="btn btn-danger btn-sm">
+                  Enviar
+                </button>
+              </Link>
+            </div>
+          </form>
         </div>
-        <div className="mx-auto justify-content-center d-flex">
-          <button
-            type="submit"
-            className="btn btn-outline-dark"
-            style={{ width: "70px", heigth: "15px", fontSize: "10px" }}
-          >
-            <b>Ingresar</b>
-          </button>
-        </div>
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
