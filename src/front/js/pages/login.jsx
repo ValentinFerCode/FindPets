@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import "../../styles/home.css";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
 export const Login = () => {
@@ -84,9 +84,11 @@ export const Login = () => {
               </div>
             </div>
             <div className="mx-auto m-4">
-              <button type="submit" className="buttonClassContraseña">
-                Olvidé mi contraseña
-              </button>
+              <Link to="/recuperacion_clave">
+                <button type="submit" className="buttonClassContraseña">
+                  Olvidé mi contraseña
+                </button>
+              </Link>
               <button type="submit" className="buttonClassIngresar">
                 Ingresar
               </button>
