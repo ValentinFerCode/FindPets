@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import "../../styles/home.css";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
 export const Recuperacion_clave = () => {
@@ -55,9 +55,11 @@ export const Recuperacion_clave = () => {
               />
             </div>
             <div className="mt-5 d-flex justify-content-center">
-              <button type="submit" className="btn btn-danger btn-sm">
-                Enviar
-              </button>
+              <Link to="/login">
+                <button type="submit" className="btn btn-danger btn-sm">
+                  Enviar
+                </button>
+              </Link>
             </div>
           </form>
         </div>

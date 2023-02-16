@@ -330,11 +330,11 @@ const getState = ({
                     })
                     .then((response) => {
                         console.log(response.status);
-                        if (response.status === 200) {
-                            setStore({
-                                auth: true,
-                            });
-                        }
+                        // if (response.status === 200) {
+                        //     setStore({
+                        //         auth: true,
+                        //     });
+                        // }
                         return response.json();
                     })
                     .then((data) => {
