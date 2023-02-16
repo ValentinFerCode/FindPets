@@ -105,13 +105,11 @@ export const Navbar = () => {
               </div>
             ) : null}
           </form>
-          {/* <div className="m-2" id="toggle">
-            <i className="indicator"></i> */}
-          <label className="switch m-2">
+          {/* MODO-DARK */}
+          {/* <label className="switch m-2">
             <input type="checkbox" ></input>
             <span className="check"></span> 
-          </label>
-          {/* </div> */}
+          </label> */}
         </div>
       </div>
     </nav>

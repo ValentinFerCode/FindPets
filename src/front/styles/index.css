@@ -50,39 +50,11 @@
     filter: invert(100%);
 } */
 
-/* DARK MODE VERSION 2 */
 
-/* #toggle {
-    position: relative;
-    display: block;
-    width: 90px;
-    height: 50px;
-    border-radius: 160px;
-    background: black;
-    transition: 0.5s;
-    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
-        inset 0 8px 8px rgba(0, 0, 0, 0.1),
-        inset 0 -4px 4px rgba(0, 0, 0, 0.1);
-}
 
-#toggle .indicator {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(to bottom, #444, #222);
-    border-radius: 50%;
-    transform: scale(0.9);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
-        inset 0 4px 4px rgba(255, 255, 255, 0.2),
-        inset 0 -4px 4px rgba(255, 255, 255, 0.2);
-    transition: 0.5s;
-} */
+/* DARK MODE VERSION 1 ACÁ */
 
-/* DARK MODE VERSION 1 */
-
-input[type="checkbox"] {
+/* input[type="checkbox"] {
     appearance: none;
     visibility: hidden;
     display: none;
@@ -101,7 +73,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked~.check {
-    background: #fff;
+    background: #ffffff;
     box-shadow: 0 0 0 1500px #000000;
 }
 
@@ -137,10 +109,4 @@ input[type="checkbox"]:checked~.check:before {
 
 input[type="checkbox"]:checked~.check:after {
     transform: translateX(0px);
-}
-
-
-
-/* p {
-    filter: invert(100%);
 } */
