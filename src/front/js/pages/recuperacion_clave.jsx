@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import "../../styles/home.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
 export const Recuperacion_clave = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
   function forgotPassword(e) {
@@ -19,6 +20,7 @@ export const Recuperacion_clave = () => {
     } else {
       actions.forgotPassword(email);
       setEmail("");
+      navigate("/login");
     }
   }
 
@@ -55,11 +57,9 @@ export const Recuperacion_clave = () => {
               />
             </div>
             <div className="mt-5 d-flex justify-content-center">
-              <Link to="/login">
-                <button type="submit" className="btn btn-danger btn-sm">
-                  Enviar
-                </button>
-              </Link>
+              <button type="submit" className="btn btn-danger btn-sm">
+                Enviar
+              </button>
             </div>
           </form>
         </div>
