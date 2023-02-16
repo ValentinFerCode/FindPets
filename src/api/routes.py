@@ -128,7 +128,6 @@ def putUser():
     
     if user is not None:
         user.username = body["username"]
-        user.contraseña = body["contraseña"]
         user.email = body["email"]
         user.nombre = body["nombre"]
         user.apellido = body["apellido"]
@@ -208,7 +207,10 @@ def putPets(mascota_id):
         pet.latitud = body["latitud"]
         pet.longitud = body["longitud"]
         pet.url = body["url"]
+<<<<<<< HEAD
         # pet.usuario_id = body["usuario_id"]
+=======
+>>>>>>> d4d0e07c904952012df31d9d03975c41b474148a
 
         db.session.add(pet)
         db.session.commit()
