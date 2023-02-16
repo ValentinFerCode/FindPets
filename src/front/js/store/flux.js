@@ -316,6 +316,41 @@ const getState = ({
                     console.log(e);
                 }
             },
+
+            forgotPassword: (userEmail) => {
+                fetch(process.env.BACKEND_URL + "/api/forgotpassword", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            // username: userName,
+                            email: userEmail,
+                        }), // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        console.log(response.status);
+                        // if (response.status === 200) {
+                        //     setStore({
+                        //         auth: true,
+                        //     });
+                        // }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log(data.msg);
+                        if (
+                            data.msg === "El correo ingresado no existe en nuestros registros"
+                        ) {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Usuario o dirección de correo electrónico incorrecto!",
+                            });
+                        }
+                    })
+                    .catch((err) => console.log(err));
+            },
         },
     };
 };
