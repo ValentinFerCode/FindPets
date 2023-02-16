@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import Swal from "sweetalert2";
 import "../../styles/home.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
 export const Recuperacion_clave = () => {
   const { store, actions } = useContext(Context);
-  const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
 
   function forgotPassword(e) {
     e.preventDefault();
@@ -57,11 +57,9 @@ export const Recuperacion_clave = () => {
               />
             </div>
             <div className="mt-5 d-flex justify-content-center">
-              {/* <Link to="/login"> */}
               <button type="submit" className="btn btn-danger btn-sm">
                 Enviar
               </button>
-              {/* </Link> */}
             </div>
           </form>
         </div>

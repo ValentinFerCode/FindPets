@@ -20,6 +20,7 @@ export const Perfil = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     actions.getPetsUser(store.userSession.id);
+    actions.getOneUser(store.userSession.id);
   }, []);
 
   //
@@ -48,20 +49,30 @@ export const Perfil = () => {
     });
     //
   }
+  //
+  function deleteUser() {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        actions.deleteUser(store.oneUser.id); // borramos el usuario
+        navigate("/"); //usamos navigate para redireccionar
+      }
+    });
+  }
   return (
     <div className="container-fluid w-75">
       {store.auth === false ? (
         <Navigate to="/" />
       ) : (
-        <div className="jumbotron m-3">
+        <div className="jumbotron m-3 ">
           <div className="rounded border border-danger">
-            <div className="m-2">
-              {/* Boton Eliminar */}
-              <button className="float-end btn btn-outline-dark border-0 mx-1">
-                <i className="fa fa-trash-alt"></i>
-              </button>
-            </div>
-
             <h1 className="text-center text-danger border-bottom border-danger">
               PERFIL DEL USUARIO
             </h1>
@@ -77,9 +88,9 @@ export const Perfil = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={firstname}
-                        onChange={(e) => setFirstname(e.target.value)}
+                        value={store.oneUser.nombre}
                         id="firstname"
+                        readOnly
                       />
                     </div>
                     <div className="col-md-6 mb-3">
@@ -89,9 +100,9 @@ export const Perfil = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={lastname}
-                        onChange={(e) => setLastname(e.target.value)}
+                        value={store.oneUser.apellido}
                         id="lastname"
+                        readOnly
                       />
                     </div>
                   </div>
@@ -103,10 +114,10 @@ export const Perfil = () => {
                       <input
                         type="email"
                         className="form-control"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={store.oneUser.email}
                         id="email"
                         aria-describedby="emailHelp"
+                        readOnly
                       />
                     </div>
 
@@ -117,9 +128,9 @@ export const Perfil = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={contact}
-                        onChange={(e) => setContact(e.target.value)}
+                        value={store.oneUser.contacto}
                         id="contact"
+                        readOnly
                       />
                     </div>
                   </div>
@@ -131,29 +142,40 @@ export const Perfil = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        value={store.oneUser.username}
                         id="username"
+                        readOnly
                       />
                     </div>
                   </div>
-
-                  <div className="d-grid gap-2 col-6 mx-auto mb-4">
-                    <button
-                      type="submit"
-                      className="btn btn-lg btn-danger"
-                      disabled={
-                        !(
-                          username != store.userSession.username ||
-                          firstname != store.userSession.nombre ||
-                          lastname != store.userSession.apellido ||
-                          email != store.userSession.email ||
-                          contact != store.userSession.contacto
-                        )
-                      }
-                    >
-                      Actualizar Datos
-                    </button>
+                  <div className="form-group row">
+                    <div className="d-grid gap-2 col-4 mx-auto mb-4">
+                      <Link
+                        to={"/perfil/edit"}
+                        type="button"
+                        className="btn btn-primary"
+                      >
+                        MODIFICAR DATOS
+                      </Link>
+                    </div>
+                    {/* <div className="d-grid gap-2 col-4 mx-auto mb-4">
+                      <Link
+                        to={"/perfil/changepassword"}
+                        type="button"
+                        className="btn btn-secondary"
+                      >
+                        CAMBIAR CONTRASEÑA{" "}
+                      </Link>
+                    </div> */}
+                    <div className="d-grid gap-2 col-4 mx-auto mb-4">
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={deleteUser}
+                      >
+                        ELIMINAR CUENTA
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
