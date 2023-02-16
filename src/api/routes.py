@@ -279,12 +279,11 @@ def forgotpassword():
 
 
 # Delete - Mascota
-@api.route('/pets', methods=['DELETE'])
-def deleteFormAdoptar():
-    body = json.loads(request.data)
-    formadoptar = Mascotas.query.filter_by(id=body["formadoptar_id"]).first()
-    if formadoptar is not None:
-        db.session.delete(formadoptar)
+@api.route('/pets/<int:id>', methods=['DELETE'])
+def deletePet(id):
+    mascota = Mascotas.query.filter_by(id=id).first()
+    if mascota is not None:
+        db.session.delete(mascota)
         db.session.commit()
         response_body = {
             "msg": "Eliminación correcta de mascota adoptada"
@@ -295,3 +294,19 @@ def deleteFormAdoptar():
             "msg": "La mascota no existe"
         }
     return jsonify(response_body), 400
+
+# Validar Token
+@api.route("/valid-token", methods=["GET"])
+@jwt_required()
+def private():
+    # Access the identity of the current user with get_jwt_identity
+    current_user_id = get_jwt_identity()
+    user = Usuario.query.filter_by(id=current_user_id).first()
+
+    if current_user_id is None:
+        return jsonify({"User not logged in"}), 402
+
+    elif user is None:
+        return jsonify({"status":False}), 404
+
+    return jsonify({"status": True,"user": user.serialize()  }), 200
