@@ -2,12 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "../../styles/home.css";
 import Swal from "sweetalert2";
 
 export const Perfil = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
+
   //
   const [username, setUsername] = useState(store.userSession.username);
   const [firstname, setFirstname] = useState(store.userSession.nombre);
@@ -24,19 +26,25 @@ export const Perfil = () => {
   function updateUser(e) {
     e.preventDefault();
     Swal.fire({
-      title: "<strong>HTML <u>example</u></strong>",
-      icon: "info",
-      html:
-        '<label htmlFor="password" className="form-label">Password</label> ' +
-        '<input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} id="password" />' +
-        "and other HTML tags",
-      showCloseButton: true,
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
       showCancelButton: true,
-      focusConfirm: false,
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-      confirmButtonAriaLabel: "Thumbs up, great!",
-      cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
-      cancelButtonAriaLabel: "Thumbs down",
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, update it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        actions.updateUser(
+          username,
+          email,
+          firstname,
+          lastname,
+          contact,
+          store.userSession.id
+        ); // actualizamos el perfil del usuario
+        navigate("/"); //usamos navigate para redireccionar
+      }
     });
     //
   }
@@ -54,38 +62,6 @@ export const Perfil = () => {
               </button>
             </div>
 
-<<<<<<< HEAD
-            {store.petsUser != null ? (
-              <div className="row g-0 scrollablePerfil ">
-                <div className="col-md-12 ">
-                  <div className="d-flex">
-                    {store.petsUser.map((item, id) => (
-                      <div className="btn m-3 ms-0 rounded " key={id}>
-                        <div
-                          className="card listPerfil border-danger "
-                          style={{ width: "10rem", height: "10rem" }}
-                        >
-                          <Link
-                            style={{ textDecoration: "none" }}
-                            to={"/mascota/" + item.id}
-                          >
-                            <div className="border-bottom border-danger">
-                              <img
-                                src={item.url}
-                                className="card-img-top"
-                                alt="..."
-                              />
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : null}
-            {/*  */}
-=======
             <h1 className="text-center text-danger border-bottom border-danger">
               PERFIL DEL USUARIO
             </h1>
@@ -148,7 +124,7 @@ export const Perfil = () => {
                     </div>
                   </div>
                   <div className="form-group row">
-                    <div className="col-md-6 mb-3">
+                    <div className="col-md-6 mb-3 mx-auto">
                       <label htmlFor="username" className="form-label">
                         Username
                       </label>
@@ -215,7 +191,6 @@ export const Perfil = () => {
 
               {/*  */}
             </div>
->>>>>>> c0b9b86b155781f9760cc4b51ea3213f523fe54e
           </div>
         </div>
       )}
