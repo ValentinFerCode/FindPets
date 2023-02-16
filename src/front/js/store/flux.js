@@ -14,6 +14,7 @@ const getState = ({
             adopt: [],
             oneUser: {},
             petsUser: [],
+            styles: []
         },
         actions: {
             signup: (username, email, password, nombre, apellido, contacto) => {
@@ -315,6 +316,9 @@ const getState = ({
                 } catch (e) {
                     console.log(e);
                 }
+            },
+            darkMode: () => {
+                if (checked === true) {}
             },
         },
     };

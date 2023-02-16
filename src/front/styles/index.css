@@ -2,7 +2,6 @@
     General Styles used on every website (Don't Repeat Yourself)
 */
 
-
 .buttonClassIngresar {
     font-size: 15px;
     font-family: Arial;
@@ -25,7 +24,6 @@
     background: linear-gradient(#f24437, #c62d1f);
 }
 
-
 .buttonClassContraseña {
     font-size: 15px;
     font-family: Arial;
@@ -47,3 +45,102 @@
 .buttonClassContraseña:hover {
     background: linear-gradient(#f24437, #c62d1f);
 }
+
+/* .dark {
+    filter: invert(100%);
+} */
+
+/* DARK MODE VERSION 2 */
+
+/* #toggle {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 50px;
+    border-radius: 160px;
+    background: black;
+    transition: 0.5s;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+        inset 0 8px 8px rgba(0, 0, 0, 0.1),
+        inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#toggle .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+        inset 0 4px 4px rgba(255, 255, 255, 0.2),
+        inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+    transition: 0.5s;
+} */
+
+/* DARK MODE VERSION 1 */
+
+input[type="checkbox"] {
+    appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+.check {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 40px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+
+input[type="checkbox"]:checked~.check {
+    background: #fff;
+    box-shadow: 0 0 0 1500px #000000;
+}
+
+.check:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(-50px);
+}
+
+input[type="checkbox"]:checked~.check:before {
+    transform: translateX(-50px);
+}
+
+.check:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #000000;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+
+input[type="checkbox"]:checked~.check:after {
+    transform: translateX(0px);
+}
+
+
+
+/* p {
+    filter: invert(100%);
+} */
