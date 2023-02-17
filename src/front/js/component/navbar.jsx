@@ -18,7 +18,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bg-danger">
+    <nav className="navbar navbar-expand-lg " >
       <div className="container-fluid">
         <Link to="/" style={{ textDecoration: "none" }}>
           <span className="navbar-brand mb-0 h1 text-white fs-2">

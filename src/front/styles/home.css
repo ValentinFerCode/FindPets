@@ -102,3 +102,129 @@ img[src$="#custom_marker"] {
 .scrollablePerfil::-webkit-scrollbar-corner {
     display: none;
 }
+
+.carta {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    /* background: #333; */
+    transition-delay: 0.5s;
+}
+
+.carta:hover {
+    width: 600px;
+    transition-delay: 0.5s;
+}
+
+.carta .circulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carta .circulo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #2C74B3;
+    border: 8px solid #2C74B3;
+    filter: drop-shadow(0 0 10px #2C74B3) drop-shadow(0 0 60px #2C74B3);
+    transition: 0.5s, background 0.5s;
+    transition-delay: 0.75s, 1s;
+}
+
+.carta:hover .circulo::before {
+    transition-delay: 0.5s;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #82AAE3;
+}
+
+.carta .circulo .logo {
+    position: relative;
+    width: 250px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.carta:hover .circulo .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.carta .perro_gato {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 100px;
+    transition: 0.5 ease-in-out;
+}
+
+.carta:hover .perro_gato {
+    transition-delay: 0.75s;
+    left: 72%;
+    height: 250px;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+}
+
+.carta .contenido {
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+.carta:hover .contenido {
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+    left: 20px;
+}
+
+.carta .contenido h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    line-height: 1em;
+}
+
+.carta .contenido p {
+    color: #fff;
+}
+
+.navbar {
+    background: #2C74B3;
+}
+
+.footer {
+    background: #2C74B3;
+}
+
+#bienvenida {
+    color: #2C74B3;
+}
+
+.pregunta {
+    color: #2C74B3;
+}

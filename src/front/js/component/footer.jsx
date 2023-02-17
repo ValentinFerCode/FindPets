@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-  <footer className="footer mt-auto py-3 text-center bg-danger">
+  <footer className="footer mt-auto py-3 text-center">
     <div className="container text-center">
       <div className="row align-items-start text-light">
         <div className="col">
@@ -47,7 +47,7 @@ export const Footer = () => (
             (@FindPets_Official)
           </p>
         </div>
-        <div className="col">Sobre FindPets</div>
+        {/* <div className="col">Sobre FindPets</div> */}
         <div className="col m-2">
           ¡Contáctanos!
           <p className="m-2">
@@ -56,13 +56,6 @@ export const Footer = () => (
         </div>
       </div>
     </div>
-    <div className="row align-items-start text-light">
-      <div className="col">
-        <p>Política de Privacidad</p>
-        <p>Política de Cookies</p>
-      </div>
-    </div>
-
     <div className="text-light">
       <p>
         <b>© 2023 Todos los derechos reservados. FindPets.</b>
