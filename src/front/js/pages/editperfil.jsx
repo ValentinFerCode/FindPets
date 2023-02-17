@@ -19,6 +19,7 @@ export const EditPerfil = () => {
   //
   useEffect(() => {
     window.scrollTo(0, 0);
+    actions.getOneUser(store.userSession.id);
   }, []);
 
   //

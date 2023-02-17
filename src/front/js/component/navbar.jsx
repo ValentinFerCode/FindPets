@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 import { useNavigate, Navigate } from "react-router-dom";
@@ -6,6 +6,11 @@ import { useNavigate, Navigate } from "react-router-dom";
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    actions.getOneUser(store.userSession.id);
+  }, []);
 
   function handleLogout() {
     actions.logout(); //cerrar la sesion
