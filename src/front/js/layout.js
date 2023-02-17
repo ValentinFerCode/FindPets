@@ -15,6 +15,9 @@ import { OnePet } from "./pages/mascota.jsx";
 import { Perfil } from "./pages/perfil.jsx";
 import { AllListas } from "./pages/listas.jsx";
 import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
+import { EditPerfil } from "./pages/editperfil.jsx";
+import { ChangePassword } from "./pages/changepassword.jsx";
+import { EditMascota } from "./pages/editmascota.jsx";
 
 // create your first component
 const Layout = () => {
@@ -35,18 +38,21 @@ const Layout = () => {
               path="/recuperacion_clave"
             />
             <Route element={<PetForm />} path="/formencontrado" />{" "}
-            {/* <Route element={<FormAdoptar/>} path="/formadoptar"/> */}
+            {/* <Route element={<FormAdoptar/>} path="/formadoptar"/> */}{" "}
             <Route element={<FormAdoptar />} path="/formadoptar" />
             <Route element={<OnePet />} path="/mascota/:id" />
             <Route element={<Perfil />} path="/perfil" />
-            <Route element={<h1>Not found!</h1>} />
+            <Route element={<h1> Not found! </h1>} />
             <Route element={<Register />} path="/register" />
             <Route element={<Perfil />} path="/perfil" />
             <Route element={<AllListas />} path="/listas" />
-          </Routes>
+            <Route element={<EditPerfil />} path="/perfil/edit" />
+            <Route element={<ChangePassword />} path="/perfil/changepassword" />
+            <Route element={<EditMascota />} path="/mascota/edit" />
+          </Routes>{" "}
           <Footer />
-        </ScrollToTop>
-      </BrowserRouter>
+        </ScrollToTop>{" "}
+      </BrowserRouter>{" "}
     </div>
   );
 };
