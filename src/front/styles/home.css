@@ -228,3 +228,8 @@ img[src$="#custom_marker"] {
 .pregunta {
     color: #2C74B3;
 }
+
+.logo-pagina {
+    width: 200px;
+
+}

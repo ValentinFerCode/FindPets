@@ -21,16 +21,17 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg " >
       <div className="container-fluid">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="navbar-brand mb-0 h1 text-white fs-2">
-            FindPets
+          {/* <span className="navbar-brand mb-0 h1 text-white fs-2"> */}
+            <img src="https://i.imgur.com/tkKWUot.png" className="logo-pagina"/>
+            {/* FindPets
             <i className="fa fa-paw mx-1"></i>
-          </span>
+          </span> */}
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item fs-6">
               <Link to="/listas" style={{ textDecoration: "none" }}>
-                <span className="text-white">Lista de Mascotas</span>
+                <span className="text-white m-2">Lista de Mascotas</span>
               </Link>
             </li>
           </ul>
