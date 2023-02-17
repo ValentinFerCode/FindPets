@@ -207,10 +207,7 @@ def putPets(mascota_id):
         pet.latitud = body["latitud"]
         pet.longitud = body["longitud"]
         pet.url = body["url"]
-<<<<<<< HEAD
         # pet.usuario_id = body["usuario_id"]
-=======
->>>>>>> d4d0e07c904952012df31d9d03975c41b474148a
 
         db.session.add(pet)
         db.session.commit()
@@ -220,10 +217,10 @@ def putPets(mascota_id):
         }
         return jsonify(response_body), 200
 
-    response_body = {
+        response_body = {
             "msg": "La mascota no existe en el sistema"
         }
-    return jsonify(response_body), 400
+        return jsonify(response_body), 400
 
 # Get - All Mascotas Perdidas
 @api.route('/pets/lost', methods=['GET'])
