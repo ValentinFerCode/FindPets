@@ -54,24 +54,30 @@ export const OnePet = () => {
               <div className="container w-75 mx-auto my-3">
                 <div className="border-bottom border-danger">
                   {/* Boton Modificar */}
-                  {store.userSession.id === store.oneUser.id &&
+                  {store.userSession.id === store.onePet.usuario_id &&
                   store.auth == true ? (
-                    <button className="float-end btn btn-outline-primary border-0">
+                    <Link
+                      to={"/mascota/edit"}
+                      className="float-end btn btn-outline-secondary "
+                    >
                       <i className="fa fa-edit"></i>
-                    </button>
+                    </Link>
                   ) : null}
                   {/* Boton Eliminar */}
-                  {store.userSession.id === store.oneUser.id &&
+                  {store.userSession.id === store.onePet.usuario_id &&
                   store.auth == true ? (
                     <button
-                      className="float-end btn btn-outline-dark border-0 mx-1"
+                      className="float-end btn btn-outline-primary fw-semibold mx-1"
                       onClick={deletePet}
                     >
-                      <i className="fa fa-trash-alt"></i>
+                      {store.onePet.estado == "lost"
+                        ? "Encontrado"
+                        : "Adoptado"}
+                      <i className="fa fa-smile-beam mx-1"></i>
                     </button>
                   ) : null}
 
-                  <h1 className="text-center text-danger">PET INFORMATION</h1>
+                  <h1 className="text-start text-danger">PET INFORMATION</h1>
                 </div>
                 <form>
                   <div className="form-group row">

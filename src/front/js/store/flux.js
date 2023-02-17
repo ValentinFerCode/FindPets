@@ -144,6 +144,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                   title: "Oops...",
                   text: "Mascota publicada con exito!",
                 });
+                setStore({
+                  imagePet: "",
+                });
               }
               return response.json();
             })
@@ -277,6 +280,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       getOneUser: (id) => {
+        let store = getStore();
         try {
           fetch(process.env.BACKEND_URL + "/api/users/" + id, {
             method: "GET",
@@ -289,8 +293,12 @@ const getState = ({ getStore, getActions, setStore }) => {
               console.log(data);
               setStore({
                 oneUser: data,
-                userSession: data,
               });
+              if (data.id == store.userSession.id) {
+                setStore({
+                  userSession: data,
+                });
+              }
             });
           //
         } catch (e) {
@@ -500,6 +508,65 @@ const getState = ({ getStore, getActions, setStore }) => {
             .then((data) => {
               console.log(data);
             });
+        } catch (e) {
+          console.log(e);
+        }
+      },
+      updatePet: (
+        genero,
+        tamaño,
+        color,
+        descripcion,
+        edad,
+        raza,
+        especie,
+        latitud,
+        longitud,
+        urlimage,
+        estado,
+        mascota_id
+      ) => {
+        try {
+          fetch(process.env.BACKEND_URL + "/api/pets", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              genero: genero,
+              tamaño: tamaño,
+              color: color,
+              descripcion: descripcion,
+              edad: edad,
+              raza: raza,
+              estado: estado,
+              especie: especie,
+              latitud: latitud,
+              longitud: longitud,
+              url: urlimage,
+              mascota_id: mascota_id,
+            }),
+          })
+            .then((response) => {
+              if (response.status === 200) {
+                Swal.fire({
+                  icon: "success",
+                  title: "Oops...",
+                  text: "Mascota modificada con exito!",
+                });
+              } else {
+                Swal.fire({
+                  icon: "error",
+                  title: "Opps..",
+                  text: "Hubo un problema al eliminar el usuario.",
+                });
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log(data);
+            });
+          //
         } catch (e) {
           console.log(e);
         }
