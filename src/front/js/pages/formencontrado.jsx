@@ -39,20 +39,20 @@ export const PetForm = () => {
       console.log(store.imagePet == "");
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "La imagen no quedo subida correctamente!",
+        title: "Ups...",
+        text: "La imagen no quedo subida correctamente",
       });
     } else if (lat == "" || lng == "") {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Debe seleccionar una ubicación en el mapa!",
+        title: "Ups...",
+        text: "¡Debe seleccionar una ubicación en el mapa!",
       });
     } else {
       actions.petsPost(

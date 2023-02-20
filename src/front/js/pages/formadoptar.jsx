@@ -30,14 +30,14 @@ export const FormAdoptar = () => {
       console.log(store.imagePet == "");
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "La imagen no quedo subida correctamente!",
+        title: "Ups...",
+        text: "La imagen no quedo subida correctamente",
       });
     } else {
       actions.petsPost(

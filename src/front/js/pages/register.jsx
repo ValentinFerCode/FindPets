@@ -33,8 +33,8 @@ export const Register = () => {
     } else {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     }
   }

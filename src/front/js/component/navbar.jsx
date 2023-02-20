@@ -42,7 +42,7 @@ export const Navbar = () => {
                   className="btn btn-outline-light mx-3 rounded-pill btn-lg"
                 >
                   <i className="fa fa-sign-in-alt mx-2"></i>
-                  Log In
+                  Iniciar sesión
                 </button>
               </Link>
             ) : null}

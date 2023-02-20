@@ -27,41 +27,32 @@ export const Animal_encontrado = (props) => {
                       <div className="row g-2 justify-content-end me-2">
                         <div className="col-6">
                           <div className="p-3">
-                            <strong>
-                               Género:
-                            </strong>{" "}
-                            {item.genero}
+                            <strong>Género</strong> {item.genero}
                           </div>
                         </div>
                         <div className="col-6">
                           <div className="p-3">
-                            <strong>Tamaño:</strong> {item.tamaño}
+                            <strong>Tamaño</strong> {item.tamaño}
                           </div>
                         </div>
                         <div className="col-6">
                           <div className="p-3">
-                            <strong>
-                               Color:
-                            </strong>{" "}
-                            {item.color}
+                            <strong>Color</strong> {item.color}
                           </div>
                         </div>
                         <div className="col-6">
                           <div className="p-3">
-                            <strong>Edad:</strong> {item.edad}
+                            <strong>Edad</strong> {item.edad}
                           </div>
                         </div>
                         <div className="col-6">
                           <div className="p-3">
-                            <strong>Raza:</strong> {item.raza}
+                            <strong>Raza</strong> {item.raza}
                           </div>
                         </div>
                         <div className="col-6">
                           <div className="p-3">
-                            <strong>
-                               Especie:
-                            </strong>{" "}
-                            {item.especie}
+                            <strong>Especie</strong> {item.especie}
                           </div>
                         </div>
                       </div>
