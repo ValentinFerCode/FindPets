@@ -26,8 +26,8 @@ export const OnePet = () => {
 
   function deletePet() {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estás seguro/a?",
+      text: "¡No podrás revertir esta acción!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -78,7 +78,7 @@ export const OnePet = () => {
                   ) : null}
 
                   <h1 className="text-start pet-information">
-                    PET INFORMATION
+                    Información de la mascota
                   </h1>
                 </div>
                 <form>
@@ -101,7 +101,7 @@ export const OnePet = () => {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mb-3">
-                      <label className="form-label">Genero</label>
+                      <label className="form-label">Género</label>
                       <input
                         type=""
                         className="form-control"
@@ -157,7 +157,7 @@ export const OnePet = () => {
                     </div>
 
                     <div className="col-md-6 mb-3">
-                      <label className="form-label">Especie:</label>
+                      <label className="form-label">Especie</label>
                       <input
                         type=""
                         className="form-control"

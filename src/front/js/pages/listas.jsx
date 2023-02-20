@@ -31,7 +31,7 @@ export const AllListas = () => {
             aria-controls="pills-home"
             aria-selected="true"
           >
-            Mascotas Perdidas
+            Mascotas perdidas
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -45,7 +45,7 @@ export const AllListas = () => {
             aria-controls="pills-profile"
             aria-selected="false"
           >
-            Mascotas para Adoptar
+            Mascotas para adoptar
           </button>
         </li>
         <li className="nav-item" role="presentation">

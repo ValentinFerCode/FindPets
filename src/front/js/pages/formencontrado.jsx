@@ -39,20 +39,20 @@ export const PetForm = () => {
       console.log(store.imagePet == "");
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "La imagen no quedo subida correctamente!",
+        title: "Ups...",
+        text: "La imagen no quedo subida correctamente",
       });
     } else if (lat == "" || lng == "") {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Debe seleccionar una ubicación en el mapa!",
+        title: "Ups...",
+        text: "¡Debe seleccionar una ubicación en el mapa!",
       });
     } else {
       actions.petsPost(
@@ -89,7 +89,7 @@ export const PetForm = () => {
             <div className="col-md-6">
               <div className="container w-75 mx-auto my-3">
                 <h1 className="text-center  border-bottom border-primary h1">
-                  PET LOST
+                  Mascota perdida
                 </h1>
 
                 {store.auth === false ? (
@@ -247,7 +247,7 @@ export const PetForm = () => {
 
                     <div className="d-grid gap-2 col-6 mx-auto">
                       <button type="submit" className="btn btn-lg btn-danger">
-                        Submit
+                        Publicar
                       </button>
                     </div>
                   </form>

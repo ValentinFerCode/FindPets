@@ -26,8 +26,8 @@ export const EditPerfil = () => {
   function updateUser(e) {
     e.preventDefault();
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Estpas seguro/a?",
+      text: "¡No podrás revertir esta acción!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -56,7 +56,7 @@ export const EditPerfil = () => {
         <div className="jumbotron m-3">
           <div className="rounded border border-primary">
             <h1 className="text-center border-bottom border-primary datos-modificar">
-              MODIFICAR DATOS{" "}
+              Modificar datos{" "}
             </h1>
             {/* TITULO */}
             <div className="container w-75 mx-auto my-3 ">
@@ -64,7 +64,7 @@ export const EditPerfil = () => {
                 <div className="form-group row">
                   <div className="col-md-6 mb-3">
                     <label htmlFor="firstname" className="form-label">
-                      First name
+                      Nombre
                     </label>
                     <input
                       type="text"
@@ -79,7 +79,7 @@ export const EditPerfil = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label htmlFor="lastname" className="form-label">
-                      Last name
+                      Apellido
                     </label>
                     <input
                       type="text"
@@ -96,7 +96,7 @@ export const EditPerfil = () => {
                 <div className="form-group row">
                   <div className="col-md-6 mb-3">
                     <label htmlFor="email" className="form-label">
-                      Email address
+                      Dirección de correo electrónico
                     </label>
                     <input
                       type="email"
@@ -112,7 +112,7 @@ export const EditPerfil = () => {
 
                   <div className="col-md-6 mb-3">
                     <label htmlFor="contact" className="form-label">
-                      Contact
+                      Contacto
                     </label>
                     <input
                       type="text"
@@ -128,7 +128,7 @@ export const EditPerfil = () => {
                 <div className="form-group row">
                   <div className="col-md-6 mb-3 mx-auto">
                     <label htmlFor="username" className="form-label">
-                      Username
+                      Nombre de usuario
                     </label>
                     <input
                       type="text"
@@ -156,14 +156,14 @@ export const EditPerfil = () => {
                       )
                     }
                   >
-                    Actualizar Datos
+                    Actualizar datos
                   </button>
                   <Link
                     to={"/perfil"}
                     type="button"
                     className="btn btn-lg btn-secondary"
                   >
-                    CANCELAR
+                    Cancelar
                   </Link>
                 </div>
               </form>
