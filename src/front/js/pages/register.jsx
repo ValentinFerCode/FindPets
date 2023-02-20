@@ -40,11 +40,9 @@ export const Register = () => {
   }
 
   return (
-    <div className="container w-50 mb-5">
-      <h1 className="text-center text-danger border-bottom border-danger">
-        SIGN UP
-      </h1>
-
+    <div className="container w-50 mb-5 registro">
+      <h1 className="text-center  border-bottom border-danger">SIGN UP</h1>
+<hr className="hr"></hr>
       {store.auth === true ? (
         <Navigate to="/" />
       ) : (
@@ -52,7 +50,7 @@ export const Register = () => {
           <div className="form-group row">
             <div className="col-md-6 mb-3">
               <label htmlFor="firstname" className="form-label">
-                First name
+                <b>First name</b>
               </label>
               <input
                 type="text"
