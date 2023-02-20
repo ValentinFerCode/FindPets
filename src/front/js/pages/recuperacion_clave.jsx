@@ -14,8 +14,8 @@ export const Recuperacion_clave = () => {
     if (email === "") {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     } else {
       actions.forgotPassword(email);
@@ -34,9 +34,9 @@ export const Recuperacion_clave = () => {
             style={{ maxWidth: "200px" }}
           />
         </div>
-        <div className="m-auto w-75 h-25 py-4">
-          <div className="d-flex align-content-center fs-6 recuperacion-contraseña">
-            <b>RECUPERACIÓN DE CONTRASEÑA</b>
+        <div className="m-auto w-80 h-25 py-4">
+          <div className="mx-4 fs-5 recuperacion-contraseña">
+            <b>Recuperación de contraseña</b>
           </div>
           <div className="h4 pb-2 mb-4 text-primary border-bottom border-primary"></div>
           <form onSubmit={forgotPassword}>

@@ -89,7 +89,7 @@ export const PetForm = () => {
             <div className="col-md-6">
               <div className="container w-75 mx-auto my-3">
                 <h1 className="text-center  border-bottom border-primary h1">
-                  PET LOST
+                  Mascota perdida
                 </h1>
 
                 {store.auth === false ? (
@@ -247,7 +247,7 @@ export const PetForm = () => {
 
                     <div className="d-grid gap-2 col-6 mx-auto">
                       <button type="submit" className="btn btn-lg btn-danger">
-                        Submit
+                        Publicar
                       </button>
                     </div>
                   </form>

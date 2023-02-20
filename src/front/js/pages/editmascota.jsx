@@ -280,7 +280,7 @@ export const EditMascota = () => {
 
                     <div className="d-grid gap-2 col-6 mx-auto mb-2">
                       <button type="submit" className="btn btn-lg btn-danger">
-                        ACTUALIZAR DATOS
+                        Actualizar datos
                       </button>
                     </div>
                     <div className="d-grid gap-2 col-6  mx-auto">
@@ -289,7 +289,7 @@ export const EditMascota = () => {
                         type="button"
                         className="btn btn-lg btn-secondary"
                       >
-                        CANCELAR
+                        Cancelar
                       </Link>
                     </div>
                   </form>

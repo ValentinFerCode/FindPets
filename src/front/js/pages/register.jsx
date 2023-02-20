@@ -41,7 +41,7 @@ export const Register = () => {
 
   return (
     <div className="container w-50 mb-5 registro">
-      <h1 className="text-center  border-bottom border-primary">SIGN UP</h1>
+      <h1 className="text-center  border-bottom border-primary">Registrarme</h1>
       {store.auth === true ? (
         <Navigate to="/" />
       ) : (
@@ -49,7 +49,7 @@ export const Register = () => {
           <div className="form-group row">
             <div className="col-md-6 mb-3 ">
               <label htmlFor="firstname" className="form-label ">
-                First name
+                Nombre
               </label>
               <input
                 type="text"
@@ -113,7 +113,7 @@ export const Register = () => {
           <div className="form-group row">
             <div className="col-md-6 mb-3">
               <label htmlFor="username" className="form-label">
-                Usuario
+                Nombre de usuario
               </label>
               <input
                 type="text"
@@ -143,7 +143,7 @@ export const Register = () => {
 
           <div className="d-grid gap-2 col-6 mx-auto">
             <button type="submit" className=" submit mx-auto">
-              Registrarme
+              Enviar
             </button>
           </div>
         </form>
