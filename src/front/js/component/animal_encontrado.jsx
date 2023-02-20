@@ -16,9 +16,9 @@ export const Animal_encontrado = (props) => {
             style={{ textDecoration: "none", color: "black" }}
           >
             <div className="jumbotron listPet m-4 shadow-lg bg-body-tertiary rounded">
-              <div className="rounded border border-danger">
+              <div className="rounded border border-primary">
                 <div className="row ">
-                  <div className="col-md-2 border-end border-danger">
+                  <div className="col-md-2 border-end border-primary">
                     <img src={item.url} />
                   </div>
                   <div className="col-md-6 m-auto mx-3">

@@ -7,98 +7,470 @@
 */
 
 .map-container {
-  width: 100%;
-  height: 84vh;
+    width: 100%;
+    height: 84vh;
 }
 
 .map-mascota {
-  width: 100%;
-  height: 93vh;
+    width: 100%;
+    height: 93vh;
 }
 
 img[src$="#custom_marker"] {
-  position: absolute;
-  cursor: pointer;
-  border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .listPet {
-  border-radius: 4px;
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow,
-    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-  cursor: pointer;
-  opacity: 0.5;
+    border-radius: 4px;
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+        0.3s box-shadow,
+        0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 .listPet:hover {
-  transform: scale(1.05);
-  opacity: 1;
+    transform: scale(1.05);
+    opacity: 1;
 }
 
 .scrollable {
-  margin: 4px, 4px;
-  padding: 4px;
-  height: 70vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+    margin: 4px, 4px;
+    padding: 4px;
+    height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .scrollable::-webkit-scrollbar {
-  display: none;
-  /* for Chrome, Safari, and Opera */
+    display: none;
+    /* for Chrome, Safari, and Opera */
 }
 
 .listPet img {
-  width: 14rem;
-  height: 14rem;
-  object-fit: cover;
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
 }
 
 .onePet {
-  width: 12rem;
-  height: 12rem;
-  object-fit: cover;
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
 }
 
 .listPerfil {
-  border-radius: 4px;
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow,
-    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-  cursor: pointer;
-  opacity: 0.5;
+    border-radius: 4px;
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+        0.3s box-shadow,
+        0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 .listPerfil:hover {
-  transform: scale(1.05);
-  opacity: 1;
+    transform: scale(1.05);
+    opacity: 1;
 }
 
 .listPerfil img {
-  width: 10rem;
-  height: 10rem;
-  object-fit: cover;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
 }
 
 .scrollablePerfil {
-  margin: 4px, 4px;
-  padding: 4px;
-  height: 30vh;
-  overflow-x: scroll;
-  overflow-y: hidden;
+    margin: 4px, 4px;
+    padding: 4px;
+    height: 30vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .scrollablePerfil::-webkit-scrollbar {
-  height: 10px;
-  background-color: rbg(33, 37, 41);
+    height: 10px;
+    background-color: rbg(33, 37, 41);
 }
 
 .scrollablePerfil::-webkit-scrollbar-thumb {
-  background-color: rgb(141, 141, 141);
-  border-radius: 9px;
+    background-color: rgb(141, 141, 141);
+    border-radius: 9px;
 }
 
 .scrollablePerfil::-webkit-scrollbar-corner {
-  display: none;
+    display: none;
+}
+
+.carta {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    /* background: #333; */
+    transition-delay: 0.5s;
+}
+
+.carta:hover {
+    width: 600px;
+    transition-delay: 0.5s;
+}
+
+.carta .circulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carta .circulo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #2c74b3;
+    border: 8px solid #2c74b3;
+    filter: drop-shadow(0 0 10px #2c74b3) drop-shadow(0 0 60px #2c74b3);
+    transition: 0.5s, background 0.5s;
+    transition-delay: 0.75s, 1s;
+}
+
+.carta:hover .circulo::before {
+    transition-delay: 0.5s;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #82aae3;
+}
+
+.carta .circulo .logo {
+    position: relative;
+    width: 250px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.carta:hover .circulo .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.carta .perro_gato {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 100px;
+    transition: 0.5 ease-in-out;
+}
+
+.carta:hover .perro_gato {
+    transition-delay: 0.75s;
+    left: 72%;
+    height: 250px;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+}
+
+.carta .contenido {
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+.carta:hover .contenido {
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+    left: 20px;
+}
+
+.carta .contenido h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    line-height: 1em;
+}
+
+.carta .contenido p {
+    color: #fff;
+}
+
+.navbar {
+    background: #2c74b3;
+}
+
+.footer {
+    background: #2c74b3;
+}
+
+#bienvenida {
+    color: #2c74b3;
+}
+
+.pregunta {
+    color: #2c74b3;
+}
+
+.logo-pagina {
+    width: 200px;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #2c74b3;
+    min-height: 50px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer .redes_iconos,
+.footer .menu-footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.footer .redes_iconos li,
+.footer .menu-footer li {
+    list-style: none;
+}
+
+.footer .redes_iconos li a {
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.footer .redes_iconos li a:hover {
+    transform: translateY(-10px);
+}
+
+.footer .menu-footer li a {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer .menu-footer li a:hover {
+    opacity: 1;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contenedor-carta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px0 0;
+    gap: 60px;
+}
+
+.contenedor-carta .box {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background: #82aae3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-carta .box::before {
+    content: "";
+    position: absolute;
+    inset: -10px 50px;
+    border-top: 4px solid var(--clr);
+    border-bottom: 4px solid var(--clr);
+    z-index: -1;
+    transform: skew(15deg);
+    transition: 0.5s ease-in-out;
+}
+
+.contenedor-carta .box:hover::before {
+    transform: skew(0deg);
+    inset: -10px 40px;
+}
+
+.contenedor-carta .box::after {
+    content: "";
+    position: absolute;
+    inset: 60px -10px;
+    border-left: 4px solid var(--clr);
+    border-right: 4px solid var(--clr);
+    z-index: -1;
+    transform: skewY(15deg);
+    transition: 0.5s ease-in-out;
+}
+
+.contenedor-carta .box:hover::after {
+    transform: skewY(0deg);
+    inset: 40px -10px;
+}
+
+.contenedor-carta .box .contenido_carta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor-carta .box .contenido_carta .icono_carta_home {
+    color: var(--clr);
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 00 4px #ffffff, 0 0 0 6px var(--clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    background: #ffffff;
+    transition: 0.5s ease-in-out;
+}
+
+.contenedor-carta .box:hover .contenido_carta .icono_carta_home {
+    background: var(--clr);
+    color: #ffffff;
+    box-shadow: 0 0 0 4px #ffffff, 0 0 0 300px var(--clr);
+}
+
+.contenedor-carta .box .contenido_carta .texto_carta_home h3 {
+    font-size: 1.5em;
+    color: #000;
+    font-weight: 500;
+    transition: 0.5s ease-in-out;
+}
+
+.contenedor-carta .box:hover .contenido_carta .texto_carta_home h3 {
+    color: #ffffff;
+}
+
+.contenedor-carta .box .contenido_carta .texto_carta_home p {
+    color: #000000;
+    transition: 0.5s ease-in-out;
+}
+
+.contenedor-carta .box:hover .contenido_carta .texto_carta_home p {
+    color: #ffffff;
+}
+
+.login {
+    color: #2c74b3;
+}
+
+.registro {
+    color: #2c74b3;
+}
+
+.nav-link {
+    color: #2c74b3;
+}
+
+.perfil {
+    color: #2c74b3;
+}
+
+.recuperacion-contraseña {
+    color: #2c74b3;
+}
+
+.enviar-contraseña {
+    font-size: 15px;
+    font-family: Arial;
+    width: 185px;
+    height: 43px;
+    border-width: 1px;
+    color: #ffffff;
+    border-color: #337fed;
+    font-weight: bold;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    text-shadow: inset 0px 1px 0px #1570cd;
+    background: linear-gradient(#3d94f6, #1e62d0);
+}
+
+.enviar-contraseña:hover {
+    background: linear-gradient(#1e62d0, #3d94f6);
+}
+
+.submit {
+    font-size: 15px;
+    font-family: Arial;
+    width: 200px;
+    height: 48px;
+    border-width: 1px;
+    color: #ffffff;
+    border-color: #337fed;
+    font-weight: bold;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    text-shadow: inset 0px 1px 0px #1570cd;
+    background: linear-gradient(#3d94f6, #1e62d0);
+}
+
+.submit:hover {
+    background: linear-gradient(#1e62d0, #3d94f6);
+}
+
+.datos-modificar {
+    color: #2c74b3;
+}
+
+.pet-information {
+    color: #2c74b3;
+}
+
+.h1 {
+    color: #2c74b3;
 }

@@ -72,18 +72,18 @@ export const Perfil = () => {
         <Navigate to="/" />
       ) : (
         <div className="jumbotron m-3 ">
-          <div className="rounded border border-danger">
-            <h1 className="text-center text-danger border-bottom border-danger">
+          <div className="rounded border border-primary">
+            <h1 className="text-center border-bottom border-primary perfil">
               PERFIL DEL USUARIO
             </h1>
             {/* TITULO */}
             <div className="container w-75 mx-auto my-3 ">
-              <div className="row g-0 border-bottom border-danger">
+              <div className="row g-0 border-bottom border-primary">
                 <form onSubmit={updateUser}>
                   <div className="form-group row">
                     <div className="col-md-6 mb-3">
                       <label htmlFor="firstname" className="form-label">
-                        First name
+                        Nombre
                       </label>
                       <input
                         type="text"
@@ -95,7 +95,7 @@ export const Perfil = () => {
                     </div>
                     <div className="col-md-6 mb-3">
                       <label htmlFor="lastname" className="form-label">
-                        Last name
+                        Apellido
                       </label>
                       <input
                         type="text"
@@ -109,7 +109,7 @@ export const Perfil = () => {
                   <div className="form-group row">
                     <div className="col-md-6 mb-3">
                       <label htmlFor="email" className="form-label">
-                        Email address
+                        Correo electrónico
                       </label>
                       <input
                         type="email"
@@ -123,7 +123,7 @@ export const Perfil = () => {
 
                     <div className="col-md-6 mb-3">
                       <label htmlFor="contact" className="form-label">
-                        Contact
+                        Contacto
                       </label>
                       <input
                         type="text"
@@ -137,7 +137,7 @@ export const Perfil = () => {
                   <div className="form-group row">
                     <div className="col-md-6 mb-3 mx-auto">
                       <label htmlFor="username" className="form-label">
-                        Username
+                        Usuario
                       </label>
                       <input
                         type="text"
@@ -188,14 +188,14 @@ export const Perfil = () => {
                       {store.petsUser.map((item, id) => (
                         <div className="btn m-3 ms-0 rounded " key={id}>
                           <div
-                            className="card listPerfil border-danger "
+                            className="card listPerfil border-primary "
                             style={{ width: "10rem", height: "10rem" }}
                           >
                             <Link
                               style={{ textDecoration: "none" }}
                               to={"/mascota/" + item.id}
                             >
-                              <div className="border-bottom border-danger">
+                              <div className="border-bottom border-primary">
                                 <img
                                   src={item.url}
                                   className="card-img-top"

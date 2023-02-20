@@ -6,9 +6,9 @@ import { Context } from "../store/appContext.js";
 
 export const Recuperacion_clave = () => {
   const { store, actions } = useContext(Context);
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
+  const navigate = useNavigate("");
   function forgotPassword(e) {
     e.preventDefault();
     if (email === "") {
@@ -26,7 +26,7 @@ export const Recuperacion_clave = () => {
 
   return (
     <>
-      <div className="mx-auto m-4 w-25 p-3 card-text-center border border-danger">
+      <div className="mx-auto m-4 w-25 p-3 card-text-center border border-primary">
         <div className="mt-3 d-flex justify-content-center">
           <img
             src="https://cdn.pixabay.com/photo/2015/10/30/10/40/key-1013662_960_720.jpg"
@@ -35,10 +35,10 @@ export const Recuperacion_clave = () => {
           />
         </div>
         <div className="m-auto w-75 h-25 py-4">
-          <div className="d-flex align-content-center text-danger fs-6">
+          <div className="d-flex align-content-center fs-6 recuperacion-contraseña">
             <b>RECUPERACIÓN DE CONTRASEÑA</b>
           </div>
-          <div className="h4 pb-2 mb-4 text-danger border-bottom border-danger"></div>
+          <div className="h4 pb-2 mb-4 text-primary border-bottom border-primary"></div>
           <form onSubmit={forgotPassword}>
             <div>
               <label
@@ -57,7 +57,7 @@ export const Recuperacion_clave = () => {
               />
             </div>
             <div className="mt-5 d-flex justify-content-center">
-              <button type="submit" className="btn btn-danger btn-sm">
+              <button type="submit" className="enviar-contraseña btn-sm">
                 Enviar
               </button>
             </div>
