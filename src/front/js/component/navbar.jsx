@@ -53,7 +53,7 @@ export const Navbar = () => {
                   className="btn btn-light rounded-pill btn-lg"
                 >
                   <i className="fa fa-user-plus mx-2"></i>
-                  Sign Up
+                  Registro
                 </button>
               </Link>
             ) : null}
@@ -97,14 +97,14 @@ export const Navbar = () => {
                 <ul className="dropdown-menu">
                   <Link to={"/perfil"}>
                     <button className="dropdown-item float-start">
-                      Account
+                      Mi cuenta
                     </button>
                   </Link>
                   <button
                     className="dropdown-item float-start text-danger"
                     onClick={handleLogout}
                   >
-                    Logout
+                    Cerrar sesión
                   </button>
                 </ul>
               </div>

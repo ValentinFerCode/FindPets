@@ -42,7 +42,7 @@ export const EditMascota = () => {
       Swal.fire({
         icon: "error",
         title: "Ups...",
-        text: "Faltan datos por completar!",
+        text: "¡Faltan datos por completar!",
       });
     } else if (lat == "" || lng == "") {
       Swal.fire({
@@ -52,7 +52,7 @@ export const EditMascota = () => {
       });
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
-        title: "¿Estás seguro?",
+        title: "¿Estás seguro/a?",
         text: "¡No podrás revertir esta acción!",
         icon: "warning",
         showCancelButton: true,
