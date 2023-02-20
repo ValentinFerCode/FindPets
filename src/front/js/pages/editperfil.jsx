@@ -54,8 +54,8 @@ export const EditPerfil = () => {
         <Navigate to="/" />
       ) : (
         <div className="jumbotron m-3">
-          <div className="rounded border border-danger">
-            <h1 className="text-center text-danger border-bottom border-danger">
+          <div className="rounded border border-primary">
+            <h1 className="text-center border-bottom border-primary datos-modificar">
               MODIFICAR DATOS{" "}
             </h1>
             {/* TITULO */}

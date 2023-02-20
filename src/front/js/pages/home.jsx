@@ -72,7 +72,7 @@ export const Home = () => {
             <div className="texto_carta_home">
               <h3>¡Es gratis!</h3>
               <p>
-                FindPets fue pensada y creada sin fines de lucros, sin embargo, aceptamos retribuciones como forma de agradecimiento para que la página siga funcionando y brindando una ayuda a todas las familias del país.
+                FindPets fue pensada y creada sin fines de lucro, sin embargo, aceptamos donaciones como forma de agradecimiento para que la página siga funcionando y brindando ayuda a todas las familias del país.
               </p>
             </div>
           </div>

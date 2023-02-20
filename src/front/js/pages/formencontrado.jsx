@@ -84,11 +84,11 @@ export const PetForm = () => {
   return (
     <div className="container-fluid">
       <div className="jumbotron m-3">
-        <div className="rounded border border-danger">
+        <div className="rounded border border-primary">
           <div className="row g-0">
             <div className="col-md-6">
               <div className="container w-75 mx-auto my-3">
-                <h1 className="text-center text-danger border-bottom border-danger">
+                <h1 className="text-center  border-bottom border-primary h1">
                   PET LOST
                 </h1>
 
@@ -248,7 +248,7 @@ export const PetForm = () => {
                 )}
               </div>
             </div>
-            <div className="col-md-6 border-start border-danger">
+            <div className="col-md-6 border-start border-primary">
               {isLoaded ? (
                 <GoogleMap
                   zoom={11}

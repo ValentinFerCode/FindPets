@@ -407,10 +407,70 @@ footer p {
     color: #2c74b3;
 }
 
-.hr {
+.nav-link {
     color: #2c74b3;
 }
 
-.nav-link {
+.perfil {
+    color: #2c74b3;
+}
+
+.recuperacion-contraseña {
+    color: #2c74b3;
+}
+
+.enviar-contraseña {
+    font-size: 15px;
+    font-family: Arial;
+    width: 185px;
+    height: 43px;
+    border-width: 1px;
+    color: #ffffff;
+    border-color: #337fed;
+    font-weight: bold;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    text-shadow: inset 0px 1px 0px #1570cd;
+    background: linear-gradient(#3d94f6, #1e62d0);
+}
+
+.enviar-contraseña:hover {
+    background: linear-gradient(#1e62d0, #3d94f6);
+}
+
+.submit {
+    font-size: 15px;
+    font-family: Arial;
+    width: 200px;
+    height: 48px;
+    border-width: 1px;
+    color: #ffffff;
+    border-color: #337fed;
+    font-weight: bold;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    text-shadow: inset 0px 1px 0px #1570cd;
+    background: linear-gradient(#3d94f6, #1e62d0);
+}
+
+.submit:hover {
+    background: linear-gradient(#1e62d0, #3d94f6);
+}
+
+.datos-modificar {
+    color: #2c74b3;
+}
+
+.pet-information {
+    color: #2c74b3;
+}
+
+.h1 {
     color: #2c74b3;
 }

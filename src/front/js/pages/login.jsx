@@ -85,7 +85,7 @@ export const Login = () => {
             </div>
             <div className="mx-auto m-4">
               <Link to="/recuperacion_clave">
-                <button type="submit" className="buttonClassContraseña">
+                <button type="submit" className="buttonClassContraseña m-2">
                   Olvidé mi contraseña
                 </button>
               </Link>

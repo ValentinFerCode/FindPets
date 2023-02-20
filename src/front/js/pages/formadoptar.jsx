@@ -67,11 +67,11 @@ export const FormAdoptar = () => {
   return (
     <div className="container-fluid">
       <div className="jumbotron m-3">
-        <div className="rounded border border-danger">
+        <div className="rounded border border-primary">
           <div className="row g-0">
             <div className="col-md-12">
               <div className="container w-75 mx-auto my-3">
-                <h1 className="text-center text-danger border-bottom border-danger">
+                <h1 className="text-center h1 border-bottom border-primary">
                   PET ADOPT
                 </h1>
 
