@@ -39,8 +39,8 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
-                                    text: "Usuario creado con exito!",
+                                    title: "¡Bienvenido!",
+                                    text: "Usuario creado con éxito",
                                 });
                             }
                             return response.json();
@@ -49,8 +49,8 @@ const getState = ({
                             if (data.msg === "User exist in the system") {
                                 Swal.fire({
                                     icon: "error",
-                                    title: "Oops...",
-                                    text: "Ya existe una cuenta con ese usuario o email!",
+                                    title: "Ups...",
+                                    text: "¡Ya existe una cuenta con ese usuario o email!",
                                 });
                             }
                             console.log(data);
@@ -86,8 +86,8 @@ const getState = ({
                         if (data.msg === "Bad username or password") {
                             Swal.fire({
                                 icon: "error",
-                                title: "Oops...",
-                                text: "Usuario o contraseña incorrecto!",
+                                title: "Ups...",
+                                text: "¡Usuario o contraseña incorrecto!",
                             });
                         } else {
                             localStorage.setItem("token", data.access_token);
@@ -145,8 +145,8 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
-                                    text: "Mascota publicada con exito!",
+                                    title: "¡Bien hecho!",
+                                    text: "Mascota publicada con éxito",
                                 });
                                 setStore({
                                     imagePet: "",
@@ -203,14 +203,14 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
-                                    text: "La foto fue subida de forma exitosa!",
+                                    title: "¡Bien hecho!",
+                                    text: "La foto fue subida de forma exitosa",
                                 });
                             } else {
                                 Swal.fire({
                                     icon: "error",
-                                    title: "Oops...",
-                                    text: "Hubo algun error al momento de subir la foto!",
+                                    title: "Ups...",
+                                    text: "¡Hubo algun error al momento de subir la foto!",
                                 });
                             }
                             return response.json();
@@ -322,13 +322,13 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Good",
-                                    text: "Mascota eliminada con exito!",
+                                    title: "¡Bien hecho!",
+                                    text: "Mascota eliminada con éxito",
                                 });
                             } else {
                                 Swal.fire({
                                     icon: "error",
-                                    title: "Opps..",
+                                    title: "Ups...",
                                     text: "Hubo un problema al eliminar la mascota.",
                                 });
                             }
@@ -357,13 +357,13 @@ const getState = ({
                         if (response.status === 200) {
                             Swal.fire({
                                 icon: "success",
-                                title: "Contraseña actualizada",
-                                text: "Su nueva contraseña fue enviada a su correo electronico!",
+                                title: "¡Contraseña actualizada!",
+                                text: "Su nueva contraseña fue enviada a su correo electronico",
                             });
                         } else {
                             Swal.fire({
                                 icon: "error",
-                                title: "Opps..",
+                                title: "Ups...",
                                 text: "El email no existe en el sistema",
                             });
                         }
@@ -421,8 +421,8 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
-                                    text: "Usuario modificado con exito!",
+                                    title: "¡Bien hecho!",
+                                    text: "Usuario modificado con exito",
                                 });
                             }
                             return response.json();
@@ -431,8 +431,8 @@ const getState = ({
                             if (data.msg === "El usuario no existe en el sistema") {
                                 Swal.fire({
                                     icon: "error",
-                                    title: "Oops...",
-                                    text: "No existe una cuenta con ese usuario o email!",
+                                    title: "Ups...",
+                                    text: "No existe una cuenta con ese usuario o email",
                                 });
                             }
                             console.log(data);
@@ -458,8 +458,8 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
-                                    text: "Contraseña modificada con exito!",
+                                    title: "¡Bien hecho!",
+                                    text: "Contraseña modificada con exito",
                                 });
                             }
                             return response.json();
@@ -468,8 +468,8 @@ const getState = ({
                             if (data.msg === "El usuario no existe en el sistema") {
                                 Swal.fire({
                                     icon: "error",
-                                    title: "Oops...",
-                                    text: "No existe una cuenta con ese usuario o email!",
+                                    title: "Ups...",
+                                    text: "No existe una cuenta con ese usuario o email",
                                 });
                             }
                             console.log(data);
@@ -491,8 +491,8 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Good",
-                                    text: "Usuario eliminado con exito!",
+                                    title: "¡Bien hecho!",
+                                    text: "Usuario eliminado con éxito",
                                 });
                                 //
                                 localStorage.removeItem("token");
@@ -502,8 +502,8 @@ const getState = ({
                             } else {
                                 Swal.fire({
                                     icon: "error",
-                                    title: "Opps..",
-                                    text: "Hubo un problema al eliminar el usuario.",
+                                    title: "Ups...",
+                                    text: "Hubo un problema al eliminar el usuario",
                                 });
                             }
                             return response.json();
@@ -554,14 +554,14 @@ const getState = ({
                             if (response.status === 200) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Oops...",
-                                    text: "Mascota modificada con exito!",
+                                    title: "¡Bien hecho!",
+                                    text: "Mascota modificada con éxito",
                                 });
                             } else {
                                 Swal.fire({
                                     icon: "error",
-                                    title: "Opps..",
-                                    text: "Hubo un problema al eliminar el usuario.",
+                                    title: "Ups...",
+                                    text: "Hubo un problema al eliminar el usuario",
                                 });
                             }
                             return response.json();

@@ -41,24 +41,24 @@ export const EditMascota = () => {
       console.log(store.imagePet == "");
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     } else if (lat == "" || lng == "") {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Debe seleccionar una ubicación en el mapa!",
+        title: "Ups...",
+        text: "¡Debe seleccionar una ubicación en el mapa!",
       });
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "¿Estás seguro/a?",
+        text: "¡No podrás revertir esta acción!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, update it!",
+        confirmButtonText: "¡Sí, deseo actualizarlo!",
       }).then((result) => {
         if (result.isConfirmed) {
           actions.updatePet(
@@ -124,8 +124,8 @@ export const EditMascota = () => {
           <div className="row g-0">
             <div className="col-md-6">
               <div className="container w-75 mx-auto my-3">
-                <h1 className="text-center border-bottom border-primary h1">
-                  PET LOST
+                <h1 className="text-center text-danger border-bottom border-danger">
+                  MASCOTA PERDIDA
                 </h1>
 
                 {store.auth === false ? (
@@ -152,7 +152,7 @@ export const EditMascota = () => {
                     <div className="form-group row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="genero" className="form-label">
-                          Genero
+                          Género
                         </label>
                         <select
                           className="form-select"
@@ -161,7 +161,7 @@ export const EditMascota = () => {
                           onChange={(e) => setGenero(e.target.value)}
                         >
                           <option value="" disabled>
-                            Selecciona un genero
+                            Selecciona un género
                           </option>
                           <option value="macho">Macho</option>
                           <option value="hembra">Hembra</option>
@@ -225,7 +225,7 @@ export const EditMascota = () => {
                     <div className="form-group row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="url" className="form-label">
-                          Especie:
+                          Especie
                         </label>
                         <select
                           className="form-select"
@@ -273,14 +273,14 @@ export const EditMascota = () => {
                           onClick={() => actions.uploadImage(urlimage)}
                           className="btn btn-primary"
                         >
-                          Subir Foto
+                          Subir foto
                         </button>
                       </div>
                     </div>
 
                     <div className="d-grid gap-2 col-6 mx-auto mb-2">
                       <button type="submit" className="btn btn-lg btn-danger">
-                        ACTUALIZAR DATOS
+                        Actualizar datos
                       </button>
                     </div>
                     <div className="d-grid gap-2 col-6  mx-auto">
@@ -289,7 +289,7 @@ export const EditMascota = () => {
                         type="button"
                         className="btn btn-lg btn-secondary"
                       >
-                        CANCELAR
+                        Cancelar
                       </Link>
                     </div>
                   </form>

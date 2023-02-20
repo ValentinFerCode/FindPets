@@ -27,8 +27,8 @@ export const Perfil = () => {
   function updateUser(e) {
     e.preventDefault();
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estás seguro/a?",
+      text: "¡No podrás revertir esta acción!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -52,13 +52,13 @@ export const Perfil = () => {
   //
   function deleteUser() {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estás seguro/a?",
+      text: "¡No podrás revertir esta acción!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Sí, eliminar el usuario",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.deleteUser(store.oneUser.id); // borramos el usuario
@@ -74,7 +74,7 @@ export const Perfil = () => {
         <div className="jumbotron m-3 ">
           <div className="rounded border border-primary">
             <h1 className="text-center border-bottom border-primary perfil">
-              PERFIL DEL USUARIO
+              Perfil del usuario
             </h1>
             {/* TITULO */}
             <div className="container w-75 mx-auto my-3 ">
@@ -137,7 +137,7 @@ export const Perfil = () => {
                   <div className="form-group row">
                     <div className="col-md-6 mb-3 mx-auto">
                       <label htmlFor="username" className="form-label">
-                        Usuario
+                        Nombre de usuario
                       </label>
                       <input
                         type="text"
@@ -155,7 +155,7 @@ export const Perfil = () => {
                         type="button"
                         className="btn btn-primary"
                       >
-                        MODIFICAR DATOS
+                        Modificar datos
                       </Link>
                     </div>
                     {/* <div className="d-grid gap-2 col-4 mx-auto mb-4">
@@ -173,7 +173,7 @@ export const Perfil = () => {
                         className="btn btn-danger"
                         onClick={deleteUser}
                       >
-                        ELIMINAR CUENTA
+                        Eliminar cuenta
                       </button>
                     </div>
                   </div>

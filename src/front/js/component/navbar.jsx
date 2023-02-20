@@ -18,12 +18,12 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg " >
+    <nav className="navbar navbar-expand-lg ">
       <div className="container-fluid">
         <Link to="/" style={{ textDecoration: "none" }}>
           {/* <span className="navbar-brand mb-0 h1 text-white fs-2"> */}
-            <img src="https://i.imgur.com/tkKWUot.png" className="logo-pagina"/>
-            {/* FindPets
+          <img src="https://i.imgur.com/tkKWUot.png" className="logo-pagina" />
+          {/* FindPets
             <i className="fa fa-paw mx-1"></i>
           </span> */}
         </Link>
@@ -31,7 +31,7 @@ export const Navbar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item fs-6">
               <Link to="/listas" style={{ textDecoration: "none" }}>
-                <span className="text-white m-2">Lista de Mascotas</span>
+                <span className="text-white m-2">Lista de mascotas</span>
               </Link>
             </li>
           </ul>
@@ -43,7 +43,7 @@ export const Navbar = () => {
                   className="btn btn-outline-light mx-3 rounded-pill btn-lg"
                 >
                   <i className="fa fa-sign-in-alt mx-2"></i>
-                  Log In
+                  Iniciar sesión
                 </button>
               </Link>
             ) : null}
@@ -54,7 +54,7 @@ export const Navbar = () => {
                   className="btn btn-light rounded-pill btn-lg"
                 >
                   <i className="fa fa-user-plus mx-2"></i>
-                  Sign Up
+                  Crear cuenta
                 </button>
               </Link>
             ) : null}
@@ -67,17 +67,17 @@ export const Navbar = () => {
                   aria-expanded="false"
                 >
                   <i className="fa fa-plus-circle mx-2"></i>
-                  Postear
+                  Publicar mascota
                 </button>
                 <ul className="dropdown-menu">
                   <Link to={"/formencontrado"}>
                     <button className="dropdown-item float-start">
-                      Mascota Perdida
+                      Mascota perdida
                     </button>
                   </Link>
                   <Link to={"/formadoptar"}>
                     <button className="dropdown-item float-start">
-                      Mascota para Adoptar
+                      Mascota para adoptar
                     </button>
                   </Link>
                 </ul>
@@ -98,14 +98,14 @@ export const Navbar = () => {
                 <ul className="dropdown-menu">
                   <Link to={"/perfil"}>
                     <button className="dropdown-item float-start">
-                      Account
+                      Mi perfil
                     </button>
                   </Link>
                   <button
                     className="dropdown-item float-start text-danger"
                     onClick={handleLogout}
                   >
-                    Logout
+                    Cerrar sesión
                   </button>
                 </ul>
               </div>
