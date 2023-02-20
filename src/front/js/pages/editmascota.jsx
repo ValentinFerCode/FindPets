@@ -124,7 +124,7 @@ export const EditMascota = () => {
           <div className="row g-0">
             <div className="col-md-6">
               <div className="container w-75 mx-auto my-3">
-                <h1 className="text-center text-danger border-bottom border-danger">
+                <h1 className="text-center h1 border-bottom border-primary">
                   MASCOTA PERDIDA
                 </h1>
 
