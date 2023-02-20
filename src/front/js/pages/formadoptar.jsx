@@ -144,6 +144,9 @@ export const FormAdoptar = () => {
                           value={color}
                           onChange={(e) => setColor(e.target.value)}
                           id="color"
+                          pattern="^[a-zA-Z ]*$"
+                          title="Solo se permiten letras"
+                          required
                         />
                       </div>
 
@@ -198,6 +201,9 @@ export const FormAdoptar = () => {
                           disabled={
                             especie == "gato" || especie == "" ? true : false
                           }
+                          pattern="^[a-zA-Z ]*$"
+                          title="Solo se permiten letras"
+                          required
                         />
                       </div>
                     </div>

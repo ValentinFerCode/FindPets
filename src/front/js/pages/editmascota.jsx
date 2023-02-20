@@ -197,6 +197,9 @@ export const EditMascota = () => {
                           value={color}
                           onChange={(e) => setColor(e.target.value)}
                           id="color"
+                          pattern="^[a-zA-Z ]*$"
+                          title="Solo se permiten letras"
+                          required
                         />
                       </div>
 
