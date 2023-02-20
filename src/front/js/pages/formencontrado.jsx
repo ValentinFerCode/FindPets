@@ -161,6 +161,9 @@ export const PetForm = () => {
                           value={color}
                           onChange={(e) => setColor(e.target.value)}
                           id="color"
+                          pattern="^[a-zA-Z ]*$"
+                          title="Solo se permiten letras"
+                          required
                         />
                       </div>
 
@@ -215,6 +218,9 @@ export const PetForm = () => {
                           disabled={
                             especie == "gato" || especie == "" ? true : false
                           }
+                          pattern="^[a-zA-Z ]*$"
+                          title="Solo se permiten letras"
+                          required
                         />
                       </div>
                     </div>

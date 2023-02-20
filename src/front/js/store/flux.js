@@ -323,7 +323,7 @@ const getState = ({
                                 Swal.fire({
                                     icon: "success",
                                     title: "¡Bien hecho!",
-                                    text: "Mascota eliminada con éxito!",
+                                    text: "Mascota eliminada con éxito",
                                 });
                             } else {
                                 Swal.fire({
@@ -459,7 +459,7 @@ const getState = ({
                                 Swal.fire({
                                     icon: "success",
                                     title: "¡Bien hecho!",
-                                    text: "Contraseña modificada con exito!",
+                                    text: "Contraseña modificada con exito",
                                 });
                             }
                             return response.json();
