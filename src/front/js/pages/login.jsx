@@ -53,6 +53,8 @@ export const Login = () => {
                   className="form-control border border-dark rounded-pill"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
+                  pattern="^[a-zA-Z0-9.]*$"
+                  required
                 />
               </div>
             </div>
