@@ -72,6 +72,9 @@ export const EditPerfil = () => {
                       value={firstname}
                       onChange={(e) => setFirstname(e.target.value)}
                       id="firstname"
+                      pattern="^[a-zA-Z ]*$"
+                      title="Solo se permiten letras"
+                      required
                     />
                   </div>
                   <div className="col-md-6 mb-3">
@@ -84,6 +87,9 @@ export const EditPerfil = () => {
                       value={lastname}
                       onChange={(e) => setLastname(e.target.value)}
                       id="lastname"
+                      pattern="^[a-zA-Z ]*$"
+                      title="Solo se permiten letras"
+                      required
                     />
                   </div>
                 </div>
@@ -99,6 +105,8 @@ export const EditPerfil = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       id="email"
                       aria-describedby="emailHelp"
+                      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                      required
                     />
                   </div>
 
@@ -112,6 +120,8 @@ export const EditPerfil = () => {
                       value={contact}
                       onChange={(e) => setContact(e.target.value)}
                       id="contact"
+                      pattern="^[0-9]*$"
+                      title="Solo se permiten numeros"
                     />
                   </div>
                 </div>
@@ -126,6 +136,8 @@ export const EditPerfil = () => {
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                       id="username"
+                      pattern="^[a-zA-Z0-9.]*$"
+                      required
                     />
                   </div>
                 </div>
