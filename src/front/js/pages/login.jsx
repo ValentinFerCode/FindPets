@@ -30,14 +30,14 @@ export const Login = () => {
         <Navigate to="/" />
       ) : (
         <div
-          className="mx-auto w-50 card text-center m-4 border border-danger rounded-2 border border-2 "
+          className="mx-auto w-50 card text-center m-4 border border-primary rounded-2 border border-2 "
           style={{ background: "white" }}
         >
-          <div className="m-2 text-danger">
+          <div className="login m-2">
             <h1 className="text-center ">
               <strong>LOGIN</strong>
             </h1>
-            <hr style={{ background: "red" }}></hr>
+            <hr style={{ background: "blue" }}></hr>
           </div>
           <form onSubmit={userLogin}>
             <div className="col col-6 mx-auto">
@@ -87,7 +87,7 @@ export const Login = () => {
             </div>
             <div className="mx-auto m-4">
               <Link to="/recuperacion_clave">
-                <button type="submit" className="buttonClassContraseña">
+                <button type="submit" className="buttonClassContraseña m-2">
                   Olvidé mi contraseña
                 </button>
               </Link>

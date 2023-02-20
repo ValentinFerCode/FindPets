@@ -40,23 +40,20 @@ export const Register = () => {
   }
 
   return (
-    <div className="container w-50 mb-5">
-      <h1 className="text-center text-danger border-bottom border-danger">
-        REGISTRO
-      </h1>
-
+    <div className="container w-50 mb-5 registro">
+      <h1 className="text-center  border-bottom border-primary">SIGN UP</h1>
       {store.auth === true ? (
         <Navigate to="/" />
       ) : (
         <form onSubmit={signup}>
           <div className="form-group row">
-            <div className="col-md-6 mb-3">
-              <label htmlFor="firstname" className="form-label">
-                Nombre
+            <div className="col-md-6 mb-3 ">
+              <label htmlFor="firstname" className="form-label ">
+                First name
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control "
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
                 id="firstname"
@@ -71,7 +68,7 @@ export const Register = () => {
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control "
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
                 id="lastname"
@@ -145,8 +142,8 @@ export const Register = () => {
           </div>
 
           <div className="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" className="btn btn-lg btn-danger">
-              Submit
+            <button type="submit" className=" submit mx-auto">
+              Registrarme
             </button>
           </div>
         </form>
