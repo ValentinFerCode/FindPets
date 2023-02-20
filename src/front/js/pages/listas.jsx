@@ -70,7 +70,7 @@ export const AllListas = () => {
           role="tabpanel"
           aria-labelledby="pills-home-tab"
         >
-          <div className="my-4 scrollable">
+          <div className="my-4 h-100">
             <Animal_encontrado />
           </div>
         </div>
@@ -80,7 +80,7 @@ export const AllListas = () => {
           role="tabpanel"
           aria-labelledby="pills-profile-tab"
         >
-          <div className="my-4 scrollable">
+          <div className="my-4 h-100">
             <Animal_adoptados />
           </div>
         </div>
