@@ -30,7 +30,7 @@ export const ChangePassword = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, update it!",
+      confirmButtonText: "¡Sí, actualízalo!",
     }).then((result) => {
       if (result.isConfirmed) {
         if (passOld != passUser) {
@@ -61,7 +61,7 @@ export const ChangePassword = () => {
         <div className="jumbotron m-3">
           <div className="rounded border border-danger">
             <h1 className="mx-auto text-danger border-bottom border-danger">
-              CAMBIAR CONTRASEÑA
+              Cambiar contraseña
             </h1>
             {/* TITULO */}
             <div className="container w-75 mx-auto my-3 ">
@@ -69,7 +69,7 @@ export const ChangePassword = () => {
                 <div className="form-group row">
                   <div className="col-md-8 mb-3 mx-auto">
                     <label htmlFor="passold" className="form-label">
-                      Contraseña anterior:
+                      Contraseña anterior
                     </label>
                     <input
                       type="text"
@@ -83,7 +83,7 @@ export const ChangePassword = () => {
                 <div className="form-group row">
                   <div className="col-md-8 mb-3 mx-auto">
                     <label htmlFor="passnew" className="form-label">
-                      Contraseña nueva:
+                      Contraseña nueva
                     </label>
                     <input
                       type="text"
@@ -98,7 +98,7 @@ export const ChangePassword = () => {
                 <div className="form-group row">
                   <div className="col-md-8 mb-3 mx-auto">
                     <label htmlFor="passnewcheck" className="form-label">
-                      Repetir contraseña:
+                      Repetir contraseña
                     </label>
                     <input
                       type="text"
