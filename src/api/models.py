@@ -12,6 +12,8 @@ class Usuario(db.Model):
     apellido = db.Column(db.String(80), unique=False, nullable=False)
     contacto = db.Column(db.String(80), unique=False, nullable=False)
     admin = db.Column(db.Boolean, unique=False, nullable=False)
+    raza = db.Column(db.String(80), unique=False, nullable=True)
+    paypal_url = db.Column(db.String(250), nullable=True)
     mascotas = db.relationship('Mascotas', backref='usuario', lazy=True)
 
 
