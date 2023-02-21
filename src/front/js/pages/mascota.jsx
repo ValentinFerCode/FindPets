@@ -33,6 +33,7 @@ export const OnePet = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "¡Sí, actualízalo!",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.deletePet(store.onePet.id); // borramos la mascota
