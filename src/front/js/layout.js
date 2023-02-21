@@ -16,8 +16,8 @@ import { Perfil } from "./pages/perfil.jsx";
 import { AllListas } from "./pages/listas.jsx";
 import { Recuperacion_clave } from "./pages/recuperacion_clave.jsx";
 import { EditPerfil } from "./pages/editperfil.jsx";
-import { ChangePassword } from "./pages/changepassword.jsx";
 import { EditMascota } from "./pages/editmascota.jsx";
+import { OneRefugio } from "./pages/refugiosperfil.jsx";
 
 // create your first component
 const Layout = () => {
@@ -47,8 +47,8 @@ const Layout = () => {
             <Route element={<Perfil />} path="/perfil" />
             <Route element={<AllListas />} path="/listas" />
             <Route element={<EditPerfil />} path="/perfil/edit" />
-            <Route element={<ChangePassword />} path="/perfil/changepassword" />
             <Route element={<EditMascota />} path="/mascota/edit" />
+            <Route element={<OneRefugio />} path="/refugio/:id" />
           </Routes>{" "}
           <Footer />
         </ScrollToTop>{" "}

@@ -11,31 +11,63 @@ export const Register = () => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
+  const [tipo, setTipo] = useState("");
+  const [urlimage, setUrlImage] = useState("");
+  const [empresa, setEmpresa] = useState("");
+
   //
 
   function signup(e) {
     e.preventDefault();
     if (
-      firstname != "" &&
-      lastname != "" &&
-      email != "" &&
-      username != "" &&
-      password != "" &&
-      contact != ""
+      firstname == "" &&
+      lastname == "" &&
+      email == "" &&
+      username == "" &&
+      password == "" &&
+      contact == "" &&
+      tipo == ""
     ) {
-      actions.signup(username, email, password, firstname, lastname, contact);
+      Swal.fire({
+        icon: "error",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
+      });
+    } else if (tipo == "refugio" && empresa == "") {
+      Swal.fire({
+        icon: "error",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
+      });
+    } else if (
+      (store.imagePet == "" || store.imagePet == undefined) &&
+      tipo == "refugio"
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Ups...",
+        text: "La imagen no quedo subida correctamente",
+      });
+    } else {
+      actions.signup(
+        username,
+        email,
+        password,
+        firstname,
+        lastname,
+        contact,
+        tipo,
+        store.imagePet,
+        empresa
+      );
       setFirstname("");
       setLastname("");
       setEmail("");
       setUsername("");
       setPassword("");
       setContact("");
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Ups...",
-        text: "¡Faltan datos por completar!",
-      });
+      setRefugio("");
+      setTipo("");
     }
   }
 
@@ -78,6 +110,47 @@ export const Register = () => {
               />
             </div>
           </div>
+          {/*  */}
+          <div className="form-group row">
+            <div className="col-md-12 mb-3">
+              <label htmlFor="tipo" className="form-label">
+                Tipo de Cuenta:
+              </label>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                value={tipo}
+                onChange={(e) => setTipo(e.target.value)}
+              >
+                <option value="" disabled>
+                  Selecciona un tipo
+                </option>
+                <option value="refugio">Refugio</option>
+                <option value="persona">Persona</option>
+              </select>
+            </div>
+          </div>
+          {/*  */}
+
+          {tipo == "refugio" ? (
+            <div className="form-group row">
+              <div className="col-md-12 mb-3 ">
+                <label htmlFor="empresa" className="form-label ">
+                  Refugio:
+                </label>
+                <input
+                  type="text"
+                  className="form-control "
+                  value={empresa}
+                  onChange={(e) => setEmpresa(e.target.value)}
+                  id="firstname"
+                  pattern="^[a-zA-Z ]*$"
+                  title="Solo se permiten letras"
+                  required
+                />
+              </div>
+            </div>
+          ) : null}
           <div className="form-group row">
             <div className="col-md-6 mb-3">
               <label htmlFor="email" className="form-label">
@@ -140,6 +213,27 @@ export const Register = () => {
               />
             </div>
           </div>
+          {tipo == "refugio" ? (
+            <div className="form-group row">
+              <div className="col-md-9 mb-3">
+                <input
+                  type="file"
+                  className="form-control"
+                  onChange={(e) => setUrlImage(e.target.files[0])}
+                  id="url"
+                />
+              </div>
+              <div className="col-md-3 mb-3">
+                <button
+                  type="button"
+                  onClick={() => actions.uploadImage(urlimage)}
+                  className="btn btn-primary"
+                >
+                  Subir Foto
+                </button>
+              </div>
+            </div>
+          ) : null}
 
           <div className="d-grid gap-2 col-6 mx-auto">
             <button type="submit" className=" submit mx-auto">

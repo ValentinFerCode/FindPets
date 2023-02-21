@@ -1,14 +1,8 @@
 """empty message
 
-<<<<<<<< HEAD:migrations/versions/9b70e62e485b_.py
-Revision ID: 9b70e62e485b
+Revision ID: 14cf04e568e3
 Revises: 
-Create Date: 2023-02-17 15:23:32.441382
-========
-Revision ID: 454905dba06d
-Revises: 
-Create Date: 2023-02-16 18:14:34.963653
->>>>>>>> 28e2f3af84c417ad3ee17b10ab5d906494e7e482:migrations/versions/454905dba06d_.py
+Create Date: 2023-02-21 13:41:34.582346
 
 """
 from alembic import op
@@ -16,11 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-<<<<<<<< HEAD:migrations/versions/9b70e62e485b_.py
-revision = '9b70e62e485b'
-========
-revision = '454905dba06d'
->>>>>>>> 28e2f3af84c417ad3ee17b10ab5d906494e7e482:migrations/versions/454905dba06d_.py
+revision = '14cf04e568e3'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -37,8 +27,14 @@ def upgrade():
     sa.Column('apellido', sa.String(length=80), nullable=False),
     sa.Column('contacto', sa.String(length=80), nullable=False),
     sa.Column('admin', sa.Boolean(), nullable=False),
+    sa.Column('raza', sa.String(length=80), nullable=True),
+    sa.Column('tipo', sa.String(length=80), nullable=False),
+    sa.Column('paypal_url', sa.String(length=250), nullable=True),
+    sa.Column('url', sa.String(length=250), nullable=False),
+    sa.Column('empresa', sa.String(length=120), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
+    sa.UniqueConstraint('empresa'),
     sa.UniqueConstraint('username')
     )
     op.create_table('mascotas',
