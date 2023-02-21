@@ -53,12 +53,12 @@ export const EditMascota = () => {
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
         title: "¿Estás seguro/a?",
-        text: "¡No podrás revertir esta acción!",
+        text: "No podrás revertir esta acción",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "¡Sí, deseo actualizarlo!",
+        confirmButtonText: "¡Sí, actualízalo!",
       }).then((result) => {
         if (result.isConfirmed) {
           actions.updatePet(

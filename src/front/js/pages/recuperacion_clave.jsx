@@ -52,7 +52,7 @@ export const Recuperacion_clave = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
-                className="form-control"
+                className="form-control border border-secondary rounded-pill"
                 id="exampleInputEmail1"
               />
             </div>

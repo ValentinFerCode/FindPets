@@ -222,13 +222,13 @@ const getState = ({
                                 Swal.fire({
                                     icon: "success",
                                     title: "¡Bien hecho!",
-                                    text: "La foto fue subida de forma exitosa",
+                                    text: "La foto fue subida con éxito",
                                 });
                             } else {
                                 Swal.fire({
                                     icon: "error",
                                     title: "Ups...",
-                                    text: "¡Hubo algun error al momento de subir la foto!",
+                                    text: "Hubo un problema al subir la foto",
                                 });
                             }
                             return response.json();
@@ -347,7 +347,7 @@ const getState = ({
                                 Swal.fire({
                                     icon: "error",
                                     title: "Ups...",
-                                    text: "Hubo un problema al eliminar la mascota.",
+                                    text: "Hubo un problema al eliminar la mascota",
                                 });
                             }
                             return response.json();
@@ -440,7 +440,7 @@ const getState = ({
                                 Swal.fire({
                                     icon: "success",
                                     title: "¡Bien hecho!",
-                                    text: "Usuario modificado con exito",
+                                    text: "Usuario modificado con éxito",
                                 });
                             }
                             return response.json();
@@ -477,7 +477,7 @@ const getState = ({
                                 Swal.fire({
                                     icon: "success",
                                     title: "¡Bien hecho!",
-                                    text: "Contraseña modificada con exito",
+                                    text: "Contraseña modificada con éxito",
                                 });
                             }
                             return response.json();
@@ -578,7 +578,7 @@ const getState = ({
                                 Swal.fire({
                                     icon: "error",
                                     title: "Ups...",
-                                    text: "Hubo un problema al modificar el usuario",
+                                    text: "Hubo un problema al modificar los datos",
                                 });
                             }
                             return response.json();

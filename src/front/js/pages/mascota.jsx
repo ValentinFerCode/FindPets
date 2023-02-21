@@ -27,12 +27,12 @@ export const OnePet = () => {
   function deletePet() {
     Swal.fire({
       title: "¿Estás seguro/a?",
-      text: "¡No podrás revertir esta acción!",
+      text: "No podrás revertir esta acción",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "¡Sí, actualízalo!",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.deletePet(store.onePet.id); // borramos la mascota
@@ -180,7 +180,7 @@ export const OnePet = () => {
                     <ReactWhatsapp
                       className="btn btn-lg btn-success"
                       number={"+598" + store.oneUser.contacto}
-                      message="Buenas! me contacto contigo para mas información acerca de una mascota que publicaste en FindPets!"
+                      message="¡Buenas! Me contacto contigo para obtener más información acerca de una mascota que publicaste en FindPets"
                       onClick={(e) => e.preventDefault()}
                     >
                       Contactar <i className="fab fa-whatsapp mx-1"></i>
