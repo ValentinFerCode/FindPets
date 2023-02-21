@@ -57,7 +57,7 @@ export const Register = () => {
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
                 id="firstname"
-                pattern="^[a-zA-Z ]*$"
+                pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$"
                 title="Solo se permiten letras"
                 required
               />
@@ -72,7 +72,7 @@ export const Register = () => {
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
                 id="lastname"
-                pattern="^[a-zA-Z ]*$"
+                pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$"
                 title="Solo se permiten letras"
                 required
               />

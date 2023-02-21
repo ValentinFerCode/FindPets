@@ -90,6 +90,9 @@ export const Perfil = () => {
                         className="form-control"
                         value={store.oneUser.nombre}
                         id="firstname"
+                        pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$"
+                        title="Solo se permiten letras"
+                        required
                         readOnly
                       />
                     </div>
@@ -102,6 +105,9 @@ export const Perfil = () => {
                         className="form-control"
                         value={store.oneUser.apellido}
                         id="lastname"
+                        pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$"
+                        title="Solo se permiten letras"
+                        required
                         readOnly
                       />
                     </div>
