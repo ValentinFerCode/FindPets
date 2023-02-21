@@ -28,12 +28,12 @@ export const Perfil = () => {
     e.preventDefault();
     Swal.fire({
       title: "¿Estás seguro/a?",
-      text: "¡No podrás revertir esta acción!",
+      text: "No podrás revertir esta acción",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, update it!",
+      confirmButtonText: "¡Sí, actualízalo!",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.updateUser(
@@ -53,12 +53,12 @@ export const Perfil = () => {
   function deleteUser() {
     Swal.fire({
       title: "¿Estás seguro/a?",
-      text: "¡No podrás revertir esta acción!",
+      text: "No podrás revertir esta acción",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Sí, eliminar el usuario",
+      confirmButtonText: "¡Sí, actualízalo!",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.deleteUser(store.oneUser.id); // borramos el usuario

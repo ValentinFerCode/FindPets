@@ -116,7 +116,7 @@ export const PetForm = () => {
                     <div className="form-group row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="genero" className="form-label">
-                          Genero
+                          Género
                         </label>
                         <select
                           className="form-select"
@@ -125,7 +125,7 @@ export const PetForm = () => {
                           onChange={(e) => setGenero(e.target.value)}
                         >
                           <option value="" disabled>
-                            Selecciona un genero
+                            Selecciona un género
                           </option>
                           <option value="macho">Macho</option>
                           <option value="hembra">Hembra</option>
@@ -189,7 +189,7 @@ export const PetForm = () => {
                     <div className="form-group row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="url" className="form-label">
-                          Especie:
+                          Especie
                         </label>
                         <select
                           className="form-select"
@@ -240,7 +240,7 @@ export const PetForm = () => {
                           onClick={() => actions.uploadImage(urlimage)}
                           className="btn btn-primary"
                         >
-                          Subir Foto
+                          Subir foto
                         </button>
                       </div>
                     </div>
