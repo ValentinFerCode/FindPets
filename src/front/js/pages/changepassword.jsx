@@ -31,6 +31,7 @@ export const ChangePassword = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "¡Sí, actualízalo!",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         if (passOld != passUser) {
