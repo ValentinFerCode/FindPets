@@ -53,12 +53,12 @@ export const EditMascota = () => {
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
         title: "¿Estás seguro/a?",
-        text: "¡No podrás revertir esta acción!",
+        text: "No podrás revertir esta acción",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "¡Sí, deseo actualizarlo!",
+        confirmButtonText: "¡Sí, actualízalo!",
       }).then((result) => {
         if (result.isConfirmed) {
           actions.updatePet(
@@ -124,8 +124,8 @@ export const EditMascota = () => {
           <div className="row g-0">
             <div className="col-md-6">
               <div className="container w-75 mx-auto my-3">
-                <h1 className="text-center text-danger border-bottom border-danger">
-                  MASCOTA PERDIDA
+                <h1 className="text-center h1 border-bottom border-primary">
+                  Mascota perdida
                 </h1>
 
                 {store.auth === false ? (

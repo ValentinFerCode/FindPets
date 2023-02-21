@@ -106,7 +106,7 @@ export const Register = () => {
                 onChange={(e) => setContact(e.target.value)}
                 id="contact"
                 pattern="^[0-9]*$"
-                title="Solo se permiten numeros"
+                title="Solo se permiten números"
               />
             </div>
           </div>
