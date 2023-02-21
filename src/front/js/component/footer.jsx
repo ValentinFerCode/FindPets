@@ -55,22 +55,50 @@ export const Footer = () => (
         </a>
       </li>
     </ul>
-    <ul className="menu-footer">
-      <li>
-        <a href="#">Inicio</a>
-      </li>
-      <li>
-        <a href="#">Servicios</a>
-      </li>
-      <li>
-        <a href="#">Nosotros</a>
-      </li>
-      <li>
-        <a href="#">Contacto</a>
-      </li>
-    </ul>
-    <div className="col-12">
-      <CheckoutPaypal />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ul className="menu-footer">
+          <li>
+            <a href="#">Inicio</a>
+          </li>
+          <li>
+            <a href="#">Servicios</a>
+          </li>
+          <li>
+            <a href="#">Nosotros</a>
+          </li>
+          <li>
+            <a href="#">Contacto</a>
+          </li>
+        </ul>
+        <p style={{ textAlign: "center", marginTop: "10px" }}>
+          Aceptamos donaciones mediante:
+        </p>
+        <div
+          className="col-12"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <CheckoutPaypal />
+        </div>
+      </div>
     </div>
     <p>© 2023 FindPets | Todos los derechos reservados.</p>
   </footer>
