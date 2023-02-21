@@ -218,7 +218,7 @@ export const PetForm = () => {
                           disabled={
                             especie == "gato" || especie == "" ? true : false
                           }
-                          pattern="^[a-zA-Z ]*$"
+                          pattern="^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$"
                           title="Solo se permiten letras"
                           required
                         />
