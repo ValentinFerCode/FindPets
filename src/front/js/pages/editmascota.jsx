@@ -44,7 +44,7 @@ export const EditMascota = () => {
         title: "Ups...",
         text: "¡Faltan datos por completar!",
       });
-    } else if (lat == "" || lng == "") {
+    } else if ((lat == "" || lng == "") && store.onePet.estado == "lost") {
       Swal.fire({
         icon: "error",
         title: "Ups...",
@@ -122,10 +122,16 @@ export const EditMascota = () => {
       <div className="jumbotron m-3">
         <div className="rounded border border-primary">
           <div className="row g-0">
-            <div className="col-md-6">
+            <div
+              className={
+                store.onePet.estado == "lost" ? "col-md-6" : "col-md-12"
+              }
+            >
               <div className="container w-75 mx-auto my-3">
-                <h1 className="text-center h1 border-bottom border-primary">
-                  Mascota perdida
+                <h1 className="text-center text-primary border-bottom border-primary">
+                  {store.onePet.estado == "lost"
+                    ? "MASCOTA PERDIDA"
+                    : "MASCOTA ADOPTAR"}
                 </h1>
 
                 {store.auth === false ? (

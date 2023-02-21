@@ -30,7 +30,7 @@ def signup():
         # Verifico email que no exista
         userEmail = Usuario.query.filter_by(email=body["email"]).first() 
         if userEmail is None:
-            agregar_new_user = Usuario(username=body["username"], email=body["email"], password=body["password"], nombre=body["nombre"],apellido=body["apellido"],contacto=body["contacto"], admin=body["admin"])
+            agregar_new_user = Usuario(username=body["username"], email=body["email"], password=body["password"], nombre=body["nombre"],apellido=body["apellido"],contacto=body["contacto"],tipo=body["tipo"],url=body["url"], empresa=body["empresa"] ,admin=body["admin"])
             # Add
             db.session.add(agregar_new_user)
             db.session.commit()
@@ -206,8 +206,7 @@ def putPets(mascota_id):
         pet.latitud = body["latitud"]
         pet.longitud = body["longitud"]
         pet.url = body["url"]
-        # pet.usuario_id = body["usuario_id"]
-
+        
         db.session.add(pet)
         db.session.commit()
 
@@ -308,5 +307,14 @@ def private():
         return jsonify({"status":False}), 404
 
     return jsonify({"status": True,"user": user.serialize()  }), 200
+
+# Get - All Refugios
+@api.route('/users/refugios', methods=['GET'])
+def getRefugios():
+
+    refugios = Usuario.query.filter_by(tipo="refugio").all()
+    all_refugios = list(map(lambda item: item.serialize(), refugios))
+
+    return jsonify(all_refugios), 200
 
     
