@@ -44,7 +44,7 @@ export const Login = () => {
               <div>
                 <h5 className="m-2  text-black ">
                   <b>
-                    <i className="fa fa-user"></i>Nombre de usuario
+                    <i className="fa fa-user"></i> Nombre de usuario
                   </b>
                 </h5>
                 <input

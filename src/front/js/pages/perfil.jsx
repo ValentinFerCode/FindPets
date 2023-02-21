@@ -34,6 +34,7 @@ export const Perfil = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "¡Sí, actualízalo!",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.updateUser(
@@ -59,6 +60,7 @@ export const Perfil = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "¡Sí, actualízalo!",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.deleteUser(store.oneUser.id); // borramos el usuario
