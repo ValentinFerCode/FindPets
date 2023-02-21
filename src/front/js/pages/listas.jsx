@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Animal_adoptados } from "../component/animal_adoptado.jsx";
 import { Animal_encontrado } from "../component/animal_encontrado.jsx";
+import { RefugiosList } from "../component/refugios.jsx";
 
 export const AllListas = () => {
   const { store, actions } = useContext(Context);
@@ -10,6 +11,7 @@ export const AllListas = () => {
   useEffect(() => {
     actions.getAdoption();
     actions.getPetsLost();
+    actions.getRefugios();
     window.scrollTo(0, 0);
   }, []);
 
@@ -90,7 +92,7 @@ export const AllListas = () => {
           role="tabpanel"
           aria-labelledby="pills-contact-tab"
         >
-          ...
+          <RefugiosList />
         </div>
       </div>
     </>

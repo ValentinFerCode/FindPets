@@ -12,6 +12,11 @@ class Usuario(db.Model):
     apellido = db.Column(db.String(80), unique=False, nullable=False)
     contacto = db.Column(db.String(80), unique=False, nullable=False)
     admin = db.Column(db.Boolean, unique=False, nullable=False)
+    raza = db.Column(db.String(80), unique=False, nullable=True)
+    tipo = db.Column(db.String(80), unique=False, nullable=False)
+    paypal_url = db.Column(db.String(250), nullable=True)
+    url = db.Column(db.String(250), nullable=False)
+    empresa = db.Column(db.String(120), unique=True, nullable=True)
     mascotas = db.relationship('Mascotas', backref='usuario', lazy=True)
 
 
@@ -27,6 +32,10 @@ class Usuario(db.Model):
             "contacto": self.contacto,
             "admin": self.admin,
             "username": self.username,
+            "tipo": self.tipo,
+            "paypal_url": self.paypal_url,
+            "url": self.url,
+            "empresa": self.empresa
 # do not serialize the password, its a security breach
         }
 
