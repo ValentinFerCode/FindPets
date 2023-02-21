@@ -26,8 +26,8 @@ export const OnePet = () => {
 
   function deletePet() {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estás seguro/a?",
+      text: "¡No podrás revertir esta acción!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -44,7 +44,7 @@ export const OnePet = () => {
   return (
     <div className="container-fluid">
       <div className="jumbotron  m-3">
-        <div className="rounded border border-danger">
+        <div className="rounded border border-primary">
           <div className="row g-0">
             <div
               className={
@@ -52,7 +52,7 @@ export const OnePet = () => {
               }
             >
               <div className="container w-75 mx-auto my-3">
-                <div className="border-bottom border-danger">
+                <div className="border-bottom border-primary">
                   {/* Boton Modificar */}
                   {store.userSession.id === store.onePet.usuario_id &&
                   store.auth == true ? (
@@ -77,7 +77,9 @@ export const OnePet = () => {
                     </button>
                   ) : null}
 
-                  <h1 className="text-start text-danger">PET INFORMATION</h1>
+                  <h1 className="text-start pet-information">
+                    Información de la mascota
+                  </h1>
                 </div>
                 <form>
                   <div className="form-group row">
@@ -99,7 +101,7 @@ export const OnePet = () => {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mb-3">
-                      <label className="form-label">Genero</label>
+                      <label className="form-label">Género</label>
                       <input
                         type=""
                         className="form-control"
@@ -155,7 +157,7 @@ export const OnePet = () => {
                     </div>
 
                     <div className="col-md-6 mb-3">
-                      <label className="form-label">Especie:</label>
+                      <label className="form-label">Especie</label>
                       <input
                         type=""
                         className="form-control"
@@ -164,7 +166,7 @@ export const OnePet = () => {
                         readOnly
                       />
                     </div>
-                    <h1 className="text-center text-danger border-bottom border-danger"></h1>
+                    <h1 className="text-center border-bottom border-primary h1"></h1>
                     <div className="row">
                       <a
                         className="d-flex justify-content-center"
@@ -189,7 +191,7 @@ export const OnePet = () => {
               </div>
             </div>
             {store.onePet.estado == "lost" ? (
-              <div className="col-md-6 border-start border-danger">
+              <div className="col-md-6 border-start border-primary">
                 {isLoaded ? (
                   <GoogleMap
                     zoom={17}

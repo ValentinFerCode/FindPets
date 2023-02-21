@@ -30,14 +30,14 @@ export const Login = () => {
         <Navigate to="/" />
       ) : (
         <div
-          className="mx-auto w-50 card text-center m-4 border border-danger rounded-2 border border-2 "
+          className="mx-auto w-50 card text-center m-4 border border-primary rounded-2 border border-2 "
           style={{ background: "white" }}
         >
-          <div className="m-2 text-danger">
+          <div className="login m-2">
             <h1 className="text-center ">
-              <strong>LOGIN</strong>
+              <strong>Iniciar sesión</strong>
             </h1>
-            <hr style={{ background: "red" }}></hr>
+            <hr style={{ background: "blue" }}></hr>
           </div>
           <form onSubmit={userLogin}>
             <div className="col col-6 mx-auto">
@@ -53,6 +53,8 @@ export const Login = () => {
                   className="form-control border border-dark rounded-pill"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
+                  pattern="^[a-zA-Z0-9.]*$"
+                  required
                 />
               </div>
             </div>
@@ -60,7 +62,7 @@ export const Login = () => {
               <div className="col-auto mx-auto">
                 <h5 className="m-2 text-black">
                   <b>
-                    <i className="fa fa-lock"></i> Password
+                    <i className="fa fa-lock"></i> Contraseña
                   </b>
                 </h5>
                 <div className="col-auto">
@@ -77,15 +79,13 @@ export const Login = () => {
                   <span
                     id="passwordHelpInline"
                     className="form-text text-black"
-                  >
-                    <strong>Must be 8-20 characters long.</strong>
-                  </span>
+                  ></span>
                 </div>
               </div>
             </div>
             <div className="mx-auto m-4">
               <Link to="/recuperacion_clave">
-                <button type="submit" className="buttonClassContraseña">
+                <button type="submit" className="buttonClassContraseña m-2">
                   Olvidé mi contraseña
                 </button>
               </Link>

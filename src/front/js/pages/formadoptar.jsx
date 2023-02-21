@@ -30,14 +30,14 @@ export const FormAdoptar = () => {
       console.log(store.imagePet == "");
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     } else if (store.imagePet == "" || store.imagePet == undefined) {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "La imagen no quedo subida correctamente!",
+        title: "Ups...",
+        text: "La imagen no quedo subida correctamente",
       });
     } else {
       actions.petsPost(
@@ -67,12 +67,12 @@ export const FormAdoptar = () => {
   return (
     <div className="container-fluid">
       <div className="jumbotron m-3">
-        <div className="rounded border border-danger">
+        <div className="rounded border border-primary">
           <div className="row g-0">
             <div className="col-md-12">
               <div className="container w-75 mx-auto my-3">
-                <h1 className="text-center text-danger border-bottom border-danger">
-                  PET ADOPT
+                <h1 className="text-center h1 border-bottom border-primary">
+                  Mascota para adoptar
                 </h1>
 
                 {store.auth === false ? (
@@ -99,7 +99,7 @@ export const FormAdoptar = () => {
                     <div className="form-group row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="genero" className="form-label">
-                          Genero
+                          Género
                         </label>
                         <select
                           className="form-select"
@@ -108,7 +108,7 @@ export const FormAdoptar = () => {
                           onChange={(e) => setGenero(e.target.value)}
                         >
                           <option value="" disabled>
-                            Selecciona un genero
+                            Selecciona un género
                           </option>
                           <option value="macho">Macho</option>
                           <option value="hembra">Hembra</option>
@@ -144,6 +144,9 @@ export const FormAdoptar = () => {
                           value={color}
                           onChange={(e) => setColor(e.target.value)}
                           id="color"
+                          pattern="^[a-zA-Z ]*$"
+                          title="Solo se permiten letras"
+                          required
                         />
                       </div>
 
@@ -169,7 +172,7 @@ export const FormAdoptar = () => {
                     <div className="form-group row">
                       <div className="col-md-6 mb-3">
                         <label htmlFor="url" className="form-label">
-                          Especie:
+                          Especie
                         </label>
                         <select
                           className="form-select"
@@ -198,6 +201,9 @@ export const FormAdoptar = () => {
                           disabled={
                             especie == "gato" || especie == "" ? true : false
                           }
+                          pattern="^[a-zA-Z ]*$"
+                          title="Solo se permiten letras"
+                          required
                         />
                       </div>
                     </div>
@@ -217,14 +223,14 @@ export const FormAdoptar = () => {
                           onClick={() => actions.uploadImage(urlimage)}
                           className="btn btn-primary"
                         >
-                          Subir Foto
+                          Subir foto
                         </button>
                       </div>
                     </div>
 
                     <div className="d-grid gap-2 col-6 mx-auto">
                       <button type="submit" className="btn btn-lg btn-danger">
-                        Submit
+                        Publicar
                       </button>
                     </div>
                   </form>

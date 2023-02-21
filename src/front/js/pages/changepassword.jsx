@@ -24,8 +24,8 @@ export const ChangePassword = () => {
   function updatePass(e) {
     e.preventDefault();
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estás seguro/a?",
+      text: "No podrás revertir esta acción",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -36,14 +36,14 @@ export const ChangePassword = () => {
         if (passOld != passUser) {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "La contraseña antigua no es correcta!",
+            title: "Ups...",
+            text: "¡La contraseña anterior no es correcta!",
           });
         } else if (passNew != passNewCheck) {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
-            text: "Las contraseñas nuevas no coinciden!",
+            title: "Ups...",
+            text: "¡Las contraseñas nuevas no coinciden!",
           });
         } else {
           actions.updatePassowrd(store.oneUser.id); // actualizamos la contraseña del usuario
@@ -69,7 +69,7 @@ export const ChangePassword = () => {
                 <div className="form-group row">
                   <div className="col-md-8 mb-3 mx-auto">
                     <label htmlFor="passold" className="form-label">
-                      Contraseña Antigua:
+                      Contraseña anterior:
                     </label>
                     <input
                       type="text"
@@ -83,7 +83,7 @@ export const ChangePassword = () => {
                 <div className="form-group row">
                   <div className="col-md-8 mb-3 mx-auto">
                     <label htmlFor="passnew" className="form-label">
-                      Contraseña Nueva:
+                      Contraseña nueva:
                     </label>
                     <input
                       type="text"
@@ -98,7 +98,7 @@ export const ChangePassword = () => {
                 <div className="form-group row">
                   <div className="col-md-8 mb-3 mx-auto">
                     <label htmlFor="passnewcheck" className="form-label">
-                      Repetir Contraseña:
+                      Repetir contraseña:
                     </label>
                     <input
                       type="text"
@@ -112,7 +112,7 @@ export const ChangePassword = () => {
 
                 <div className="d-grid gap-2 col-6 mx-auto mb-4">
                   <button type="submit" className="btn btn-lg btn-danger">
-                    Cambiar Contraseña
+                    Cambiar contraseña
                   </button>
                 </div>
               </form>

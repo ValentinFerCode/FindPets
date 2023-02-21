@@ -33,52 +33,55 @@ export const Register = () => {
     } else {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     }
   }
 
   return (
-    <div className="container w-50 mb-5">
-      <h1 className="text-center text-danger border-bottom border-danger">
-        SIGN UP
-      </h1>
-
+    <div className="container w-50 mb-5 registro">
+      <h1 className="text-center  border-bottom border-primary">Registrarme</h1>
       {store.auth === true ? (
         <Navigate to="/" />
       ) : (
         <form onSubmit={signup}>
           <div className="form-group row">
-            <div className="col-md-6 mb-3">
-              <label htmlFor="firstname" className="form-label">
-                First name
+            <div className="col-md-6 mb-3 ">
+              <label htmlFor="firstname" className="form-label ">
+                Nombre
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control "
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
                 id="firstname"
+                pattern="^[a-zA-Z ]*$"
+                title="Solo se permiten letras"
+                required
               />
             </div>
             <div className="col-md-6 mb-3">
               <label htmlFor="lastname" className="form-label">
-                Last name
+                Apellido
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control "
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
                 id="lastname"
+                pattern="^[a-zA-Z ]*$"
+                title="Solo se permiten letras"
+                required
               />
             </div>
           </div>
           <div className="form-group row">
             <div className="col-md-6 mb-3">
               <label htmlFor="email" className="form-label">
-                Email address
+                Correo electrónico
               </label>
               <input
                 type="email"
@@ -87,12 +90,14 @@ export const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 aria-describedby="emailHelp"
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                required
               />
             </div>
 
             <div className="col-md-6 mb-3">
               <label htmlFor="contact" className="form-label">
-                Contact
+                Contacto
               </label>
               <input
                 type="text"
@@ -100,13 +105,15 @@ export const Register = () => {
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
                 id="contact"
+                pattern="^[0-9]*$"
+                title="Solo se permiten numeros"
               />
             </div>
           </div>
           <div className="form-group row">
             <div className="col-md-6 mb-3">
               <label htmlFor="username" className="form-label">
-                Username
+                Nombre de usuario
               </label>
               <input
                 type="text"
@@ -114,12 +121,14 @@ export const Register = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 id="username"
+                pattern="^[a-zA-Z0-9.]*$"
+                required
               />
             </div>
 
             <div className="col-md-6 mb-3">
               <label htmlFor="password" className="form-label">
-                Password
+                Contraseña
               </label>
               <input
                 type="password"
@@ -127,13 +136,14 @@ export const Register = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 id="password"
+                required
               />
             </div>
           </div>
 
           <div className="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" className="btn btn-lg btn-danger">
-              Submit
+            <button type="submit" className=" submit mx-auto">
+              Enviar
             </button>
           </div>
         </form>
