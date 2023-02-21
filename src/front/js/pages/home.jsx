@@ -22,7 +22,9 @@ export const Home = () => {
         <div className="contenido">
           <h2>FindPets</h2>
           <p>
-          FindPets es una aplicación web uruguaya que promueve la adopción responsable y asiste a la comunidad en la noble tarea de volver a reunir a las mascotas perdidas con sus familias.
+            FindPets es una aplicación web uruguaya que promueve la adopción
+            responsable y asiste a la comunidad en la noble tarea de volver a
+            reunir a las mascotas perdidas con sus familias.
           </p>
         </div>
         <img
@@ -34,7 +36,7 @@ export const Home = () => {
         <h3>¡Bienvenido a FindPets!</h3>
       </div>
 
-      <div className="w-100">
+      <div className="w-100 border border-success">
         <Map />
       </div>
       <div className="contenedor-carta m-4">
@@ -46,7 +48,9 @@ export const Home = () => {
             <div className="texto_carta_home">
               <h3>Nuestra misión</h3>
               <p>
-                Nuestra misión es promover la adopción responsable y asistir a la comunidad en la noble tarea de volver a reunir a las mascotas perdidas con sus familias.
+                Nuestra misión es promover la adopción responsable y asistir a
+                la comunidad en la noble tarea de volver a reunir a las mascotas
+                perdidas con sus familias.
               </p>
             </div>
           </div>
@@ -59,7 +63,10 @@ export const Home = () => {
             <div className="texto_carta_home">
               <h3>¿Por qué FindPets?</h3>
               <p>
-              FindPets brinda los medios necesarios para que personas solidarias de todo el país que encuentran mascotas perdidas cuenten con un espacio para publicarlas, con el fin de que vuelvan a reencontrarse con sus familias. 
+                FindPets brinda los medios necesarios para que personas
+                solidarias de todo el país que encuentran mascotas perdidas
+                cuenten con un espacio para publicarlas, con el fin de que
+                vuelvan a reencontrarse con sus familias.
               </p>
             </div>
           </div>
@@ -72,7 +79,10 @@ export const Home = () => {
             <div className="texto_carta_home">
               <h3>¡Es gratis!</h3>
               <p>
-                FindPets fue pensada y creada sin fines de lucro, sin embargo, aceptamos donaciones como forma de agradecimiento para que la página siga funcionando y brindando ayuda a todas las familias del país.
+                FindPets fue pensada y creada sin fines de lucro, sin embargo,
+                aceptamos donaciones como forma de agradecimiento para que la
+                página siga funcionando y brindando ayuda a todas las familias
+                del país.
               </p>
             </div>
           </div>

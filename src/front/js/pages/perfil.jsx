@@ -164,15 +164,18 @@ export const Perfil = () => {
                         Modificar datos
                       </Link>
                     </div>
-                    {/* <div className="d-grid gap-2 col-4 mx-auto mb-4">
-                      <Link
-                        to={"/perfil/changepassword"}
-                        type="button"
-                        className="btn btn-secondary"
-                      >
-                        CAMBIAR CONTRASEÑA{" "}
-                      </Link>
-                    </div> */}
+                    {store.oneUser.tipo == "refugio" ? (
+                      <div className="d-grid gap-2 col-4 mx-auto mb-4">
+                        <Link
+                          to={"/perfil/changepassword"}
+                          type="button"
+                          className="btn btn-warning"
+                        >
+                          AGREGAR DONACIONES{" "}
+                          <i className="fab fa-paypal ms-1"></i>
+                        </Link>
+                      </div>
+                    ) : null}
                     <div className="d-grid gap-2 col-4 mx-auto mb-4">
                       <button
                         type="button"

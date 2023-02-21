@@ -16,9 +16,21 @@ const getState = ({
             adopt: [],
             oneUser: {},
             petsUser: [],
+            refugios: [],
+            oneRefugio: {},
         },
         actions: {
-            signup: (username, email, password, nombre, apellido, contacto) => {
+            signup: (
+                username,
+                email,
+                password,
+                nombre,
+                apellido,
+                contacto,
+                tipo,
+                url,
+                empresa
+            ) => {
                 try {
                     fetch(process.env.BACKEND_URL + "/api/signup", {
                             method: "POST",
@@ -33,6 +45,9 @@ const getState = ({
                                 apellido: apellido,
                                 contacto: contacto,
                                 admin: false,
+                                tipo: tipo,
+                                url: url,
+                                empresa: empresa,
                             }),
                         })
                         .then((response) => {
@@ -41,6 +56,9 @@ const getState = ({
                                     icon: "success",
                                     title: "¡Bienvenido!",
                                     text: "Usuario creado con éxito",
+                                });
+                                setStore({
+                                    imageUrl: "",
                                 });
                             }
                             return response.json();
@@ -530,7 +548,7 @@ const getState = ({
                 mascota_id
             ) => {
                 try {
-                    fetch(process.env.BACKEND_URL + "/api/pets", {
+                    fetch(process.env.BACKEND_URL + "/api/pets/" + mascota_id, {
                             method: "PUT",
                             headers: {
                                 "Content-Type": "application/json",
@@ -547,7 +565,6 @@ const getState = ({
                                 latitud: latitud,
                                 longitud: longitud,
                                 url: urlimage,
-                                mascota_id: mascota_id,
                             }),
                         })
                         .then((response) => {
@@ -568,6 +585,42 @@ const getState = ({
                         })
                         .then((data) => {
                             console.log(data);
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getRefugios: () => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/refugios", {
+                            method: "GET",
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            setStore({
+                                refugios: data,
+                            });
+                        });
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            getOneRefugio: (id) => {
+                let store = getStore();
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/" + id, {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            setStore({
+                                oneRefugio: data,
+                            });
                         });
                     //
                 } catch (e) {
