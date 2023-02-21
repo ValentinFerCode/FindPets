@@ -26,13 +26,13 @@ export const EditPerfil = () => {
   function updateUser(e) {
     e.preventDefault();
     Swal.fire({
-      title: "Estpas seguro/a?",
-      text: "¡No podrás revertir esta acción!",
+      title: "Estás seguro/a?",
+      text: "No podrás revertir esta acción",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, update it!",
+      confirmButtonText: "¡Sí, actualízalo!",
     }).then((result) => {
       if (result.isConfirmed) {
         actions.updateUser(

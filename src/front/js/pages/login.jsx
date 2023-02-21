@@ -14,8 +14,8 @@ export const Login = () => {
     if (username == "" && password == "") {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Faltan datos por completar!",
+        title: "Ups...",
+        text: "¡Faltan datos por completar!",
       });
     } else {
       actions.login(username, password);
@@ -44,13 +44,13 @@ export const Login = () => {
               <div>
                 <h5 className="m-2  text-black ">
                   <b>
-                    <i className="fa fa-user"></i> Nombre de usuario
+                    <i className="fa fa-user"></i>Nombre de usuario
                   </b>
                 </h5>
                 <input
                   type="text"
                   id="inputusuario"
-                  className="form-control border border-dark rounded-pill"
+                  className="form-control border border-secondary rounded-pill"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   pattern="^[a-zA-Z0-9.]*$"
@@ -69,7 +69,7 @@ export const Login = () => {
                   <input
                     type="password"
                     id="inputPassword6"
-                    className="form-control border border-dark rounded-pill"
+                    className="form-control border border-secondary rounded-pill"
                     aria-describedby="passwordHelpInline"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
