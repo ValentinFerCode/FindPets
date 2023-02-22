@@ -28,7 +28,7 @@ export const Home = () => {
           </p>
         </div>
         <img
-          src="https://e7.pngegg.com/pngimages/173/245/png-clipart-s-of-dogs-and-cats-dog-cat.png"
+          src="https://mail.google.com/mail/u/0?ui=2&ik=5ef87a760e&attid=0.1&permmsgid=msg-f:1758540988539598367&th=186797b640ddf61f&view=fimg&realattid=f_lefrd7sw0&disp=thd&attbid=ANGjdJ9blDPMlXuJhJmq0OLL5BOTh0lbUA4Dw6PSO4J_-WObTzYSH3Vn1cBnVtkkBzY5C3Plsx6NWZ1qSZTuz755MoPbMue4j72_eDU92yBFkc7Azs2ERsLgZMY6QZA&ats=2524608000000&sz=w1366-h657"
           className="perro_gato"
         />
       </div>
