@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Navigate, Link } from "react-router-dom";
 import CheckoutPaypal from "./paymethod.jsx";
 
 export const Footer = () => (
@@ -11,7 +12,7 @@ export const Footer = () => (
     </div>
     <ul className="redes_iconos">
       <li>
-        <a href="#">
+        <a href="https://www.instagram.com/">
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +27,8 @@ export const Footer = () => (
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="https://twitter.com/?lang=es
+">
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +43,7 @@ export const Footer = () => (
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="https://www.facebook.com/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -78,9 +80,12 @@ export const Footer = () => (
           <li>
             <a href="#">Servicios</a>
           </li>
-          <li>
+         {/* <Navigate to="/nosotros"/>  */}
+         <Link to="/nosotros">
+         <li>
             <a href="#">Nosotros</a>
-          </li>
+          </li> 
+          </Link>
           <li>
             <a href="#">Contacto</a>
           </li>
