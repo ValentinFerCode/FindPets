@@ -26,7 +26,7 @@ export const EditPerfil = () => {
   function updateUser(e) {
     e.preventDefault();
     Swal.fire({
-      title: "Estás seguro/a?",
+      title: "¿Estás seguro/a?",
       text: "No podrás revertir esta acción",
       icon: "warning",
       showCancelButton: true,
