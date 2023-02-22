@@ -12,7 +12,7 @@ export const Footer = () => (
     </div>
     <ul className="redes_iconos">
       <li>
-        <a href="#">
+        <a href="https://www.instagram.com/">
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,8 @@ export const Footer = () => (
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="https://twitter.com/?lang=es
+">
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +43,7 @@ export const Footer = () => (
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="https://www.facebook.com/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

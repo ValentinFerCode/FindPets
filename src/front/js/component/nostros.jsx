@@ -37,11 +37,11 @@ export const Nosotros = () => {
         <div class="caja-nosotros">
           <div class="caja-cartas"></div>
           <div class="intro-contenido">
-            <h1>Valentín Fernandez</h1>
+            <h1>Valentín Fernández</h1>
             <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
 </svg> Maldonado</p>
-            <p>Aquí va la informacion</p>
+            <p>Soy estudiante universitario y desarrollador Full Stack. Me interesa la programación desde los 12 años cuando participé en un proyecto con Arduino y Legos.</p>
           </div>
         </div>
         <div class="caja-nosotros">

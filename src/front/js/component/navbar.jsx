@@ -67,7 +67,7 @@ export const Navbar = () => {
                   aria-expanded="false"
                 >
                   <i className="fa fa-plus-circle mx-2"></i>
-                  PUBLICAR
+                  Publicar
                 </button>
                 <ul className="dropdown-menu">
                   <Link to={"/formencontrado"}>
