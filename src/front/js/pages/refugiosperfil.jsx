@@ -93,7 +93,7 @@ export const OneRefugio = () => {
                   <ReactWhatsapp
                     className="btn btn-lg btn-success"
                     number={"+598" + store.oneRefugio.contacto}
-                    message="Buenas! me contacto contigo para mas información acerca de una mascota que publicaste en FindPets!"
+                    message="¡Buenas! Me contacto contigo para mas información acerca de una mascota que publicaste en FindPets"
                     onClick={(e) => e.preventDefault()}
                   >
                     Contactar <i className="fab fa-whatsapp mx-1"></i>
