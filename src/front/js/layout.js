@@ -19,6 +19,7 @@ import { EditPerfil } from "./pages/editperfil.jsx";
 import { EditMascota } from "./pages/editmascota.jsx";
 import { OneRefugio } from "./pages/refugiosperfil.jsx";
 import { RefugioPaypal } from "./pages/refugiopaypal.jsx";
+import { ViewNosotros } from "./pages/viewnosotros.jsx";
 
 // create your first component
 const Layout = () => {
@@ -51,6 +52,7 @@ const Layout = () => {
             <Route element={<EditMascota />} path="/mascota/edit" />
             <Route element={<OneRefugio />} path="/refugio/:id" />
             <Route element={<RefugioPaypal />} path="/perfil/paypal" />
+            <Route element={<ViewNosotros />} path="/nosotros" />
           </Routes>{" "}
           <Footer />
         </ScrollToTop>{" "}

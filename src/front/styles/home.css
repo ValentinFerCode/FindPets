@@ -475,3 +475,89 @@ footer p {
 .h1 {
     color: #2c74b3;
 }
+
+.contenedor-grande {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja-nosotros {
+    position: relative;
+    width: 450px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 40px;
+}
+
+.caja-nosotros::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.caja-nosotros::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -2;
+    filter: blur(40px);
+}
+
+.caja-nosotros:nth-child(1)::before,
+.caja-nosotros:nth-child(1)::after {
+    background: linear-gradient(45deg, #079fe6, #010615, #2196f3);
+}
+
+.caja-nosotros:nth-child(2)::before,
+.caja-nosotros:nth-child(2)::after {
+    background: linear-gradient(45deg, #079fe6, #010615, #2196f3);
+}
+
+.caja-nosotros:nth-child(3)::before,
+.caja-nosotros:nth-child(3)::after {
+    background: linear-gradient(45deg, #079fe6, #010615, #2196f3);
+}
+
+.caja-nosotros:nth-child(4)::before,
+.caja-nosotros:nth-child(4)::after {
+    background: linear-gradient(45deg, #079fe6, #010615, #2196f3);
+}
+
+.caja-nosotros:nth-child(5)::before,
+.caja-nosotros:nth-child(5)::after {
+    background: linear-gradient(45deg, #079fe6, #010615, #2196f3);
+}
+
+.caja-nosotros .caja-cartas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.caja-nosotros .intro-contenido {
+    padding: 20px;
+    color: #fff;
+}
+
+.equipo {
+    color: #1e62d0;
+    justify-content: center;
+    text-align: center;
+}

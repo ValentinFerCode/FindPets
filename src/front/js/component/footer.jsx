@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Navigate, Link } from "react-router-dom";
 import CheckoutPaypal from "./paymethod.jsx";
 
 export const Footer = () => (
@@ -78,9 +79,12 @@ export const Footer = () => (
           <li>
             <a href="#">Servicios</a>
           </li>
-          <li>
+         {/* <Navigate to="/nosotros"/>  */}
+         <Link to="/nosotros">
+         <li>
             <a href="#">Nosotros</a>
-          </li>
+          </li> 
+          </Link>
           <li>
             <a href="#">Contacto</a>
           </li>
