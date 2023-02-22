@@ -317,4 +317,27 @@ def getRefugios():
 
     return jsonify(all_refugios), 200
 
+# Put - Paypal Refugio
+@api.route('/users/paypal/<int:id>', methods=['PUT'])
+def putPaypalRefugio(id):
+    body = json.loads(request.data)
+
+    refugio = Usuario.query.filter_by(id=id).first()
+    
+    if refugio is not None:
+        refugio.paypal_url = body["paypal_url"]
+        
+        db.session.add(refugio)
+        db.session.commit()
+
+        response_body = {
+            "msg": "Paypal agregado con exito"
+        }
+        return jsonify(response_body), 200
+
+        response_body = {
+            "msg": "El refugio no existe en el sistema"
+        }
+        return jsonify(response_body), 400
+
     

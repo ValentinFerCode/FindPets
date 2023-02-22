@@ -59,7 +59,7 @@ export const Perfil = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "¡Sí, actualízalo!",
+      confirmButtonText: "¡Sí, eliminar!",
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -169,12 +169,11 @@ export const Perfil = () => {
                     {store.oneUser.tipo == "refugio" ? (
                       <div className="d-grid gap-2 col-4 mx-auto mb-4">
                         <Link
-                          to={"/perfil/changepassword"}
+                          to={"/perfil/paypal"}
                           type="button"
                           className="btn btn-warning"
                         >
-                          AGREGAR DONACIONES{" "}
-                          <i className="fab fa-paypal ms-1"></i>
+                          DONACIONES <i className="fab fa-paypal ms-1"></i>
                         </Link>
                       </div>
                     ) : null}

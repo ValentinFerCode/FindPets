@@ -67,7 +67,7 @@ export const Navbar = () => {
                   aria-expanded="false"
                 >
                   <i className="fa fa-plus-circle mx-2"></i>
-                  Publicar mascota
+                  PUBLICAR
                 </button>
                 <ul className="dropdown-menu">
                   <Link to={"/formencontrado"}>
