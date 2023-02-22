@@ -131,8 +131,8 @@ export const EditMascota = () => {
               <div className="container w-75 mx-auto my-3">
                 <h1 className="text-center text-primary border-bottom border-primary">
                   {store.onePet.estado == "lost"
-                    ? "MASCOTA PERDIDA"
-                    : "MASCOTA ADOPTAR"}
+                    ? "Mascota perdida"
+                    : "Mascota para adoptar"}
                 </h1>
 
                 {store.auth === false ? (

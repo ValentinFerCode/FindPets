@@ -627,6 +627,41 @@ const getState = ({
                     console.log(e);
                 }
             },
+            paypalRefugio: (refugio_id, paypal_url) => {
+                try {
+                    fetch(process.env.BACKEND_URL + "/api/users/paypal/" + refugio_id, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                paypal_url: paypal_url,
+                            }),
+                        })
+                        .then((response) => {
+                            if (response.status === 200) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "¡Bien hecho!",
+                                    text: "Paypal agregado con éxito",
+                                });
+                            } else {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Ups...",
+                                    text: "Hubo un problema al agregar Paypal, verifique los datos",
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log(data);
+                        });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
         },
     };
 };

@@ -83,15 +83,18 @@ export const Login = () => {
                 </div>
               </div>
             </div>
-            <div className="mx-auto m-4">
+            <div className="m-4 d-flex flex-column">
+              <button type="submit" className="buttonClassIngresar p-2 mx-auto">
+                Ingresar
+              </button>
               <Link to="/recuperacion_clave">
-                <button type="submit" className="buttonClassContraseña m-2">
+                <button
+                  type="submit"
+                  className="buttonClassContraseña  mx-auto m-2 p-2"
+                >
                   Olvidé mi contraseña
                 </button>
               </Link>
-              <button type="submit" className="buttonClassIngresar">
-                Ingresar
-              </button>
             </div>
           </form>
         </div>
