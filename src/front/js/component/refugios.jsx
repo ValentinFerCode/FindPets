@@ -26,7 +26,7 @@ export const RefugiosList = (props) => {
                       <div className="row g-2 justify-content-end me-2">
                         <div className="col-6">
                           <div className="p-3">
-                            <strong>Refugio Nombre: </strong> {item.empresa}
+                            <strong>Nombre del refugio: </strong> {item.empresa}
                           </div>
                         </div>
                       </div>
