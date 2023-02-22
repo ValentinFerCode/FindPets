@@ -1,8 +1,4 @@
-import React, {useContext, useEffect} from "react";
-import {Context} from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
-import {Map} from "../component/maps.jsx";
+"../component/maps.jsx";
 
 export const Home = () => {
     const {store, actions} = useContext(Context);
@@ -52,8 +48,8 @@ export const Home = () => {
                             <h3>Nuestra misión</h3>
                             <p>
                                 Nuestra misión es promover la adopción responsable y asistir a
-                                                la comunidad en la noble tarea de volver a reunir a las mascotas
-                                                perdidas con sus familias.
+                                                                                la comunidad en la noble tarea de volver a reunir a las mascotas
+                                                                                perdidas con sus familias.
                             </p>
                         </div>
                     </div>
@@ -70,9 +66,9 @@ export const Home = () => {
                             <h3>¿Por qué FindPets?</h3>
                             <p>
                                 FindPets brinda los medios necesarios para que personas
-                                                solidarias de todo el país que encuentran mascotas perdidas
-                                                cuenten con un espacio para publicarlas, con el fin de que
-                                                vuelvan a reencontrarse con sus familias.
+                                                                                solidarias de todo el país que encuentran mascotas perdidas
+                                                                                cuenten con un espacio para publicarlas, con el fin de que
+                                                                                vuelvan a reencontrarse con sus familias.
                             </p>
                         </div>
                     </div>
@@ -89,9 +85,9 @@ export const Home = () => {
                             <h3>¡Es gratis!</h3>
                             <p>
                                 FindPets fue pensada y creada sin fines de lucro, sin embargo,
-                                                aceptamos donaciones como forma de agradecimiento para que la
-                                                página siga funcionando y brindando ayuda a todas las familias
-                                                del país.
+                                                                                aceptamos donaciones como forma de agradecimiento para que la
+                                                                                página siga funcionando y brindando ayuda a todas las familias
+                                                                                del país.
                             </p>
                         </div>
                     </div>

@@ -92,7 +92,9 @@ export const AllListas = () => {
           role="tabpanel"
           aria-labelledby="pills-contact-tab"
         >
-          <RefugiosList />
+          <div className="my-4 scrollable">
+            <RefugiosList />
+          </div>
         </div>
       </div>
     </>

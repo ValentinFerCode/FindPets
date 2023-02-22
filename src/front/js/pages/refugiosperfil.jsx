@@ -11,7 +11,9 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 export const OneRefugio = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
-  const params = useParams(); //
+  const params = useParams();
+  //
+  const [donation, setDonation] = useState(1);
 
   //Obtengo la mascota
   useEffect(() => {
@@ -91,19 +93,68 @@ export const OneRefugio = () => {
                   <ReactWhatsapp
                     className="btn btn-lg btn-success"
                     number={"+598" + store.oneRefugio.contacto}
-                    message="Buenas! me contacto contigo para mas información acerca de una mascota que publicaste en FindPets!"
+                    message="¡Buenas! Me contacto contigo para mas información acerca de una mascota que publicaste en FindPets"
                     onClick={(e) => e.preventDefault()}
                   >
                     Contactar <i className="fab fa-whatsapp mx-1"></i>
                   </ReactWhatsapp>
                 </div>
-                {store.oneRefugio.paypal_url == null ? (
-                  <div className="d-flex justify-content-center pe-4 my-2">
-                    <PayPalScriptProvider
-                      options={{ "client-id": store.oneRefugio.paypal_url }}
-                    >
-                      <PayPalButtons />
-                    </PayPalScriptProvider>
+                {store.oneRefugio.paypal_url != null ? (
+                  <div className="mx-auto w-50 pe-4 my-2  border-primary border-top mt-3">
+                    <div className="row ">
+                      <label
+                        htmlFor="amount"
+                        style={{
+                          fontSize: "20px",
+                          marginRight: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <span>Cantidad a donar en US$:</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="amount"
+                        value={donation}
+                        onChange={(event) => setDonation(event.target.value)}
+                        style={{
+                          fontSize: "20px",
+                          margin: "0.5rem 0",
+                          padding: "0.5rem",
+                          border: "1px solid #ccc",
+                          borderRadius: "4px",
+                        }}
+                      />
+                    </div>
+                    <div className="row">
+                      <PayPalScriptProvider
+                        options={{ "client-id": store.oneRefugio.paypal_url }}
+                      >
+                        <PayPalButtons
+                          createOrder={(data, actions) => {
+                            return actions.order.create({
+                              purchase_units: [
+                                {
+                                  amount: {
+                                    value: donation,
+                                  },
+                                },
+                              ],
+                            });
+                          }}
+                          onApprove={(data, actions) => {
+                            return actions.order.capture().then((details) => {
+                              const name = details.payer.name.given_name;
+                              Swal.fire({
+                                icon: "success",
+                                title: "¡Muchas Gracias!",
+                                text: "La donación se realizo de forma correcta",
+                              });
+                            });
+                          }}
+                        />
+                      </PayPalScriptProvider>
+                    </div>
                   </div>
                 ) : null}
                 {/*  */}
