@@ -60,7 +60,7 @@ export const RefugioPaypal = () => {
             <div className="container w-75 mx-auto my-3 ">
               <form onSubmit={paypalRefugio}>
                 <div className="form-group row">
-                  <div className="col-md-8 mb-3 mx-auto border-bottom border-primary fw-light lh-base">
+                  <div className="col-md-8 mb-3 mx-auto fw-light lh-base">
                     Para agregar las donaciones para tu refugio, necesitas
                     generar un ID de Paypal,para realizar esto necesitas seguir
                     unas instrucciónes para mas información haz{" "}
@@ -81,6 +81,10 @@ export const RefugioPaypal = () => {
                       id="paypalid"
                     />
                   </div>
+                </div>
+                <div className="col-md-8 mb-3 mx-auto fw-light lh-base fs-6 text-muted">
+                  *Nota: Si ingresas un ID erróneo no te lo tomara como
+                  incorrecto, pero las donaciónes no van aparecer en tu perfil.
                 </div>
 
                 <div className="d-grid gap-2 col-6 mx-auto mb-4">
