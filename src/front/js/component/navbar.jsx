@@ -18,7 +18,9 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg ">
+        <nav className="navbar navbar-expand-lg navbar-expand-md   navbar-expand-sm ">
+
+            {/* navbar-expand-xs */}
             <div className="container-fluid">
                 <Link to="/"
                     style={
