@@ -76,21 +76,21 @@ export const Footer = () => (
         }}
       >
         <ul className="menu-footer">
+          <Link to="/">
           <li>
             <a href="#">Inicio</a>
           </li>
+          </Link>
+          <Link to="/listas">
           <li>
             <a href="#">Servicios</a>
           </li>
-          {/* <Navigate to="/nosotros"/>  */}
+          </Link>
           <Link to="/nosotros">
             <li>
               <a href="#">Nosotros</a>
             </li>
           </Link>
-          <li>
-            <a href="#">Contacto</a>
-          </li>
         </ul>
         <p style={{ textAlign: "center", marginTop: "10px" }}>
           Aceptamos donaciones mediante:
