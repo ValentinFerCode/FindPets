@@ -30,7 +30,7 @@ export const Login = () => {
         <Navigate to="/" />
       ) : (
         <div
-          className="mx-auto w-50 card text-center m-4 border border-primary rounded-2 border border-2 "
+          className="mx-auto w-50 card text-center m-4 border border-primary rounded-2 border border-2 col-12 col-md-8 col-sm-4"
           style={{ background: "white" }}
         >
           <div className="login m-2">
@@ -40,7 +40,7 @@ export const Login = () => {
             <hr style={{ background: "blue" }}></hr>
           </div>
           <form onSubmit={userLogin}>
-            <div className="col col-6 mx-auto">
+            <div className="col-12 col-md-8 col-sm-4 mx-auto">
               <div>
                 <h5 className="m-2  text-black ">
                   <b>
@@ -50,7 +50,7 @@ export const Login = () => {
                 <input
                   type="text"
                   id="inputusuario"
-                  className="form-control border border-secondary rounded-pill"
+                  className="form-control border border-secondary rounded-pill col-12 col-md-8 col-sm-4"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   pattern="^[a-zA-Z0-9.]*$"
@@ -58,7 +58,7 @@ export const Login = () => {
                 />
               </div>
             </div>
-            <div className="row g-3 align-items-center">
+            <div className="col-12 col-md-8 col-sm-4 mx-auto">
               <div className="col-auto mx-auto">
                 <h5 className="m-2 text-black">
                   <b>
@@ -83,14 +83,17 @@ export const Login = () => {
                 </div>
               </div>
             </div>
-            <div className="m-4 d-flex flex-column">
-              <button type="submit" className="buttonClassIngresar p-2 mx-auto">
+            <div className="m-4 d-flex flex-column col-12 col-md-8 col-sm-4 mx-auto">
+              <button
+                type="submit"
+                className="buttonClassIngresar p-2 mx-auto col-12 col-md-8 col-sm-4"
+              >
                 Ingresar
               </button>
               <Link to="/recuperacion_clave">
                 <button
                   type="submit"
-                  className="buttonClassContraseña  mx-auto m-2 p-2"
+                  className="buttonClassContraseña mx-auto m-2 p-2 col-12 col-md-8 col-sm-4"
                 >
                   Olvidé mi contraseña
                 </button>
