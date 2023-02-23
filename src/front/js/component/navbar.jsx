@@ -31,7 +31,28 @@ export const Navbar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item fs-6">
               <Link to="/listas" style={{ textDecoration: "none" }}>
-                <span className="text-white m-2">Lista de mascotas</span>
+                <span
+                  type="text"
+                  style={{
+                    transition: "transform 0.2s ease-in-out",
+                    padding: "5px 15px",
+                    marginLeft: "-12px",
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoration: "none",
+                    color: "white",
+                    fontSize: "18px",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = "translateY(-5px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = "translateY(0)";
+                  }}
+                >
+                  <i className="fas fa-paw" style={{ marginRight: "5px" }}></i>{" "}
+                  Lista de Mascotas
+                </span>
               </Link>
             </li>
           </ul>
