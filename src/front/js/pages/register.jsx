@@ -45,7 +45,7 @@ export const Register = () => {
             store.auth === true ? (
                 <Navigate to="/"/>
             ) : (
-                <form className="col-align-centercol-md-6mb-3 col-sm-2 col-lg-12"
+                <form className="col-align-center col-md-6 mb-3 col-sm-2 col-lg-12"
                     onSubmit={signup}>
 
 

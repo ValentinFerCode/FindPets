@@ -19,6 +19,7 @@ export const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm ">
+
             <div className="container-fluid">
                 <Link to="/"
                     style={

@@ -53,21 +53,21 @@ export const Footer = () => (
                 }
             }>
                 <ul className="menu-footer">
-                    <li>
-                        <a href="#">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="#">Servicios</a>
-                    </li>
-                    {/* <Navigate to="/nosotros"/>  */}
+                    <Link to="/">
+                        <li>
+                            <a href="#">Inicio</a>
+                        </li>
+                    </Link>
+                    <Link to="/listas">
+                        <li>
+                            <a href="#">Servicios</a>
+                        </li>
+                    </Link>
                     <Link to="/nosotros">
                         <li>
                             <a href="#">Nosotros</a>
                         </li>
                     </Link>
-                    <li>
-                        <a href="#">Contacto</a>
-                    </li>
                 </ul>
                 <p style={
                     {
