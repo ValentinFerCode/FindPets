@@ -6,7 +6,7 @@ export const Nosotros = () => {
       <div class="contenedor-grande">
         <div class="caja-nosotros">
           <div class="imagen-nosotros">
-            <img src="https://img.freepik.com/vector-gratis/diseno-plano-dia-internacional-concepto-familia_23-2148492790.jpg" />
+            <img src="https://i.ibb.co/LrfXxYv/IMG-20230223-151023.jpg" />
           </div>
           <div class="contenido-caja">
             <h2>
@@ -30,7 +30,7 @@ export const Nosotros = () => {
         </div>
         <div class="caja-nosotros">
           <div class="imagen-nosotros">
-            <img src="https://img.freepik.com/vector-gratis/diseno-plano-dia-internacional-concepto-familia_23-2148492790.jpg" />
+            <img src="https://i.ibb.co/hK4HWmG/Caro-app-voil.jpg" />
           </div>
           <div class="contenido-caja">
             <h2>
@@ -54,7 +54,7 @@ export const Nosotros = () => {
         </div>
         <div class="caja-nosotros">
           <div class="imagen-nosotros">
-            <img src="https://img.freepik.com/vector-gratis/diseno-plano-dia-internacional-concepto-familia_23-2148492790.jpg" />
+            <img src="https://i.ibb.co/N2F5n7K/IMG-20230223-150458.jpg" />
           </div>
           <div class="contenido-caja">
             <h2>
@@ -80,7 +80,7 @@ export const Nosotros = () => {
       <div class="contenedor-grande">
         <div class="caja-nosotros">
           <div class="imagen-nosotros">
-            <img src="https://img.freepik.com/vector-gratis/diseno-plano-dia-internacional-concepto-familia_23-2148492790.jpg" />
+            <img src="https://i.ibb.co/FKKzWPn/IMG-20230223-145539.jpg" />
           </div>
           <div class="contenido-caja">
             <h2>
@@ -104,7 +104,7 @@ export const Nosotros = () => {
         </div>
         <div class="caja-nosotros">
           <div class="imagen-nosotros">
-            <img src="https://img.freepik.com/vector-gratis/diseno-plano-dia-internacional-concepto-familia_23-2148492790.jpg" />
+            <img src="https://i.ibb.co/kJt81B5/IMG-20230223-141123.jpg" />
           </div>
           <div class="contenido-caja">
             <h2>
