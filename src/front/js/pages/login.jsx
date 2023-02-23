@@ -30,7 +30,7 @@ export const Login = () => {
         <Navigate to="/" />
       ) : (
         <div
-          className="mx-auto w-50 card text-center m-4 border border-primary rounded-2 border border-2 col-12 col-md-8 col-sm-4"
+          className="expand-sm mx-auto w-50 card text-center m-4 border border-primary rounded-2 border border-2 col-12 col-md-8 col-sm-4"
           style={{ background: "white" }}
         >
           <div className="login m-2">
@@ -50,7 +50,7 @@ export const Login = () => {
                 <input
                   type="text"
                   id="inputusuario"
-                  className="form-control border border-secondary rounded-pill col-12 col-md-8 col-sm-4"
+                  className="form-control border border-secondary rounded-pill"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   pattern="^[a-zA-Z0-9.]*$"
@@ -86,14 +86,14 @@ export const Login = () => {
             <div className="m-4 d-flex flex-column col-12 col-md-8 col-sm-4 mx-auto">
               <button
                 type="submit"
-                className="buttonClassIngresar p-2 mx-auto col-12 col-md-8 col-sm-4"
+                className="buttonClassIngresar btn-sm p-2 mx-auto"
               >
                 Ingresar
               </button>
               <Link to="/recuperacion_clave">
                 <button
                   type="submit"
-                  className="buttonClassContraseña mx-auto m-2 p-2 col-12 col-md-8 col-sm-4"
+                  className="buttonClassContraseña btn-sm m-2 mx-auto py-auto"
                 >
                   Olvidé mi contraseña
                 </button>
