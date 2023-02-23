@@ -16,8 +16,8 @@ export const Footer = () => (
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="28"
+            height="28"
             fill="currentColor"
             className="bi bi-instagram"
             viewBox="0 0 16 16"
@@ -27,13 +27,15 @@ export const Footer = () => (
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/?lang=es
-">
+        <a
+          href="https://twitter.com/?lang=es
+"
+        >
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="28"
+            height="28"
             fill="currentColor"
             className="bi bi-twitter"
             viewBox="0 0 16 16"
@@ -46,8 +48,8 @@ export const Footer = () => (
         <a href="https://www.facebook.com/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="28"
+            height="28"
             fill="currentColor"
             className="bi bi-facebook"
             viewBox="0 0 16 16"
@@ -80,11 +82,11 @@ export const Footer = () => (
           <li>
             <a href="#">Servicios</a>
           </li>
-         {/* <Navigate to="/nosotros"/>  */}
-         <Link to="/nosotros">
-         <li>
-            <a href="#">Nosotros</a>
-          </li> 
+          {/* <Navigate to="/nosotros"/>  */}
+          <Link to="/nosotros">
+            <li>
+              <a href="#">Nosotros</a>
+            </li>
           </Link>
           <li>
             <a href="#">Contacto</a>
