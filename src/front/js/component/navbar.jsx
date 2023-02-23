@@ -18,17 +18,16 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-expand-md   navbar-expand-sm ">
-
-            {/* navbar-expand-xs */}
+        <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm ">
             <div className="container-fluid">
                 <Link to="/"
                     style={
                         {textDecoration: "none"}
                 }>
-
-                    <img src="https://i.imgur.com/tkKWUot.png" className="logo-pagina"/>
-                </Link>
+                    {/* <span className="navbar-brand mb-0 h1 text-white fs-2"> */}
+                    <img src="https://i.imgur.com/tkKWUot.png" className="logo-pagina"/> {/* FindPets
+            <i className="fa fa-paw mx-1"></i>
+          </span> */} </Link>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item fs-6">
@@ -36,7 +35,36 @@ export const Navbar = () => {
                                 style={
                                     {textDecoration: "none"}
                             }>
-                                <span className="text-white m-2">Lista de mascotas</span>
+                                <span type="text"
+                                    style={
+                                        {
+                                            transition: "transform 0.2s ease-in-out",
+                                            padding: "5px 15px",
+                                            marginLeft: "-12px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            textDecoration: "none",
+                                            color: "white",
+                                            fontSize: "18px"
+                                        }
+                                    }
+                                    onMouseEnter={
+                                        (e) => {
+                                            e.target.style.transform = "translateY(-5px)";
+                                        }
+                                    }
+                                    onMouseLeave={
+                                        (e) => {
+                                            e.target.style.transform = "translateY(0)";
+                                        }
+                                }>
+                                    <i className="fas fa-paw"
+                                        style={
+                                            {marginRight: "5px"}
+                                    }></i>
+                                    {" "}
+                                    Lista de Mascotas
+                                </span>
                             </Link>
                         </li>
                     </ul>
@@ -106,7 +134,11 @@ export const Navbar = () => {
                             </div>
                         ) : null
                     } </form>
-                </div>
+                    {/* MODO-DARK */}
+                    {/* <label className="switch m-2">
+            <input type="checkbox" ></input>
+            <span className="check"></span> 
+          </label> */} </div>
             </div>
         </nav>
     );
