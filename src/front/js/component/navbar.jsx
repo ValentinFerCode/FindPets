@@ -18,17 +18,15 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm ">
-
+        <nav className="w-100 p-3 navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xs ">
             <div className="container-fluid">
                 <Link to="/"
                     style={
                         {textDecoration: "none"}
                 }>
-                    {/* <span className="navbar-brand mb-0 h1 text-white fs-2"> */}
-                    <img src="https://i.imgur.com/tkKWUot.png" className="logo-pagina"/> {/* FindPets
-            <i className="fa fa-paw mx-1"></i>
-          </span> */} </Link>
+
+                    <img className="" src="https://i.imgur.com/tkKWUot.png" className="logo-pagina"/>
+                </Link>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item fs-6">
