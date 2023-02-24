@@ -131,6 +131,8 @@ def putUser():
         user.nombre = body["nombre"]
         user.apellido = body["apellido"]
         user.contacto = body["contacto"]
+        user.empresa = body["empresa"]
+        user.url = body["url"]
 
         db.session.add(user)
         db.session.commit()

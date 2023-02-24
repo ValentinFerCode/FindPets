@@ -15,6 +15,9 @@ export const RefugioPaypal = () => {
   //
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (store.userSession.paypal_url != null) {
+      setPaypalID(store.userSession.paypal_url);
+    }
   }, []);
   //
   //
