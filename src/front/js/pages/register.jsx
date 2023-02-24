@@ -66,7 +66,7 @@ export const Register = () => {
       setUsername("");
       setPassword("");
       setContact("");
-      setRefugio("");
+      setEmpresa("");
       setTipo("");
     }
   }
