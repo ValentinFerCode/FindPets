@@ -16,6 +16,8 @@ export const EditPerfil = () => {
   const [lastname, setLastname] = useState(store.oneUser.apellido);
   const [email, setEmail] = useState(store.oneUser.email);
   const [contact, setContact] = useState(store.oneUser.contacto);
+  const [refugio, setRefugio] = useState(store.oneUser.empresa);
+  const [urlimage, setUrlImage] = useState("");
   //
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,29 +27,48 @@ export const EditPerfil = () => {
   //
   function updateUser(e) {
     e.preventDefault();
-    Swal.fire({
-      title: "¿Estás seguro/a?",
-      text: "No podrás revertir esta acción",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "¡Sí, actualízalo!",
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        actions.updateUser(
-          username,
-          email,
-          firstname,
-          lastname,
-          contact,
-          store.userSession.id
-        ); // actualizamos el perfil del usuario
-        navigate("/perfil"); //usamos navigate para redireccionar
-      }
-    });
-    //
+    if (
+      store.imagePet == "" ||
+      (store.imagePet == undefined && store.oneUser.tipo == "refugio")
+    ) {
+      Swal.fire({
+        title: "¿Estás seguro/a?",
+        text: "No podrás revertir esta acción",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "¡Sí, actualízalo!",
+        cancelButtonText: "Cancelar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          actions.updateUser(
+            username,
+            email,
+            firstname,
+            lastname,
+            contact,
+            refugio,
+            store.oneUser.url,
+            store.userSession.id
+          ); // actualizamos el perfil del usuario
+          navigate("/perfil"); //usamos navigate para redireccionar
+        }
+      });
+      //
+    } else {
+      actions.updateUser(
+        username,
+        email,
+        firstname,
+        lastname,
+        contact,
+        refugio,
+        store.imagePet,
+        store.userSession.id
+      ); // actualizamos el perfil del usuario
+      navigate("/perfil"); //usamos navigate para redireccionar
+    }
   }
   return (
     <div className="container-fluid w-75">
@@ -141,8 +162,46 @@ export const EditPerfil = () => {
                       required
                     />
                   </div>
+
+                  {store.oneUser.tipo == "refugio" ? (
+                    <div className="col-md-6 mb-3 mx-auto">
+                      <label htmlFor="refugio" className="form-label">
+                        Refugio
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={refugio}
+                        onChange={(e) => setRefugio(e.target.value)}
+                        id="refugio"
+                        pattern="^[a-zA-Z ]*$"
+                        required
+                      />
+                    </div>
+                  ) : null}
                 </div>
 
+                {store.oneUser.tipo == "refugio" ? (
+                  <div className="form-group row">
+                    <div className="col-md-9 mb-3">
+                      <input
+                        type="file"
+                        className="form-control"
+                        onChange={(e) => setUrlImage(e.target.files[0])}
+                        id="url"
+                      />
+                    </div>
+                    <div className="col-md-3 mb-3">
+                      <button
+                        type="button"
+                        onClick={() => actions.uploadImage(urlimage)}
+                        className="btn btn-primary"
+                      >
+                        Subir Foto
+                      </button>
+                    </div>
+                  </div>
+                ) : null}
                 <div className="d-grid gap-2 col-6 mx-auto mb-4">
                   <button
                     type="submit"
@@ -153,7 +212,9 @@ export const EditPerfil = () => {
                         firstname != store.userSession.nombre ||
                         lastname != store.userSession.apellido ||
                         email != store.userSession.email ||
-                        contact != store.userSession.contacto
+                        contact != store.userSession.contacto ||
+                        refugio != store.userSession.empresa ||
+                        urlimage != null
                       )
                     }
                   >
