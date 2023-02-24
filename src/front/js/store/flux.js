@@ -419,7 +419,16 @@ const getState = ({
                     return false;
                 }
             },
-            updateUser: (username, email, nombre, apellido, contacto, usuario_id) => {
+            updateUser: (
+                username,
+                email,
+                nombre,
+                apellido,
+                contacto,
+                empresa,
+                url,
+                usuario_id
+            ) => {
                 try {
                     fetch(process.env.BACKEND_URL + "/api/users", {
                             method: "PUT",
@@ -432,6 +441,8 @@ const getState = ({
                                 nombre: nombre,
                                 apellido: apellido,
                                 contacto: contacto,
+                                empresa: empresa,
+                                url: url,
                                 usuario_id: usuario_id,
                             }),
                         })

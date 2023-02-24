@@ -24,32 +24,7 @@ export const Perfil = () => {
   }, []);
 
   //
-  function updateUser(e) {
-    e.preventDefault();
-    Swal.fire({
-      title: "¿Estás seguro/a?",
-      text: "No podrás revertir esta acción",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "¡Sí, actualízalo!",
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        actions.updateUser(
-          username,
-          email,
-          firstname,
-          lastname,
-          contact,
-          store.userSession.id
-        ); // actualizamos el perfil del usuario
-        navigate("/"); //usamos navigate para redireccionar
-      }
-    });
-    //
-  }
+
   //
   function deleteUser() {
     Swal.fire({
@@ -81,7 +56,7 @@ export const Perfil = () => {
             {/* TITULO */}
             <div className="container w-75 mx-auto my-3 ">
               <div className="row g-0 border-bottom border-primary">
-                <form onSubmit={updateUser}>
+                <form>
                   <div className="form-group row">
                     <div className="col-md-6 mb-3">
                       <label htmlFor="firstname" className="form-label">
@@ -155,6 +130,20 @@ export const Perfil = () => {
                         readOnly
                       />
                     </div>
+                    {store.oneUser.tipo == "refugio" ? (
+                      <div className="col-md-6 mb-3 mx-auto">
+                        <label htmlFor="refugio" className="form-label">
+                          Refugio
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          value={store.oneUser.empresa}
+                          id="refugio"
+                          readOnly
+                        />
+                      </div>
+                    ) : null}
                   </div>
                   <div className="form-group row">
                     <div className="d-grid gap-2 col-4 mx-auto mb-4">
