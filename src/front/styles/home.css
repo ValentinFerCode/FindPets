@@ -188,7 +188,7 @@ img[src$="#custom_marker"] {
 
 .carta .contenido {
   position: absolute;
-  width: 50%;
+  width: 46%;
   left: 20%;
   padding: 20px 20px 20px 40px;
   opacity: 0;
@@ -200,7 +200,7 @@ img[src$="#custom_marker"] {
   transition-delay: 0.75s;
   opacity: 1;
   visibility: visible;
-  left: 20px;
+  left: 5px;
 }
 
 .carta .contenido h2 {

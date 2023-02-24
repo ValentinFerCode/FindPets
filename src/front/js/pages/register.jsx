@@ -202,8 +202,8 @@ export const Register = () => {
                     ) : null
                 }
 
-                    <div className="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" className=" submit mx-auto">
+                    <div className=" btn-sm d-grid gap-2 col-md-6 mb-3  mx-auto px-auto  ">
+                        <button type="submit" className="submit mx-auto btn-sm ">
                             Enviar
                         </button>
                     </div>
